@@ -4,7 +4,12 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ICT Academy</title>
+    <link rel="shortcut icon" href="Assets/Images/logo-small.png" />
+    <link rel="apple-touch-icon" href="Assets/Images/logo-small.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -23,10 +28,10 @@
                                 </a>
                             </li>
                             <li class="nav-item col-6 col-md-auto">
-                                <a class="nav-link p-2 active" href="#">Home</a>
+                                <a class="nav-link p-2 active" aria-current="true" href="Default.aspx">Home</a>
                             </li>
                             <li class="nav-item col-6 col-md-auto">
-                                <a class="nav-link p-2" aria-current="true" href="#">Course Category</a>
+                                <a class="nav-link p-2" aria-current="true" href="CourseCategory.aspx">Course Category</a>
                             </li>
 
                         </ul>
@@ -51,6 +56,9 @@
             </footer>--%>
         </div>
         <script src="Scripts/bootstrap.min.js"></script>
+        <script>
+
+        </script>
     </form>
 </body>
 </html>
