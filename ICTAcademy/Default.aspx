@@ -31,7 +31,7 @@
                                                 <p class="text-muted"><%#Eval("Price").ToString().Length >0 ? decimal.Parse(Eval("Price").ToString()).ToString("N2") : "" %></p>
                                             </div>
                                             <p class="card-text badge bg-warning"><%#Eval("CourseCategory") %></p>
-                                            <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>
+                                           <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
                                         </div>
                                     </div>
                                 </div>
