@@ -33,7 +33,6 @@
                             <li class="nav-item col-6 col-md-auto">
                                 <a class="nav-link p-2" aria-current="true" href="CourseCategory.aspx">Course Category</a>
                             </li>
-
                         </ul>
                         <a class="btn btn-success" href="#"> My Courses </a>
 
@@ -56,9 +55,8 @@
             </footer>--%>
         </div>
         <script src="Scripts/bootstrap.min.js"></script>
-        <script>
-
-        </script>
+        <asp:ContentPlaceHolder ID="Scripts" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

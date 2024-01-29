@@ -6,11 +6,22 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">Home</h1>
-                    </div>
-                </div>
+               
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="Assets/Images/cover1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="Assets/Images/cover2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="Assets/Images/cover3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                          </div>
+                        </div>
+                    
+               
             </section>
 
             <div class="album py-5 bg-light">
@@ -37,6 +48,7 @@
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
+
 
                     </div>
                 </div>
