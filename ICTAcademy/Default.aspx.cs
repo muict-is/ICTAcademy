@@ -14,7 +14,11 @@ namespace ICTAcademy
         CourseCS C = new CourseCS();
         protected void Page_Load(object sender, EventArgs e)
         {
-            getCourseList();
+            if (!IsPostBack)
+            {
+                getCourseList();
+            }
+           
         }
 
 
