@@ -33,6 +33,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
+        /// FileUpload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+
+        /// <summary>
         /// CourseNameTH control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CourseNameTH;
+
+        /// <summary>
+        /// lblText1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblText1;
 
         /// <summary>
         /// CourseNameEN control.
@@ -51,15 +69,6 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox CourseNameEN;
 
         /// <summary>
-        /// DropDownList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
-        /// <summary>
         /// stylesID control.
         /// </summary>
         /// <remarks>
@@ -69,13 +78,13 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.DropDownList stylesID;
 
         /// <summary>
-        /// Tag control.
+        /// CategoryID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tag;
+        protected global::System.Web.UI.WebControls.DropDownList CategoryID;
 
         /// <summary>
         /// maxSeat control.
@@ -141,31 +150,22 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox endLeaening;
 
         /// <summary>
-        /// startdate control.
+        /// rptAddDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox startdate;
+        protected global::System.Web.UI.WebControls.Repeater rptAddDate;
 
         /// <summary>
-        /// enddate control.
+        /// BAddExtendTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox enddate;
-
-        /// <summary>
-        /// extendTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button extendTime;
+        protected global::System.Web.UI.WebControls.Button BAddExtendTime;
 
         /// <summary>
         /// rptAddInstrutor control.
@@ -186,13 +186,13 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Button BAddInstruture;
 
         /// <summary>
-        /// tbEmailMessage control.
+        /// courseDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmailMessage;
+        protected global::System.Web.UI.WebControls.TextBox courseDescription;
 
         /// <summary>
         /// courseObjective control.
@@ -222,21 +222,21 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox courseEvaluation;
 
         /// <summary>
-        /// Button3 control.
+        /// BtnDraft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button BtnDraft;
 
         /// <summary>
-        /// Button4 control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
     }
 }

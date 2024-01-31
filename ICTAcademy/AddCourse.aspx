@@ -69,6 +69,50 @@
                 height: 300px;
                 object-fit: cover;
             }
+
+        .drag-area2 {
+            height: 120px;
+            border: 3px dashed #e0eafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px auto;
+        }
+
+            .drag-area2 .icon {
+                font-size: 50px;
+                color: #1683ff;
+            }
+
+            .drag-area2 .header {
+                font-size: 20px;
+                font-weight: 500;
+                color: #34495e;
+            }
+
+            .drag-area2 .support {
+                font-size: 12px;
+                color: gray;
+                margin: 10px 0 15px 0;
+            }
+
+            .drag-area2 .button {
+                font-size: 20px;
+                font-weight: 500;
+                color: #1683ff;
+                cursor: pointer;
+            }
+
+            .drag-area2.active {
+                border: 2px solid #1683ff;
+            }
+
+            .drag-area2 img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
     </style>
 
 
@@ -104,6 +148,8 @@
 
                                 </label>
                             </div>
+                            <asp:FileUpload ID="FileUpload2" runat="server" />
+
 
                             <%-- <div class="newImage">
                                 <label class="newbtn">                                    
@@ -124,6 +170,7 @@
                             <div class="mb-3">
                                 <asp:Label for="CourseNameTH" runat="server" Text="Label" CssClass="form-label">Course Name (TH)</asp:Label>
                                 <asp:TextBox ID="CourseNameTH" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:Label id="lblText1" runat="server"></asp:Label>
                             </div>
                             <div class="mb-3">
                                 <asp:Label for="CourseNameEN" runat="server" Text="Label" CssClass="form-label">Course Name (EN)</asp:Label>
@@ -132,24 +179,24 @@
                             <div class="row mb-3">
                                 <div class="col-sm-6">
                                     <asp:Label for="stylesID" runat="server" Text="Label" CssClass="form-label">รูปแบบการเรียน</asp:Label>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select">
+                                    <asp:DropDownList ID="stylesID" runat="server" CssClass="form-select">
                                         <asp:ListItem Value="0" Text=""></asp:ListItem>
                                         <asp:ListItem Value="1" Text="Instructor-paced : ผู้สอนเป็นผู้กำหนดกิจกรรมตามระยะเวลาเรียนออนไลน์" />
                                         <asp:ListItem Value="2" Text="Self-paced : ผู้เรียนสามารถเลือกเนื้อหาและเวลาเรียน" />
                                     </asp:DropDownList>
                                 </div>
                                 <div class="col-sm-6">
-                                    <asp:Label for="stylesID" runat="server" Text="Label" class="form-label">Category  </asp:Label>
-                                    <asp:DropDownList ID="stylesID" runat="server" CssClass="form-select">
+                                    <asp:Label for="CategoryID" runat="server" Text="Label" class="form-label">Category  </asp:Label>
+                                    <asp:DropDownList ID="CategoryID" runat="server" CssClass="form-select">
                                         <asp:ListItem Value="0" Text="" />
                                         <asp:ListItem Value="1" Text="Cyber Security" />
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <%-- <div class="mb-3">
                                 <asp:Label for="Tag" runat="server" Text="Label" class="form-label">Tag</asp:Label>
                                 <asp:TextBox ID="Tag" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
+                            </div>--%>
                             <div class="row mb-3">
                                 <div class="col-sm-6">
                                     <asp:Label for="maxSeat" runat="server" Text="Label" class="form-label">จำนวนที่เปิดรับสมัคร</asp:Label>
@@ -185,90 +232,113 @@
                                         <asp:ListItem Value="2" Text="Self-paced : ผู้เรียนสามารถเลือกเนื้อหาและเวลาเรียน" />
                                     </asp:DropDownList>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 dtDate">
                                     <asp:Label for="startLeaening" runat="server" Text="Label" class="form-label">วันเริ่มคอร์ส  </asp:Label>
-                                    <asp:TextBox ID="startLeaening" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                    <asp:TextBox ID="startLeaening" CssClass="form-control" TextMode="Date"  runat="server" placeholder=""></asp:TextBox>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 dtDate">
                                     <asp:Label for="endLeaening" runat="server" Text="Label" class="form-label">วันสิ้นสุดคอร์ส  </asp:Label>
-                                    <asp:TextBox ID="endLeaening" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                    <asp:TextBox ID="endLeaening" CssClass="form-control" TextMode="Date"  runat="server" placeholder=""></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <asp:Label for="startdate" runat="server" Text="Label" class="form-label">วันที่เปิดรับสมัคร  </asp:Label>
-                                    <asp:TextBox ID="startdate" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                </div>
-                                <div class="col-sm-4">
-                                    <asp:Label for="enddate" runat="server" Text="Label" class="form-label">วันที่ปิดรับสมัคร  </asp:Label>
-                                    <asp:TextBox ID="enddate" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                </div>
-                                <div class="col-sm-4">
-                                    <br>
-                                    <asp:Button ID="extendTime" runat="server" Text="กรณีขยายเวลา" CssClass="btn btn-outline-primary" />
-                                </div>
-                            </div>
+
                             <br>
+                            <hr>
+                            <br>
+                            <h3>Application Deadline</h3>
+                            <asp:Repeater runat="server" ID="rptAddDate" ClientIDMode="AutoID" OnItemDataBound="rptAddDate_ItemDataBound">
+                                <ItemTemplate>
+                                    <div class="card mb-3 dtDate" id="AddInstrutor">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <asp:Label for="startdate" runat="server" Text="Label" class="form-label">วันที่เปิดรับสมัคร  </asp:Label>
+                                                    <asp:TextBox ID="startdate" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <asp:Label for="enddate" runat="server" Text="Label" class="form-label">วันที่ปิดรับสมัคร  </asp:Label>
+                                                    <asp:TextBox ID="enddate" CssClass="form-control"  TextMode="Date" runat="server" placeholder=""></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+
+
+                            <div class="row mb-3 justify-content-md-center">
+                                <div class="col-8 col-md-2 center">
+                                    <asp:Button ID="BAddExtendTime" runat="server" Text="Deadline extended" CssClass="btn btn-outline-primary" OnClick="BAddExtendTime_Click" />
+                                </div>
+                            </div>
+
                             <hr>
                             <br>
 
                             <h3>Instructor</h3>
-                            <br>
 
-                            <asp:Repeater runat="server" ID="rptAddInstrutor" ClientIDMode="AutoID">
+                            <asp:Repeater runat="server" ID="rptAddInstrutor" ClientIDMode="AutoID" OnItemDataBound="rptAddInstrutor_ItemDataBound">
                                 <ItemTemplate>
-                                    <div class="row mb-3" id="AddInstrutor">
 
-                                        <div class="col-sm-2 text-center">
-                                            <div class="newPreview">
-                                                <label class="newbtn drag-area">
+                                    <div class="card m-3" id="AddInstrutor">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-2 text-center">
+                                                    <div class="newPreview">
+                                                        <label class="newbtn drag-area2">
 
-                                                    <div class="icon"> 
-                                                        <i class="fas fa-images"></i>
+                                                            <div class="icon">
+                                                                <i class="fas fa-images"></i>
+                                                            </div>
+                                                            <div id="imgPreview2" style="display: none">
+                                                               <%-- <img id="PreviewImage2" style="width: 400px">--%>
+                                                                <asp:Image ID="PreviewImage2" runat="server" Style="width: 200px;height: 120px" />
+                                                            </div>
+                                                            <%--<asp:HiddenField ID="HiddenField1" class="test" runat="server" />--%>
+                                                            <asp:FileUpload ID="FileUploadImage" runat="server" onchange="readInstructor(this);" hidden />
+
+                                                            <div id="divCoverPhoto2">
+                                                                <span class="button">Browse Cover Photo</span>
+                                                                <br>
+                                                                <span class="support">Supports: JPEG, JPG, PNG</span>
+                                                            </div>
+
+
+
+                                                        </label>
                                                     </div>
-                                                    <div id="imgPreview2" style="display: none">
-                                                        <img id="PreviewImage2" style="width: 400px">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-6">
+                                                            <asp:Label for="Fullname" runat="server" Text="Label" class="form-label">ชื่อ-นามสกุล อาจารย์ผู้สอน  </asp:Label>
+                                                            <asp:TextBox ID="Fullname" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <asp:Label for="position" runat="server" Text="Label" class="form-label">ตำแหน่ง  </asp:Label>
+                                                            <asp:TextBox ID="position" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <asp:Label for="work" runat="server" Text="Label" class="form-label">ส่วนงาน/สถาบัน   </asp:Label>
+                                                            <asp:TextBox ID="work" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <asp:Label for="email" runat="server" Text="Label" class="form-label">Email  </asp:Label>
+                                                            <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
+                                                        </div>
                                                     </div>
-
-                                                    <asp:FileUpload ID="FileUpload2" runat="server" onchange="readInstructor(this);" hidden />
-
-                                                    <div id="divCoverPhoto2">
-                                                        <span class="button">Browse Cover Photo</span>
-                                                        <br>
-                                                        <span class="support">Supports: JPEG, JPG, PNG</span>
-                                                    </div>
-
-                                                </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-10">
-                                            <div class="row mb-3">
-                                                <div class="col-sm-6">
-                                                    <asp:Label for="Fullname" runat="server" Text="Label" class="form-label">ชื่อ-นามสกุล อาจารย์ผู้สอน  </asp:Label>
-                                                    <asp:TextBox ID="Fullname" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <asp:Label for="position" runat="server" Text="Label" class="form-label">ตำแหน่ง  </asp:Label>
-                                                    <asp:TextBox ID="position" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <asp:Label for="work" runat="server" Text="Label" class="form-label">ส่วนงาน/สถาบัน   </asp:Label>
-                                                    <asp:TextBox ID="work" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <asp:Label for="email" runat="server" Text="Label" class="form-label">Email  </asp:Label>
-                                                    <asp:TextBox ID="email" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                     </div>
+
                                 </ItemTemplate>
                             </asp:Repeater>
 
                             <div class="row mb-3 justify-content-md-center">
                                 <div class="col-8 col-md-2">
-                                    <asp:Button ID="BAddInstruture" runat="server" Text="เพิ่มอาจารย์" class="btn btn-outline-primary" />
+                                    <asp:Button ID="BAddInstruture" runat="server" Text="Add Instructor" class="btn btn-outline-primary" OnClick="BAddInstruture_Click" />
                                 </div>
                             </div>
                             <br>
@@ -279,7 +349,7 @@
                                 <div class="col-sm-12">
 
                                     <asp:Label for="courseDescription" runat="server" Text="Label" class="form-label">รายละเอียดคอร์ส  </asp:Label>
-                                    <asp:TextBox runat="server" CssClass="form-control d-none" ID="tbEmailMessage" TextMode="multiline" Rows="5"></asp:TextBox>
+                                    <asp:TextBox runat="server" CssClass="form-control d-none" ID="courseDescription" TextMode="multiline" Rows="5"></asp:TextBox>
 
                                     <div id="editor"></div>
                                 </div>
@@ -318,13 +388,19 @@
                         </div>
                     </div>
 
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <asp:Button ID="BtnDraft" runat="server" Text="Draft" CssClass="btn btn-secondary" />
+                        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="BtnSubmit_Click"/>
+                    </div>
+
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <asp:Button ID="Button3" runat="server" Text="DRAFT" CssClass="btn btn-secondary" />
-                    <asp:Button ID="Button4" runat="server" Text="POST" CssClass="btn btn-primary" />
-                </div>
+
             </section>
         </ContentTemplate>
+
+        <Triggers>
+                                <asp:PostBackTrigger ControlID="BAddInstruture" />
+                            </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Scripts" runat="server">
@@ -364,13 +440,15 @@
 
                 reader.onload = function (e) {
                     //set image source
-                    //document.getElementById("imgPreview").style.display = "";
-                    //document.getElementById("divCoverPhoto").style.display = "none";
+                    document.getElementById("imgPreview2").style.display = "";
+                    document.getElementById("divCoverPhoto2").style.display = "none";
 
-                    //$('#PreviewImage').attr('src', e.target.result);
                     var imgPreview = input.parentElement.querySelector('img');
                     imgPreview.src = e.target.result;
-                    alert(imgPreview);
+
+
+
+                    //alert(e.target.result);
 
                 };
 
@@ -403,7 +481,17 @@
                 console.error(error);
             });
 
+        
 
+        $(function () {
+
+            $('.AddInstrutor').datepicker()({
+                format: 'YYY/MM/DD',
+                ignoreReadonly: true,
+                defaulDate: new Date()
+            }); 
+
+        });
 
     </script>
 </asp:Content>
