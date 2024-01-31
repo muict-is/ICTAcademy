@@ -119,6 +119,19 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <!-- for test -->
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <asp:FileUpload ID="FileUpload3" runat="server" CssClass="form-control" />
+                    <asp:LinkButton runat="server" ID="btnTestFileUpload" OnClick="btnTestFileUpload_Click" CssClass="btn btn-primary" Text="test upload" />
+                </div>
+            </div>
+        </div>
+    </div>
+
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <section class="py-5 container">
@@ -170,7 +183,7 @@
                             <div class="mb-3">
                                 <asp:Label for="CourseNameTH" runat="server" Text="Label" CssClass="form-label">Course Name (TH)</asp:Label>
                                 <asp:TextBox ID="CourseNameTH" CssClass="form-control" runat="server"></asp:TextBox>
-                                <asp:Label id="lblText1" runat="server"></asp:Label>
+                                <asp:Label ID="lblText1" runat="server"></asp:Label>
                             </div>
                             <div class="mb-3">
                                 <asp:Label for="CourseNameEN" runat="server" Text="Label" CssClass="form-label">Course Name (EN)</asp:Label>
@@ -234,11 +247,11 @@
                                 </div>
                                 <div class="col-sm-4 dtDate">
                                     <asp:Label for="startLeaening" runat="server" Text="Label" class="form-label">วันเริ่มคอร์ส  </asp:Label>
-                                    <asp:TextBox ID="startLeaening" CssClass="form-control" TextMode="Date"  runat="server" placeholder=""></asp:TextBox>
+                                    <asp:TextBox ID="startLeaening" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
                                 </div>
                                 <div class="col-sm-4 dtDate">
                                     <asp:Label for="endLeaening" runat="server" Text="Label" class="form-label">วันสิ้นสุดคอร์ส  </asp:Label>
-                                    <asp:TextBox ID="endLeaening" CssClass="form-control" TextMode="Date"  runat="server" placeholder=""></asp:TextBox>
+                                    <asp:TextBox ID="endLeaening" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
                                 </div>
                             </div>
 
@@ -257,7 +270,7 @@
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <asp:Label for="enddate" runat="server" Text="Label" class="form-label">วันที่ปิดรับสมัคร  </asp:Label>
-                                                    <asp:TextBox ID="enddate" CssClass="form-control"  TextMode="Date" runat="server" placeholder=""></asp:TextBox>
+                                                    <asp:TextBox ID="enddate" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
@@ -292,8 +305,8 @@
                                                                 <i class="fas fa-images"></i>
                                                             </div>
                                                             <div id="imgPreview2" style="display: none">
-                                                               <%-- <img id="PreviewImage2" style="width: 400px">--%>
-                                                                <asp:Image ID="PreviewImage2" runat="server" Style="width: 200px;height: 120px" />
+                                                                <%-- <img id="PreviewImage2" style="width: 400px">--%>
+                                                                <asp:Image ID="PreviewImage2" runat="server" Style="width: 200px; height: 120px" />
                                                             </div>
                                                             <%--<asp:HiddenField ID="HiddenField1" class="test" runat="server" />--%>
                                                             <asp:FileUpload ID="FileUploadImage" runat="server" onchange="readInstructor(this);" hidden />
@@ -390,7 +403,7 @@
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <asp:Button ID="BtnDraft" runat="server" Text="Draft" CssClass="btn btn-secondary" />
-                        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="BtnSubmit_Click"/>
+                        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="BtnSubmit_Click" />
                     </div>
 
                 </div>
@@ -399,8 +412,8 @@
         </ContentTemplate>
 
         <Triggers>
-                                <asp:PostBackTrigger ControlID="BAddInstruture" />
-                            </Triggers>
+            <asp:PostBackTrigger ControlID="BAddInstruture" />
+        </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Scripts" runat="server">
@@ -481,7 +494,7 @@
                 console.error(error);
             });
 
-        
+
 
         $(function () {
 
@@ -489,7 +502,7 @@
                 format: 'YYY/MM/DD',
                 ignoreReadonly: true,
                 defaulDate: new Date()
-            }); 
+            });
 
         });
 

@@ -259,5 +259,17 @@ namespace ICTAcademy
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + ImageCourseName + "')", true);
         }
+
+        protected void btnTestFileUpload_Click(object sender, EventArgs e)
+        {
+            string logResult = "- no file -";
+            if(FileUpload3.HasFile)
+            {
+                logResult = FileUpload3.FileName.ToString();
+                logResult = FileUpload3.FileName.ToString();
+            }
+
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' File name : " + logResult + "')", true);
+        }
     }
 }
