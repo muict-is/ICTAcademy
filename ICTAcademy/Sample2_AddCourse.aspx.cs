@@ -26,7 +26,7 @@ namespace ICTAcademy
             string learningStyle = ddlLearningStyle.SelectedValue.ToString();
 
 
-            C.createCourse(1, tbCourseCode.Text.Trim(), tbCourseNameTH.Text.Trim(), tbCourseNameEN.Text.Trim(), "prach.cha");
+            C.createCourse(1, tbCourseCode.Text.Trim(), tbCourseNameTH.Text.Trim(), tbCourseNameEN.Text.Trim(), Session["userAccount"].ToString());
 
             tbCourseCode.Text = string.Empty;
             tbCourseNameTH.Text = string.Empty; 
