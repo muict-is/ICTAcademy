@@ -13,15 +13,15 @@ namespace ICTAcademy
         CourseCS C = new CourseCS();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Add("userAccount", "prach.cha");
         }
 
         protected void btnAddCourse_Click(object sender, EventArgs e)
         {
-            C.createCourse(1, tbCourseCode.Text.Trim(), tbCourseNameTH.Text.Trim(), tbCourseNameEN.Text.Trim(), "prach.cha");
+            C.createCourse(1, tbCourseCode.Text.Trim(), tbCourseNameTH.Text.Trim(), tbCourseNameEN.Text.Trim(), Session["userAccount"].ToString());
 
             tbCourseCode.Text = string.Empty;
-            tbCourseNameTH.Text = string.Empty;
+            tbCourseNameTH.Text = string.Empty; 
             tbCourseNameEN.Text = string.Empty;
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('add courses success')", true);

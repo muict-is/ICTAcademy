@@ -33,6 +33,7 @@ namespace ICTAcademy
             DateTime localDate = DateTime.Now;
             String createDate = localDate.ToString(); //Example: 1/31/2024 4:47:50 PM
 
+            //Temp Display Code 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + titleTH + " - " + firstnameTH + " - " + middleTH + " - " + lastnameTH + " - " + titleEN + " - " + " - " + firstnameEN + " - " + middleEN + " - " + lastnameEN + " - " + countryID + email + " - " + username + " - " + password + " - " + createDate + "')", true);
              
         }
