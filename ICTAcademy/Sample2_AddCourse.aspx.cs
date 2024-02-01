@@ -34,6 +34,7 @@ namespace ICTAcademy
             tbCourseCode.Text = string.Empty;
             tbCourseNameTH.Text = string.Empty; 
             tbCourseNameEN.Text = string.Empty;
+            bindDDLLearningStyle(); 
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('add courses success')", true);
 
