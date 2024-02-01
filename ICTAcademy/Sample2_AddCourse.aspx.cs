@@ -23,10 +23,13 @@ namespace ICTAcademy
 
         protected void btnAddCourse_Click(object sender, EventArgs e)
         {
-            string learningStyle = ddlLearningStyle.SelectedValue.ToString();
+            int learningStyle = int.Parse(ddlLearningStyle.SelectedValue.ToString());
+            string courseCode = tbCourseCode.Text.Trim();
+            string courseNameTH = tbCourseNameTH.Text.Trim();
+            string courseNameEN = tbCourseNameEN.Text.Trim();
+            string createBy = Session["userAccount"].ToString();
 
-
-            C.createCourse(1, tbCourseCode.Text.Trim(), tbCourseNameTH.Text.Trim(), tbCourseNameEN.Text.Trim(), Session["userAccount"].ToString());
+            C.createCourse(learningStyle, courseCode , courseNameTH, courseNameEN, createBy);
 
             tbCourseCode.Text = string.Empty;
             tbCourseNameTH.Text = string.Empty; 
