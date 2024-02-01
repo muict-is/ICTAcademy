@@ -234,14 +234,14 @@ namespace ICTAcademy
             }
 
 
-            if (FileUpload2.PostedFile != null)
-            {
-                ImageCourseName = "Yes";
-            }
-            else
-            {
-                ImageCourseName = "NO";
-            }
+            //if (FileUpload2.HasFile)
+            //{
+            //    ImageCourseName = "Yes";
+            //}
+            //else
+            //{
+            //    ImageCourseName = "NO2222";
+            //}
 
 
             String courseDescription = this.courseDescription.Text;

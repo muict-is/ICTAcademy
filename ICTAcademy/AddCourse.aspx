@@ -148,7 +148,7 @@
 
                                 </label>
                             </div>
-                            <asp:FileUpload ID="FileUpload2" runat="server" />
+                           <%-- <asp:FileUpload ID="FileUpload2" runat="server" />--%>
 
 
                             <%-- <div class="newImage">
