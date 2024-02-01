@@ -31,6 +31,13 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <div class="mb-3">
+                                    <asp:Label for="ddlLearningStyle" runat="server" Text="Label" CssClass="form-label">รูปแบบการเรียน</asp:Label>
+                                    <asp:DropDownList ID="ddlLearningStyle" runat="server" CssClass="form-select"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="reqLearningStyle"  runat="server" ControlToValidate="ddlLearningStyle" ErrorMessage="* please select"  InitialValue="0" ForeColor="Red" />
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <asp:Button runat="server" ID="btnAddCourse" CssClass="btn btn-success" Text="Add Course" OnClick="btnAddCourse_Click" />
                             </div>
                         </div>
