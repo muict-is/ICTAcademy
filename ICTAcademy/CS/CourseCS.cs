@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace ICTAcademy.CS
 {
@@ -53,6 +54,23 @@ namespace ICTAcademy.CS
         public void createCourse(int courseType, string courseCode, string courseNameTH, string courseNameEN, string createBy)
         {
             insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+        }
+
+
+        //------------------------------------------------
+        private SP_Select_LearningStyleTableAdapter learningStyle = null;
+        protected SP_Select_LearningStyleTableAdapter learningStyleADT
+        {
+            get
+            {
+                if (learningStyle == null) learningStyle = new SP_Select_LearningStyleTableAdapter();
+                return learningStyle;
+            }
+        }
+        public DataTable getLearningStyleList()
+        {
+            
+            return learningStyleADT.GetData();
         }
 
 

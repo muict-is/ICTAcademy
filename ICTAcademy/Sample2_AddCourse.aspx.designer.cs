@@ -78,6 +78,24 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCourseNameEN;
 
         /// <summary>
+        /// ddlLearningStyle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLearningStyle;
+
+        /// <summary>
+        /// reqLearningStyle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLearningStyle;
+
+        /// <summary>
         /// btnAddCourse control.
         /// </summary>
         /// <remarks>
