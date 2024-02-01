@@ -38,5 +38,23 @@ namespace ICTAcademy.CS
 
             return dt;
         }
+
+
+        //--------------------------------------------
+        private SP_Insert_CourseTableAdapter insertCourse = null;
+        protected SP_Insert_CourseTableAdapter insertCourseADT
+        {
+            get
+            {
+                if (insertCourse == null) insertCourse = new SP_Insert_CourseTableAdapter();
+                return insertCourse;
+            }
+        }
+        public void createCourse(int courseType, string courseCode, string courseNameTH, string courseNameEN, string createBy)
+        {
+            insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+        }
+
+
     }
 }
