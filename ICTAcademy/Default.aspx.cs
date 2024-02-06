@@ -1,4 +1,5 @@
 ﻿using ICTAcademy.CS;
+using ICTAcademy.DS;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -44,5 +45,14 @@ namespace ICTAcademy
                 //PreviewImage2.ImageUrl = dt.Rows[itemIdx]["ImageCourse"].ToString();
             }
         }
+
+        protected void Image1_Command(object sender, CommandEventArgs e)
+        {
+            String courseID = (sender as ImageButton).CommandArgument;
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseID + "')", true);
+            Response.Redirect(Page.ResolveUrl("~/CourseDetail.aspx?cid=" + courseID));
+        }
+
+    
     }
 }
