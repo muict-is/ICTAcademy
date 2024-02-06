@@ -18,10 +18,11 @@ namespace ICTAcademy
             {
                 bindDDLLearningStyle();
             }
-            Session.Add("userAccount", "prach.cha");
+            //Session.Add("userAccount", "prach.cha");
+            Session.Add("userAccount", "sukumaporn.kon");
         }
 
-        protected void btnAddCourse_Click(object sender, EventArgs e)
+        protected void btnAddCourse_Click(object sender, EventArgs e) 
         {
             int learningStyle = int.Parse(ddlLearningStyle.SelectedValue.ToString());
             string courseCode = tbCourseCode.Text.Trim();

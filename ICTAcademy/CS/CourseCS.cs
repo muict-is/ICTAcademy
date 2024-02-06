@@ -30,7 +30,7 @@ namespace ICTAcademy.CS
             dt.Columns.Add("CourseName", typeof(string));
             dt.Columns.Add("CourseCategory", typeof(string));
             dt.Columns.Add("Price", typeof(decimal));
-            dt.Columns.Add("CourseNote", typeof(string));
+            dt.Columns.Add("CourseNote", typeof(string)); 
 
             dt.Rows.Add(new object[] { "Intro to DataScience", "Data Science", 3500, "" });
             dt.Rows.Add(new object[] { "Web Pentest", "Cyber Security", 4200, "recomened for web developer" });
@@ -73,6 +73,22 @@ namespace ICTAcademy.CS
             return learningStyleADT.GetData();
         }
 
+
+        
+        //------------------------------------------------
+        private SP_Select_AllCourseTableAdapter courseAll = null;
+        protected SP_Select_AllCourseTableAdapter courseAllADT
+        {
+            get
+            {
+                if (courseAll == null) courseAll = new SP_Select_AllCourseTableAdapter();
+                return courseAll;
+            }
+        }
+        public DataTable getCourseAllList()
+        {
+            return courseAllADT.GetDataCourse();
+        }
 
     }
 }

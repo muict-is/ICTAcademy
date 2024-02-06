@@ -24,9 +24,25 @@ namespace ICTAcademy
 
         private void getCourseList()
         {
-            DataTable dt = C.getCoursListSample();
+            //DataTable dt = C.getCoursListSample();
+            DataTable dt = C.getCourseAllList();
             rptCourseList.DataSource = dt;
             rptCourseList.DataBind();
+
+        }
+
+        protected void rptCourseList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            { 
+                int itemIdx = e.Item.ItemIndex;
+                DataTable dt = C.getCourseAllList();
+
+                RepeaterItem item = e.Item;
+                Image PreviewImage2 = (Image)item.FindControl("Image1");
+
+                //PreviewImage2.ImageUrl = dt.Rows[itemIdx]["ImageCourse"].ToString();
+            }
         }
     }
 }

@@ -3,46 +3,45 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <section class="py-2 text-center">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <asp:ImageButton ID="ImageButton1" runat="server" src="Assets/Images/cover_1.jpg"/>
+            </div>
+            <div class="carousel-item">
+               <asp:ImageButton ID="ImageButton2" runat="server" src="Assets/Images/cover_2.jpg"/>
+            </div>
+            <div class="carousel-item">
+               <asp:ImageButton ID="ImageButton3" runat="server" src="Assets/Images/cover_3.jpg"/>
+            </div>
+        </div> 
+    </div>
+
+
+</section>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <section class="py-5 text-center container">
-               
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="Assets/Images/cover1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="Assets/Images/cover2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="Assets/Images/cover3.jpg" class="d-block w-100" alt="...">
-                            </div>
-                          </div>
-                        </div>
-                    
-               
-            </section>
-
-            <div class="album py-5 bg-light">
+            
+            <div class="album bg-light py-5">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <asp:Repeater runat="server" ID="rptCourseList" ClientIDMode="AutoID">
                             <ItemTemplate>
                                 <div class="col">
-                                    <div class="card shadow-sm">
-                                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                            <title>Placeholder</title>
-                                            <rect width="100%" height="100%" fill="#55595c" />
-                                            <text x="40%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                                    <div class="card shadow-sm  h-100">
+                                        <asp:Image ID="Image1" runat="server" src='<%#Eval("ImageCourse") %>' />
 
-                                        <div class="card-body">
+                                        <div class="card-body " >
+                                            <p class="card-text badge bg-warning"><%#Eval("CategoryEN") %></p>
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <p class="card-title fw-bold"><%#Eval("CourseName") %></p>
-                                                <p class="text-muted"><%#Eval("Price").ToString().Length >0 ? decimal.Parse(Eval("Price").ToString()).ToString("N2") : "" %></p>
+                                                <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
+                                                <p class="text-muted"><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></p>
                                             </div>
-                                            <p class="card-text badge bg-warning"><%#Eval("CourseCategory") %></p>
-                                           <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
+                                            
+                                            <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
                                         </div>
                                     </div>
                                 </div>

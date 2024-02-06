@@ -170,9 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCourse.aspx" />
-    <Content Include="Assets\Images\cover1.jpg" />
-    <Content Include="Assets\Images\cover2.jpg" />
-    <Content Include="Assets\Images\cover3.jpg" />
+    <Content Include="Assets\Images\blog1.jpg" />
+    <Content Include="Assets\Images\blog2.jpg" />
+    <Content Include="Assets\Images\blog3.jpg" />
+    <Content Include="Assets\Images\cover_1.jpg" />
+    <Content Include="Assets\Images\cover_2.jpg" />
+    <Content Include="Assets\Images\cover_3.jpg" />
     <Content Include="Assets\Images\imagePreview.jpg" />
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
@@ -288,6 +291,17 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="DS\RegisterDS.xsc">
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </Content>
+    <None Include="DS\RegisterDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegisterDS.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DS\RegisterDS.xss">
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -312,6 +326,7 @@
     <Compile Include="CourseCategory.aspx.designer.cs">
       <DependentUpon>CourseCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CS\RegisterCS.cs" />
     <Compile Include="CS\CourseCS.cs" />
     <Compile Include="CS\InstructorCS.cs" />
     <Compile Include="Default.aspx.cs">
@@ -330,6 +345,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InstructorDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\RegisterDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="OpenFileDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
