@@ -38,10 +38,13 @@
                                             <p class="card-text badge bg-warning"><%#Eval("CategoryEN") %></p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
-                                                <p class="text-muted"><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></p>
+                                                
                                             </div>
                                             
                                             <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
+                                        </div>
+                                        <div class="card-footer text-muted" >
+                                            <b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b>
                                         </div>
                                     </div>
                                 </div>
