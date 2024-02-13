@@ -15,6 +15,9 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
     <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="Assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="Assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="Assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <style>
         .buttonRound {
