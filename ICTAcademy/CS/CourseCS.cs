@@ -106,5 +106,21 @@ namespace ICTAcademy.CS
             return courseByIDADT.GetCourseByID(courseID);
         }
 
+
+        //------------------------------------------------ 
+        private SP_Select_CourseInstructorTableAdapter Instruture = null;
+        protected SP_Select_CourseInstructorTableAdapter InstrutureADT
+        {
+            get
+            {
+                if (Instruture == null) Instruture = new SP_Select_CourseInstructorTableAdapter();
+                return Instruture;
+            }
+        }
+        public DataTable GetInstructorsByCourseID(int courseDesID)
+        {
+            return InstrutureADT.GetInstructorsByCourseID(courseDesID);
+        }
+
     }
 }

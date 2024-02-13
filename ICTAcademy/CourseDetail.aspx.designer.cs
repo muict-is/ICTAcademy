@@ -51,6 +51,51 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbCategoryEN;
 
         /// <summary>
+        /// lbstartLearning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbstartLearning;
+
+        /// <summary>
+        /// lbhour control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbhour;
+
+        /// <summary>
+        /// lbhourPerWeek control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbhourPerWeek;
+
+        /// <summary>
+        /// lbstyleEN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbstyleEN;
+
+        /// <summary>
+        /// lbstyleTH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbstyleTH;
+
+        /// <summary>
         /// lbmaxSeat control.
         /// </summary>
         /// <remarks>
@@ -69,13 +114,58 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbFee;
 
         /// <summary>
-        /// LinkButton2 control.
+        /// DivEnroll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEnroll;
+
+        /// <summary>
+        /// DivEnrollText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DivEnrollText;
+
+        /// <summary>
+        /// DivEnrollOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEnrollOpen;
+
+        /// <summary>
+        /// enrollOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton enrollOpen;
+
+        /// <summary>
+        /// DivEnrollClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEnrollClose;
+
+        /// <summary>
+        /// enrollClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton enrollClose;
 
         /// <summary>
         /// lbcourseDescription control.
@@ -87,6 +177,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbcourseDescription;
 
         /// <summary>
+        /// rptInstructors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptInstructors;
+
+        /// <summary>
         /// ImageBlog control.
         /// </summary>
         /// <remarks>
@@ -94,6 +193,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageBlog;
+
+        /// <summary>
+        /// DivlbcourseObjective control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivlbcourseObjective;
 
         /// <summary>
         /// lbcourseObjective control.
@@ -105,13 +213,31 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbcourseObjective;
 
         /// <summary>
-        /// lbcourseProgram control.
+        /// DivlbcourseOutline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbcourseProgram;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivlbcourseOutline;
+
+        /// <summary>
+        /// lbcourseOutline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbcourseOutline;
+
+        /// <summary>
+        /// DivlbcourseEvaluation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivlbcourseEvaluation;
 
         /// <summary>
         /// lbcourseEvaluation control.

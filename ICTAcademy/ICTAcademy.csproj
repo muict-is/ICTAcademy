@@ -179,6 +179,7 @@
     <Content Include="Assets\Images\imagePreview.jpg" />
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
+    <Content Include="Assets\Images\profile.jpg" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -200,6 +201,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="CourseCategory.aspx" />
     <Content Include="CourseDetail.aspx" />
+    <Content Include="CourseProfile.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Sample.aspx" />
@@ -333,6 +335,13 @@
     </Compile>
     <Compile Include="CourseDetail.aspx.designer.cs">
       <DependentUpon>CourseDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseProfile.aspx.cs">
+      <DependentUpon>CourseProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseProfile.aspx.designer.cs">
+      <DependentUpon>CourseProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="CS\RegisterCS.cs" />
     <Compile Include="CS\CourseCS.cs" />

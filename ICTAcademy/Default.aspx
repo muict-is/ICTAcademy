@@ -34,10 +34,10 @@
                                 <div class="col">
 
                                     <div class="card shadow-sm  h-100">
-                                        <asp:ImageButton ID="Image1" runat="server" src='<%#Eval("ImageCourse") %>' CommandArgument='<%# Eval("courseID") %>' OnCommand="Image1_Command" />
+                                        <asp:ImageButton ID="Image1" runat="server" src='<%#Eval("ImageCourse") %>' CommandArgument='<%# Eval("courseDesID") %>' OnCommand="Image1_Command" />
 
                                         <div class="card-body ">
-                                           
+                                            
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
 

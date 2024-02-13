@@ -57,18 +57,10 @@
                                 </span>
                             </li>
 
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Number of Applicants</h6>
-                                    <%-- <small class="text-body-secondary">Brief description</small>--%>
-                                </div>
-                                <span class="text-body-secondary">                                   
-                                        <strong><asp:Label runat="server" ID="lbmaxSeat" /></strong>                           
-                                </span>
-                            </li>
 
-                            
-                            <%--  <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+
+                            <%--   
+                              <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                 <div class="text-success">
                                     <h6 class="my-0">Promo code</h6>
                                     <small>EXAMPLECODE</small>
@@ -76,36 +68,112 @@
                                 <span class="text-success">−$5</span> 
                             </li>--%>
                             <li class="list-group-item d-flex justify-content-between">
+                                <h6 class="my-0">Classes Start</h6>
+                                <small class="text-body-secondary">
+                                    <asp:Label runat="server" ID="lbstartLearning" /></small>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <h6 class="my-0">Total Hours</h6>
+                                <small class="text-body-secondary">
+                                    <asp:Label runat="server" ID="lbhour" /></small>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <h6 class="my-0">Hours/Week</h6>
+                                <small class="text-body-secondary">
+                                    <asp:Label runat="server" ID="lbhourPerWeek" /></small>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0"><asp:Label runat="server" ID="lbstyleEN" /></h6>
+                                   <small class="text-body-secondary"> <asp:Label runat="server" ID="lbstyleTH" /></small>
+                                </div>
+                                <%--<span class="text-body-secondary">
+                                    <p class="card-text badge bg-warning my-0">
+                                       
+                                    </p>
+                                </span>--%>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Number of Applicants</h6>
+                                    <%-- <small class="text-body-secondary">Brief description</small>--%>
+                                </div>
+                                <span class="text-body-secondary">
+                                    <strong>
+                                        <h4>
+                                            <asp:Label runat="server" ID="lbmaxSeat" /></h4>
+                                    </strong>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
                                 <h6 class="my-0">Fee</h6>
                                 <h3 class="my-0"><strong>฿<asp:Label runat="server" ID="lbFee" /></strong></h3>
                             </li>
+
                         </ul>
 
-                        <div class="text-end">
-                            <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-success btn-round"> Enroll Course </asp:LinkButton>
+
+                        <div class="text-end" id="DivEnroll" runat="server" visible="false">
+                            <asp:Label runat="server" ID="DivEnrollText" /></small>
+                        </div>
+                        <div class="text-end" id="DivEnrollOpen" runat="server" visible="false">
+                            <asp:LinkButton ID="enrollOpen" runat="server" class="btn btn-success btn-round"> Enroll Course </asp:LinkButton>
+                        </div>
+                        <div class="text-end" id="DivEnrollClose" runat="server" visible="false">
+                            <asp:LinkButton ID="enrollClose" runat="server" class="btn btn-danger btn-round"> Closed </asp:LinkButton>
                         </div>
 
-                        <h4 class="mb-3 text-muted">Description</h4>
+                        <h4 class="mb-3 text-muted py-3">Description</h4>
                         <asp:Label ID="lbcourseDescription" runat="server" />
+
+                        <h4 class="mb-3 text-muted py-3">Instructors</h4>
+                        <asp:Repeater runat="server" ID="rptInstructors" ClientIDMode="AutoID">
+                            <ItemTemplate>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <asp:ImageButton ID="ImageIns" runat="server" src='<%#Eval("imageIns") %>' Width="100px" />
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <h6 class="my-0">
+                                            <asp:Label ID="lbNameInstructors" runat="server" Text='<%#Eval("fullname") %>' /></h6>
+                                        <small class="text-body-secondary">
+                                            <%#Eval("position") %>
+                                            <br>
+                                            <%#Eval("workAddress") %>
+                                            <br>
+                                            <%#Eval("email") %> 
+                                        </small>
+                                    </div>
+                                </div>
+
+
+                            </ItemTemplate>
+                        </asp:Repeater>
+
 
                     </div>
                     <div class="col-md-7 col-lg-8">
 
-                        <asp:Image ID="ImageBlog" runat="server" width="100%"/>
+                        <asp:Image ID="ImageBlog" runat="server" Width="100%" />
 
-                        <br><br><br>
-                        <h4 class="mb-3">Objective</h4>
-                        <asp:Label ID="lbcourseObjective" runat="server" />
+                        <div id="DivlbcourseObjective" runat="server" visible="false">
+                            <h4 class="mb-3 py-4">Objective</h4>
+                            <asp:Label ID="lbcourseObjective" runat="server" />
+                        </div>
 
-                        <hr class="my-4">
+                        <div id="DivlbcourseOutline" runat="server" visible="false">
+                            <h4 class="mb-3 py-4">Program</h4>
+                            <asp:Label ID="lbcourseOutline" runat="server" />
+                        </div>
 
-                        <h4 class="mb-3">Program</h4>
-                        <asp:Label ID="lbcourseProgram" runat="server" />
+                        <div id="DivlbcourseEvaluation" runat="server" visible="false">
+                            <h4 class="mb-3 py-4">Course Evaluation</h4>
+                            <asp:Label ID="lbcourseEvaluation" runat="server" />
+                        </div>
 
-                        <hr class="my-4">
 
-                        <h4 class="mb-3">Course Evaluation</h4>
-                        <asp:Label ID="lbcourseEvaluation" runat="server" />
+
                     </div>
                 </div>
             </main>

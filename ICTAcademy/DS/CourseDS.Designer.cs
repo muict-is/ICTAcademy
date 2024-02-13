@@ -34,6 +34,8 @@ namespace ICTAcademy.DS {
         
         private SP_Select_CourseByIDDataTable tableSP_Select_CourseByID;
         
+        private SP_Select_CourseInstructorDataTable tableSP_Select_CourseInstructor;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace ICTAcademy.DS {
                 }
                 if ((ds.Tables["SP_Select_CourseByID"] != null)) {
                     base.Tables.Add(new SP_Select_CourseByIDDataTable(ds.Tables["SP_Select_CourseByID"]));
+                }
+                if ((ds.Tables["SP_Select_CourseInstructor"] != null)) {
+                    base.Tables.Add(new SP_Select_CourseInstructorDataTable(ds.Tables["SP_Select_CourseInstructor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace ICTAcademy.DS {
         public SP_Select_CourseByIDDataTable SP_Select_CourseByID {
             get {
                 return this.tableSP_Select_CourseByID;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_Select_CourseInstructorDataTable SP_Select_CourseInstructor {
+            get {
+                return this.tableSP_Select_CourseInstructor;
             }
         }
         
@@ -227,6 +242,9 @@ namespace ICTAcademy.DS {
                 if ((ds.Tables["SP_Select_CourseByID"] != null)) {
                     base.Tables.Add(new SP_Select_CourseByIDDataTable(ds.Tables["SP_Select_CourseByID"]));
                 }
+                if ((ds.Tables["SP_Select_CourseInstructor"] != null)) {
+                    base.Tables.Add(new SP_Select_CourseInstructorDataTable(ds.Tables["SP_Select_CourseInstructor"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace ICTAcademy.DS {
                     this.tableSP_Select_CourseByID.InitVars();
                 }
             }
+            this.tableSP_Select_CourseInstructor = ((SP_Select_CourseInstructorDataTable)(base.Tables["SP_Select_CourseInstructor"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_Select_CourseInstructor != null)) {
+                    this.tableSP_Select_CourseInstructor.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace ICTAcademy.DS {
             base.Tables.Add(this.tableSP_Select_AllCourse);
             this.tableSP_Select_CourseByID = new SP_Select_CourseByIDDataTable();
             base.Tables.Add(this.tableSP_Select_CourseByID);
+            this.tableSP_Select_CourseInstructor = new SP_Select_CourseInstructorDataTable();
+            base.Tables.Add(this.tableSP_Select_CourseInstructor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace ICTAcademy.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeSP_Select_CourseByID() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeSP_Select_CourseInstructor() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace ICTAcademy.DS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void SP_Select_CourseByIDRowChangeEventHandler(object sender, SP_Select_CourseByIDRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void SP_Select_CourseInstructorRowChangeEventHandler(object sender, SP_Select_CourseInstructorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2229,8 +2264,6 @@ namespace ICTAcademy.DS {
             
             private global::System.Data.DataColumn columncourseObjective;
             
-            private global::System.Data.DataColumn columncourseProgram;
-            
             private global::System.Data.DataColumn columncourseEvaluation;
             
             private global::System.Data.DataColumn columnstylesID;
@@ -2274,6 +2307,14 @@ namespace ICTAcademy.DS {
             private global::System.Data.DataColumn columnupdatedate2;
             
             private global::System.Data.DataColumn columnstatus2;
+            
+            private global::System.Data.DataColumn columnlinkUrl;
+            
+            private global::System.Data.DataColumn columncourseOutline;
+            
+            private global::System.Data.DataColumn columnstartRegisdate;
+            
+            private global::System.Data.DataColumn columnendRegisdate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2433,14 +2474,6 @@ namespace ICTAcademy.DS {
             public global::System.Data.DataColumn courseObjectiveColumn {
                 get {
                     return this.columncourseObjective;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn courseProgramColumn {
-                get {
-                    return this.columncourseProgram;
                 }
             }
             
@@ -2622,6 +2655,38 @@ namespace ICTAcademy.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn linkUrlColumn {
+                get {
+                    return this.columnlinkUrl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn courseOutlineColumn {
+                get {
+                    return this.columncourseOutline;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn startRegisdateColumn {
+                get {
+                    return this.columnstartRegisdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn endRegisdateColumn {
+                get {
+                    return this.columnendRegisdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2672,7 +2737,6 @@ namespace ICTAcademy.DS {
                         string ImageCourse, 
                         string courseDescription, 
                         string courseObjective, 
-                        string courseProgram, 
                         string courseEvaluation, 
                         int stylesID, 
                         int periodTimeID, 
@@ -2693,7 +2757,11 @@ namespace ICTAcademy.DS {
                         System.DateTime createdate2, 
                         string updateby2, 
                         System.DateTime updatedate2, 
-                        int status2) {
+                        int status2, 
+                        string linkUrl, 
+                        string courseOutline, 
+                        System.DateTime startRegisdate, 
+                        System.DateTime endRegisdate) {
                 SP_Select_CourseByIDRow rowSP_Select_CourseByIDRow = ((SP_Select_CourseByIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2712,7 +2780,6 @@ namespace ICTAcademy.DS {
                         ImageCourse,
                         courseDescription,
                         courseObjective,
-                        courseProgram,
                         courseEvaluation,
                         stylesID,
                         periodTimeID,
@@ -2734,10 +2801,23 @@ namespace ICTAcademy.DS {
                         createdate2,
                         updateby2,
                         updatedate2,
-                        status2};
+                        status2,
+                        linkUrl,
+                        courseOutline,
+                        startRegisdate,
+                        endRegisdate};
                 rowSP_Select_CourseByIDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Select_CourseByIDRow);
                 return rowSP_Select_CourseByIDRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseByIDRow FindBycourseIDcourseDesIDCategoryID1(int courseID, int courseDesID, int CategoryID1) {
+                return ((SP_Select_CourseByIDRow)(this.Rows.Find(new object[] {
+                            courseID,
+                            courseDesID,
+                            CategoryID1})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2773,7 +2853,6 @@ namespace ICTAcademy.DS {
                 this.columnImageCourse = base.Columns["ImageCourse"];
                 this.columncourseDescription = base.Columns["courseDescription"];
                 this.columncourseObjective = base.Columns["courseObjective"];
-                this.columncourseProgram = base.Columns["courseProgram"];
                 this.columncourseEvaluation = base.Columns["courseEvaluation"];
                 this.columnstylesID = base.Columns["stylesID"];
                 this.columnperiodTimeID = base.Columns["periodTimeID"];
@@ -2796,6 +2875,10 @@ namespace ICTAcademy.DS {
                 this.columnupdateby2 = base.Columns["updateby2"];
                 this.columnupdatedate2 = base.Columns["updatedate2"];
                 this.columnstatus2 = base.Columns["status2"];
+                this.columnlinkUrl = base.Columns["linkUrl"];
+                this.columncourseOutline = base.Columns["courseOutline"];
+                this.columnstartRegisdate = base.Columns["startRegisdate"];
+                this.columnendRegisdate = base.Columns["endRegisdate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2833,8 +2916,6 @@ namespace ICTAcademy.DS {
                 base.Columns.Add(this.columncourseDescription);
                 this.columncourseObjective = new global::System.Data.DataColumn("courseObjective", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseObjective);
-                this.columncourseProgram = new global::System.Data.DataColumn("courseProgram", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncourseProgram);
                 this.columncourseEvaluation = new global::System.Data.DataColumn("courseEvaluation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseEvaluation);
                 this.columnstylesID = new global::System.Data.DataColumn("stylesID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2879,6 +2960,18 @@ namespace ICTAcademy.DS {
                 base.Columns.Add(this.columnupdatedate2);
                 this.columnstatus2 = new global::System.Data.DataColumn("status2", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus2);
+                this.columnlinkUrl = new global::System.Data.DataColumn("linkUrl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlinkUrl);
+                this.columncourseOutline = new global::System.Data.DataColumn("courseOutline", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncourseOutline);
+                this.columnstartRegisdate = new global::System.Data.DataColumn("startRegisdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstartRegisdate);
+                this.columnendRegisdate = new global::System.Data.DataColumn("endRegisdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnendRegisdate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncourseID,
+                                this.columncourseDesID,
+                                this.columnCategoryID1}, true));
                 this.columncourseID.AutoIncrement = true;
                 this.columncourseID.AutoIncrementSeed = -1;
                 this.columncourseID.AutoIncrementStep = -1;
@@ -2894,9 +2987,7 @@ namespace ICTAcademy.DS {
                 this.columncreateby.AllowDBNull = false;
                 this.columncreateby.MaxLength = 50;
                 this.columncreatedate.AllowDBNull = false;
-                this.columnupdateby.AllowDBNull = false;
                 this.columnupdateby.MaxLength = 50;
-                this.columnupdatedate.AllowDBNull = false;
                 this.columnstatus.AllowDBNull = false;
                 this.columncourseDesID.AutoIncrement = true;
                 this.columncourseDesID.AutoIncrementSeed = -1;
@@ -2906,7 +2997,6 @@ namespace ICTAcademy.DS {
                 this.columnImageCourse.MaxLength = 150;
                 this.columncourseDescription.MaxLength = 1073741823;
                 this.columncourseObjective.MaxLength = 1073741823;
-                this.columncourseProgram.MaxLength = 1073741823;
                 this.columncourseEvaluation.MaxLength = 1073741823;
                 this.columntotalHour.MaxLength = 50;
                 this.columnhourPerWeek.MaxLength = 50;
@@ -2921,6 +3011,8 @@ namespace ICTAcademy.DS {
                 this.columnCategoryTH.MaxLength = 250;
                 this.columncreateby2.MaxLength = 50;
                 this.columnupdateby2.MaxLength = 50;
+                this.columnlinkUrl.MaxLength = 2147483647;
+                this.columncourseOutline.MaxLength = 1073741823;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3007,6 +3099,429 @@ namespace ICTAcademy.DS {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_Select_CourseByIDDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_Select_CourseInstructorDataTable : global::System.Data.TypedTableBase<SP_Select_CourseInstructorRow> {
+            
+            private global::System.Data.DataColumn columncourseInsID;
+            
+            private global::System.Data.DataColumn columncourseDesID;
+            
+            private global::System.Data.DataColumn columnimageIns;
+            
+            private global::System.Data.DataColumn columnfullname;
+            
+            private global::System.Data.DataColumn columnworkAddress;
+            
+            private global::System.Data.DataColumn columnposition;
+            
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columncreateby;
+            
+            private global::System.Data.DataColumn columncreatedate;
+            
+            private global::System.Data.DataColumn columnupdateby;
+            
+            private global::System.Data.DataColumn columnupdatedate;
+            
+            private global::System.Data.DataColumn columnstatus;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorDataTable() {
+                this.TableName = "SP_Select_CourseInstructor";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SP_Select_CourseInstructorDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected SP_Select_CourseInstructorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn courseInsIDColumn {
+                get {
+                    return this.columncourseInsID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn courseDesIDColumn {
+                get {
+                    return this.columncourseDesID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn imageInsColumn {
+                get {
+                    return this.columnimageIns;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn fullnameColumn {
+                get {
+                    return this.columnfullname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn workAddressColumn {
+                get {
+                    return this.columnworkAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn positionColumn {
+                get {
+                    return this.columnposition;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn createbyColumn {
+                get {
+                    return this.columncreateby;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn createdateColumn {
+                get {
+                    return this.columncreatedate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn updatebyColumn {
+                get {
+                    return this.columnupdateby;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn updatedateColumn {
+                get {
+                    return this.columnupdatedate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRow this[int index] {
+                get {
+                    return ((SP_Select_CourseInstructorRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SP_Select_CourseInstructorRowChangeEventHandler SP_Select_CourseInstructorRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SP_Select_CourseInstructorRowChangeEventHandler SP_Select_CourseInstructorRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SP_Select_CourseInstructorRowChangeEventHandler SP_Select_CourseInstructorRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event SP_Select_CourseInstructorRowChangeEventHandler SP_Select_CourseInstructorRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddSP_Select_CourseInstructorRow(SP_Select_CourseInstructorRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRow AddSP_Select_CourseInstructorRow(int courseDesID, string imageIns, string fullname, string workAddress, string position, string email, string createby, System.DateTime createdate, string updateby, System.DateTime updatedate, int status) {
+                SP_Select_CourseInstructorRow rowSP_Select_CourseInstructorRow = ((SP_Select_CourseInstructorRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        courseDesID,
+                        imageIns,
+                        fullname,
+                        workAddress,
+                        position,
+                        email,
+                        createby,
+                        createdate,
+                        updateby,
+                        updatedate,
+                        status};
+                rowSP_Select_CourseInstructorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_Select_CourseInstructorRow);
+                return rowSP_Select_CourseInstructorRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRow FindBycourseInsID(int courseInsID) {
+                return ((SP_Select_CourseInstructorRow)(this.Rows.Find(new object[] {
+                            courseInsID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_Select_CourseInstructorDataTable cln = ((SP_Select_CourseInstructorDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_Select_CourseInstructorDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columncourseInsID = base.Columns["courseInsID"];
+                this.columncourseDesID = base.Columns["courseDesID"];
+                this.columnimageIns = base.Columns["imageIns"];
+                this.columnfullname = base.Columns["fullname"];
+                this.columnworkAddress = base.Columns["workAddress"];
+                this.columnposition = base.Columns["position"];
+                this.columnemail = base.Columns["email"];
+                this.columncreateby = base.Columns["createby"];
+                this.columncreatedate = base.Columns["createdate"];
+                this.columnupdateby = base.Columns["updateby"];
+                this.columnupdatedate = base.Columns["updatedate"];
+                this.columnstatus = base.Columns["status"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columncourseInsID = new global::System.Data.DataColumn("courseInsID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncourseInsID);
+                this.columncourseDesID = new global::System.Data.DataColumn("courseDesID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncourseDesID);
+                this.columnimageIns = new global::System.Data.DataColumn("imageIns", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimageIns);
+                this.columnfullname = new global::System.Data.DataColumn("fullname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullname);
+                this.columnworkAddress = new global::System.Data.DataColumn("workAddress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnworkAddress);
+                this.columnposition = new global::System.Data.DataColumn("position", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnposition);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columncreateby = new global::System.Data.DataColumn("createby", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreateby);
+                this.columncreatedate = new global::System.Data.DataColumn("createdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreatedate);
+                this.columnupdateby = new global::System.Data.DataColumn("updateby", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdateby);
+                this.columnupdatedate = new global::System.Data.DataColumn("updatedate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdatedate);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncourseInsID}, true));
+                this.columncourseInsID.AutoIncrement = true;
+                this.columncourseInsID.AutoIncrementSeed = -1;
+                this.columncourseInsID.AutoIncrementStep = -1;
+                this.columncourseInsID.AllowDBNull = false;
+                this.columncourseInsID.ReadOnly = true;
+                this.columncourseInsID.Unique = true;
+                this.columnimageIns.MaxLength = 2147483647;
+                this.columnfullname.MaxLength = 250;
+                this.columnworkAddress.MaxLength = 2147483647;
+                this.columnposition.MaxLength = 2147483647;
+                this.columnemail.MaxLength = 250;
+                this.columncreateby.MaxLength = 50;
+                this.columnupdateby.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRow NewSP_Select_CourseInstructorRow() {
+                return ((SP_Select_CourseInstructorRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_Select_CourseInstructorRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_Select_CourseInstructorRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_Select_CourseInstructorRowChanged != null)) {
+                    this.SP_Select_CourseInstructorRowChanged(this, new SP_Select_CourseInstructorRowChangeEvent(((SP_Select_CourseInstructorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_Select_CourseInstructorRowChanging != null)) {
+                    this.SP_Select_CourseInstructorRowChanging(this, new SP_Select_CourseInstructorRowChangeEvent(((SP_Select_CourseInstructorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_Select_CourseInstructorRowDeleted != null)) {
+                    this.SP_Select_CourseInstructorRowDeleted(this, new SP_Select_CourseInstructorRowChangeEvent(((SP_Select_CourseInstructorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_Select_CourseInstructorRowDeleting != null)) {
+                    this.SP_Select_CourseInstructorRowDeleting(this, new SP_Select_CourseInstructorRowChangeEvent(((SP_Select_CourseInstructorRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveSP_Select_CourseInstructorRow(SP_Select_CourseInstructorRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CourseDS ds = new CourseDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_Select_CourseInstructorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4297,7 +4812,12 @@ namespace ICTAcademy.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string updateby {
                 get {
-                    return ((string)(this[this.tableSP_Select_CourseByID.updatebyColumn]));
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseByID.updatebyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updateby\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSP_Select_CourseByID.updatebyColumn] = value;
@@ -4308,7 +4828,12 @@ namespace ICTAcademy.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime updatedate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableSP_Select_CourseByID.updatedateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Select_CourseByID.updatedateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updatedate\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSP_Select_CourseByID.updatedateColumn] = value;
@@ -4416,22 +4941,6 @@ namespace ICTAcademy.DS {
                 }
                 set {
                     this[this.tableSP_Select_CourseByID.courseObjectiveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string courseProgram {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_Select_CourseByID.courseProgramColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'courseProgram\' in table \'SP_Select_CourseByID\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_Select_CourseByID.courseProgramColumn] = value;
                 }
             }
             
@@ -4785,6 +5294,94 @@ namespace ICTAcademy.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string linkUrl {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseByID.linkUrlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'linkUrl\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseByID.linkUrlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string courseOutline {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseByID.courseOutlineColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'courseOutline\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseByID.courseOutlineColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime startRegisdate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Select_CourseByID.startRegisdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'startRegisdate\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseByID.startRegisdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime endRegisdate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Select_CourseByID.endRegisdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'endRegisdate\' in table \'SP_Select_CourseByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseByID.endRegisdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsupdatebyNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.updatebyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetupdatebyNull() {
+                this[this.tableSP_Select_CourseByID.updatebyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsupdatedateNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.updatedateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetupdatedateNull() {
+                this[this.tableSP_Select_CourseByID.updatedateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscourseID1Null() {
                 return this.IsNull(this.tableSP_Select_CourseByID.courseID1Column);
             }
@@ -4841,18 +5438,6 @@ namespace ICTAcademy.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcourseObjectiveNull() {
                 this[this.tableSP_Select_CourseByID.courseObjectiveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscourseProgramNull() {
-                return this.IsNull(this.tableSP_Select_CourseByID.courseProgramColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcourseProgramNull() {
-                this[this.tableSP_Select_CourseByID.courseProgramColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5106,6 +5691,392 @@ namespace ICTAcademy.DS {
             public void Setstatus2Null() {
                 this[this.tableSP_Select_CourseByID.status2Column] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslinkUrlNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.linkUrlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlinkUrlNull() {
+                this[this.tableSP_Select_CourseByID.linkUrlColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscourseOutlineNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.courseOutlineColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcourseOutlineNull() {
+                this[this.tableSP_Select_CourseByID.courseOutlineColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsstartRegisdateNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.startRegisdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetstartRegisdateNull() {
+                this[this.tableSP_Select_CourseByID.startRegisdateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsendRegisdateNull() {
+                return this.IsNull(this.tableSP_Select_CourseByID.endRegisdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetendRegisdateNull() {
+                this[this.tableSP_Select_CourseByID.endRegisdateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_Select_CourseInstructorRow : global::System.Data.DataRow {
+            
+            private SP_Select_CourseInstructorDataTable tableSP_Select_CourseInstructor;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal SP_Select_CourseInstructorRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_Select_CourseInstructor = ((SP_Select_CourseInstructorDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int courseInsID {
+                get {
+                    return ((int)(this[this.tableSP_Select_CourseInstructor.courseInsIDColumn]));
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.courseInsIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int courseDesID {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Select_CourseInstructor.courseDesIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'courseDesID\' in table \'SP_Select_CourseInstructor\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.courseDesIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string imageIns {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.imageInsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'imageIns\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.imageInsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string fullname {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.fullnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullname\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.fullnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string workAddress {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.workAddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'workAddress\' in table \'SP_Select_CourseInstructor\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.workAddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string position {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.positionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'position\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.positionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string email {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.emailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'email\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string createby {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.createbyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'createby\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.createbyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime createdate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Select_CourseInstructor.createdateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'createdate\' in table \'SP_Select_CourseInstructor\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.createdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string updateby {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_CourseInstructor.updatebyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updateby\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.updatebyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime updatedate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Select_CourseInstructor.updatedateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updatedate\' in table \'SP_Select_CourseInstructor\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.updatedateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int status {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Select_CourseInstructor.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'SP_Select_CourseInstructor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_CourseInstructor.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscourseDesIDNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.courseDesIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcourseDesIDNull() {
+                this[this.tableSP_Select_CourseInstructor.courseDesIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsimageInsNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.imageInsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetimageInsNull() {
+                this[this.tableSP_Select_CourseInstructor.imageInsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfullnameNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.fullnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfullnameNull() {
+                this[this.tableSP_Select_CourseInstructor.fullnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsworkAddressNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.workAddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetworkAddressNull() {
+                this[this.tableSP_Select_CourseInstructor.workAddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspositionNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.positionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpositionNull() {
+                this[this.tableSP_Select_CourseInstructor.positionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsemailNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.emailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemailNull() {
+                this[this.tableSP_Select_CourseInstructor.emailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscreatebyNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.createbyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcreatebyNull() {
+                this[this.tableSP_Select_CourseInstructor.createbyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscreatedateNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.createdateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcreatedateNull() {
+                this[this.tableSP_Select_CourseInstructor.createdateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsupdatebyNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.updatebyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetupdatebyNull() {
+                this[this.tableSP_Select_CourseInstructor.updatebyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsupdatedateNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.updatedateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetupdatedateNull() {
+                this[this.tableSP_Select_CourseInstructor.updatedateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tableSP_Select_CourseInstructor.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tableSP_Select_CourseInstructor.statusColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -5264,6 +6235,40 @@ namespace ICTAcademy.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SP_Select_CourseByIDRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class SP_Select_CourseInstructorRowChangeEvent : global::System.EventArgs {
+            
+            private SP_Select_CourseInstructorRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRowChangeEvent(SP_Select_CourseInstructorRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SP_Select_CourseInstructorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6160,7 +7165,6 @@ namespace ICTAcademy.DS.CourseDSTableAdapters {
             tableMapping.ColumnMappings.Add("ImageCourse", "ImageCourse");
             tableMapping.ColumnMappings.Add("courseDescription", "courseDescription");
             tableMapping.ColumnMappings.Add("courseObjective", "courseObjective");
-            tableMapping.ColumnMappings.Add("courseProgram", "courseProgram");
             tableMapping.ColumnMappings.Add("courseEvaluation", "courseEvaluation");
             tableMapping.ColumnMappings.Add("stylesID", "stylesID");
             tableMapping.ColumnMappings.Add("periodTimeID", "periodTimeID");
@@ -6183,6 +7187,10 @@ namespace ICTAcademy.DS.CourseDSTableAdapters {
             tableMapping.ColumnMappings.Add("updateby2", "updateby2");
             tableMapping.ColumnMappings.Add("updatedate2", "updatedate2");
             tableMapping.ColumnMappings.Add("status2", "status2");
+            tableMapping.ColumnMappings.Add("linkUrl", "linkUrl");
+            tableMapping.ColumnMappings.Add("courseOutline", "courseOutline");
+            tableMapping.ColumnMappings.Add("startRegisdate", "startRegisdate");
+            tableMapping.ColumnMappings.Add("endRegisdate", "endRegisdate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -6202,41 +7210,195 @@ namespace ICTAcademy.DS.CourseDSTableAdapters {
             this._commandCollection[0].CommandText = "dbo.SP_Select_CourseByID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@courseID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CourseDS.SP_Select_CourseByIDDataTable dataTable, global::System.Nullable<int> courseID) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((courseID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(courseID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@courseDesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CourseDS.SP_Select_CourseByIDDataTable GetCourseByID(global::System.Nullable<int> courseID) {
+        public virtual CourseDS.SP_Select_CourseByIDDataTable GetCourseByID(global::System.Nullable<int> courseDesID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((courseID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(courseID.Value));
+            if ((courseDesID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(courseDesID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             CourseDS.SP_Select_CourseByIDDataTable dataTable = new CourseDS.SP_Select_CourseByIDDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_Select_CourseInstructorTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public SP_Select_CourseInstructorTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_Select_CourseInstructor";
+            tableMapping.ColumnMappings.Add("courseInsID", "courseInsID");
+            tableMapping.ColumnMappings.Add("courseDesID", "courseDesID");
+            tableMapping.ColumnMappings.Add("imageIns", "imageIns");
+            tableMapping.ColumnMappings.Add("fullname", "fullname");
+            tableMapping.ColumnMappings.Add("workAddress", "workAddress");
+            tableMapping.ColumnMappings.Add("position", "position");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("createby", "createby");
+            tableMapping.ColumnMappings.Add("createdate", "createdate");
+            tableMapping.ColumnMappings.Add("updateby", "updateby");
+            tableMapping.ColumnMappings.Add("updatedate", "updatedate");
+            tableMapping.ColumnMappings.Add("status", "status");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AcademyConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SP_Select_CourseInstructor";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@courseDesID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CourseDS.SP_Select_CourseInstructorDataTable GetInstructorsByCourseID(global::System.Nullable<int> courseDesID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((courseDesID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(courseDesID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            CourseDS.SP_Select_CourseInstructorDataTable dataTable = new CourseDS.SP_Select_CourseInstructorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
