@@ -88,7 +88,43 @@
        
         <script src="Scripts/jquery-3.6.4.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
-        <%--<script src="Scripts/bootstrap-datetimepicker.min.js"></script>--%>
+        <script src="Scripts/moment.min.js"></script>
+        <script src="Scripts/moment-with-locales.min.js"></script>
+        <script src="Scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="Scripts/bootstrap-datepicker-custom.js"></script>
+        <script>
+            //active menu
+            $(function () {
+                try {
+                    var current = location.pathname.split('/').pop().split('.')[0];
+                    // active menu
+                    $('header .navbar-nav .nav-item').each(function () {
+                        var $this = $(this);
+                        if ($this.attr('class').indexOf(current.toLowerCase()) !== -1) {
+                            $this.addClass('active');
+                        }
+                    })
+                }
+                catch (e) { }
+
+            })
+            function openModal(modalID) {
+                var Modal = new bootstrap.Modal(document.getElementById(modalID));
+                Modal.show();
+            }
+            function hideModal(modalID) {
+
+                var modal = new bootstrap.Modal(modalID);
+                document.addEventListener('closeModal', () => {
+                    modal.hide();
+                });
+                $('body').removeClass('modal-open');
+                $('body').css('overflow', '');
+                $('body').css('padding-right', '');
+                $('.modal-backdrop').remove();
+
+            }
+        </script>
         <asp:ContentPlaceHolder ID="Scripts" runat="server">
         </asp:ContentPlaceHolder>
     </form>

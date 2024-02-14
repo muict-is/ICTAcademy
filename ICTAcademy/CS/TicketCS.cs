@@ -18,8 +18,13 @@ namespace ICTAcademy.CS
                 return selTicket;
             }
         }
+        public DataTable getTicketList( int courseID, string startDate, string expireDate, int status)
+        {
+            return getTicketList(null, courseID, startDate, expireDate, status);
+        }
         public DataTable getTicketList(string code, int courseID, string startDate, string expireDate, int status)
         {
+            
             return selTicketADT.GetData(code, courseID, startDate, expireDate, status);
         }
 
@@ -70,6 +75,41 @@ namespace ICTAcademy.CS
             }
 
             return false;
+        }
+
+
+        private SP_Select_AllCourseTableAdapter selCourse = null;
+        protected SP_Select_AllCourseTableAdapter selCourseADT
+        {
+            get
+            {
+                if (selCourse == null) selCourse = new SP_Select_AllCourseTableAdapter();
+                return selCourse;
+            }
+        }
+        public DataTable getCourseList ()
+        {
+            DataTable dt = selCourseADT.GetData();
+            dt.Columns.Add("CourseName", typeof(string));
+            foreach(DataRow dr in dt.Rows)
+            {
+                dr["CourseName"] = $"{dr["courseCode"]}-{dr["courseNameTH"]} / {dr["courseNameEN"]}";
+            }
+
+            return dt;
+        }
+
+        public DataTable getStatusList()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("dataTextFiled", typeof(string));
+            dt.Columns.Add("dataValueField", typeof(int));
+            //dt.Rows.Add(new Object[] { "--ทั้งหมด--", -1 });
+            dt.Rows.Add(new Object[] { "ใช้งาน", 1 });
+            dt.Rows.Add(new Object[] { "ยกเลิกใช้งาน", 0 });
+
+
+            return dt;
         }
     }
 }
