@@ -12,9 +12,11 @@
     <link rel="apple-touch-icon" href="Assets/Images/logo-small.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <%--<link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />--%>
+    <link href="Content/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
 
     <style>
         .buttonRound {
@@ -63,7 +65,7 @@
                                 <a class="nav-link p-2" aria-current="true" href="CourseCategory.aspx">Course Category</a>
                             </li>
                         </ul>
-                        
+
                         <a class="btn btn-success buttonRound" href="#">My Courses </a>
 
                     </div>
@@ -85,13 +87,16 @@
                 </div>
             </footer>--%>
         </div>
-       
+
         <script src="Scripts/jquery-3.6.4.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
         <script src="Scripts/moment.min.js"></script>
         <script src="Scripts/moment-with-locales.min.js"></script>
-        <script src="Scripts/bootstrap-datetimepicker.min.js"></script>
-        <script src="Scripts/bootstrap-datepicker-custom.js"></script>
+        <%--<script src="Scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="Scripts/bootstrap-datepicker-custom.js"></script>--%>
+        <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+        <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker-custom.js"></script>
+        <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker.th.min.js"></script>
         <script>
             //active menu
             $(function () {
@@ -113,8 +118,16 @@
                 Modal.show();
             }
             function hideModal(modalID) {
-
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.addEventListener('closeModal', () => {
+                        var modal = new bootstrap.Modal(document.getElementById(modalID));
+                        modal.hide();
+                    });
+                });
+                
                 var modal = new bootstrap.Modal(modalID);
+                modal.hide()
+
                 document.addEventListener('closeModal', () => {
                     modal.hide();
                 });
@@ -123,6 +136,49 @@
                 $('body').css('padding-right', '');
                 $('.modal-backdrop').remove();
 
+            }
+
+            //------------- for date picker----
+            function activeDatePicker() {
+                $('.datepicker').datepicker({
+                    format: 'd M yyyy',
+                    language: 'th',
+                    clearBtn: true,
+                    thaiyear: true,
+                    todayHighlight: true
+                });
+            }
+
+            function setDateText(tb) {
+                try {
+                    if ((tb.val().length > 0))
+                        tb.datepicker("setDate", convertTHDate(tb.val()));
+                } catch (e) { }
+            }
+
+            function setMinDateFromStartDate(tbStart, tbEnd) {
+                try {
+                    if (tbStart.val().length > 0) {
+                        var minDate = new Date(convertTHDate(tbStart.val()));
+                        tbEnd.datepicker('setStartDate', minDate);
+                    }
+                } catch (e) { }
+
+                tbStart.datepicker().on('changeDate', function (selected) {
+                    var minDate = new Date(selected.date.valueOf());
+                    tbEnd.datepicker('setStartDate', minDate);
+                });
+
+            }
+            function convertTHDate(_s) {
+                var tMonth = { "ม.ค.": 1, "ก.พ.": 2, "มี.ค.": 3, "เม.ย.": 4, "พ.ค.": 5, "มิ.ย.": 6, "ก.ค.": 7, "ส.ค.": 8, "ก.ย.": 9, "ต.ค.": 10, "พ.ย.": 11, "ธ.ค.": 12 };
+
+                _s = _s.split(' ');
+                let _y = _s[2] - 543;
+                let _m = tMonth[_s[1]];
+                let _d = _s[0];
+
+                return new Date(_y + "," + _m + "," + _d)
             }
         </script>
         <asp:ContentPlaceHolder ID="Scripts" runat="server">

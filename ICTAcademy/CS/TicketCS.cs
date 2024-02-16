@@ -18,6 +18,10 @@ namespace ICTAcademy.CS
                 return selTicket;
             }
         }
+        public DataTable getTicketList(string ticket)
+        {
+            return getTicketList(ticket, 0, null, null, 1);
+        }
         public DataTable getTicketList( int courseID, string startDate, string expireDate, int status)
         {
             return getTicketList(null, courseID, startDate, expireDate, status);
@@ -93,7 +97,7 @@ namespace ICTAcademy.CS
             dt.Columns.Add("CourseName", typeof(string));
             foreach(DataRow dr in dt.Rows)
             {
-                dr["CourseName"] = $"{dr["courseCode"]}-{dr["courseNameTH"]} / {dr["courseNameEN"]}";
+                dr["CourseName"] = $"{dr["courseCode"]} {dr["courseNameTH"]} / {dr["courseNameEN"]}";
             }
 
             return dt;

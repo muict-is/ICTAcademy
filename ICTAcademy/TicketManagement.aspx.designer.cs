@@ -123,6 +123,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbModelEditTitle;
 
         /// <summary>
+        /// divWarningEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divWarningEdit;
+
+        /// <summary>
         /// ddlCourseEdit control.
         /// </summary>
         /// <remarks>
@@ -141,13 +150,22 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox tbTicketEdit;
 
         /// <summary>
-        /// tbDiscountEdtit control.
+        /// tbDiscountEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDiscountEdtit;
+        protected global::System.Web.UI.WebControls.TextBox tbDiscountEdit;
+
+        /// <summary>
+        /// RangeValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
 
         /// <summary>
         /// tbStartDateEdit control.
@@ -175,6 +193,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbAmountEdit;
+
+        /// <summary>
+        /// rvAmountEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvAmountEdit;
 
         /// <summary>
         /// lbUsedCode control.
