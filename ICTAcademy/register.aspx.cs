@@ -40,7 +40,7 @@ namespace ICTAcademy
             R.insertRegisterMember(titleTH, firstnameTH, middleTH, lastnameTH, titleEN, firstnameEN, middleEN, lastnameEN, country, email, username, password);
 
             //Temp Display Code 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + titleTH + " - " + firstnameTH + " - " + middleTH + " - " + lastnameTH + " - " + titleEN + " - " + " - " + firstnameEN + " - " + middleEN + " - " + lastnameEN + " - " + countryID + email + " - " + username + " - " + password + " - "  + "')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + titleTH + " - " + firstnameTH + " - " + middleTH + " - " + lastnameTH + " - " + titleEN + " - " + " - " + firstnameEN + " - " + middleEN + " - " + lastnameEN + " - " + countryID + email + " - " + username + " - " + password + " - "  + "')", true);
 
             //Setting Front to Empty field
             this.titleTH.Text = string.Empty;
