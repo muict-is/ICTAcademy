@@ -68,26 +68,30 @@
                                         <th>No. </th>
                                         <th>ชื่อคอร์ส </th>
                                         <th>Ticket Code </th>
-                                        <th>สถานะ </th>
-                                        <th>ส่วนลด(%) </th>
-                                        <th>จำนวนทั้งหมด </th>
-                                        <th>ใช้งานแล้ว </th>
-                                        <th>วันที่เริ่มต้น </th>
-                                        <th>วันที่สิ้นสุด </th>
+                                        <th class="text-center">สถานะ </th>
+                                        <th class="text-center">ส่วนลด<br />
+                                            (%) </th>
+                                        <th class="text-center">จำนวน<br />
+                                            ทั้งหมด / ใช้งานแล้ว </th>
+                                        <th class="text-center">ช่วงเวลา </th>
                                         <th></th>
                                     </tr>
                                     <asp:Repeater runat="server" ID="rptResult" ClientIDMode="AutoID">
                                         <ItemTemplate>
                                             <tr>
                                                 <td><%# Container.ItemIndex + 1  %>. </td>
-                                                <td><%#Eval("CourseNameTH") + "/" + Eval("CourseNameEN") %></td>
-                                                <td><%#Eval("Code") %></td>
+                                                <td style="max-width: 20rem"><%#Eval("CourseNameTH") + "/" + Eval("CourseNameEN") %></td>
+                                                <td  style="width: 15%">
+                                                     <span class="text-primary fw-bold"><%#Eval("Code") %></span>
+                                                     <a href="javascript:void(0)"  class="btn-clipboard text-secondary" data-clipboard-text='<%#Eval("Code") %>' id='<%# "btncp"+(Container.ItemIndex+1).ToString() %>'><i class="fa fa-clone" aria-hidden="true"></i></a>
+                                                </td>
                                                 <td class="text-center"><%#(int)Eval("Status") == 1 ? "<span class='badge text-bg-success'>ใช้งาน</span>" : "<span class='badge text-bg-danger'>ยกเลิกใช้งาน</span>" %></td>
                                                 <td class="text-center fw-bold"><%#Eval("discount") %></td>
-                                                <td class="text-center"><%#Eval("limitCode") %></td>
-                                                <td class="text-center"><%#Eval("usedCode") %></td>
-                                                <td class="text-center"><%#Eval("startDate").ToString().Length > 0 ? DateTime.Parse(Eval("startDate").ToString()).ToString("d MMM yy",new System.Globalization.CultureInfo("th-th")) : "-" %></td>
-                                                <td class="text-center"><%#Eval("expireDate").ToString().Length > 0 ? DateTime.Parse(Eval("expireDate").ToString()).ToString("d MMM yy",new System.Globalization.CultureInfo("th-th")) : "-" %></td>
+                                                <td class="text-center"><%#Eval("limitCode") %> / <%#Eval("usedCode") %></td>
+                                                <td class="text-center small">
+                                                    <%#Eval("startDate").ToString().Length > 0 ? DateTime.Parse(Eval("startDate").ToString()).ToString("d MMM yy",new System.Globalization.CultureInfo("th-th"))  : "" %> - 
+                                                    <%#Eval("expireDate").ToString().Length > 0 ? DateTime.Parse(Eval("expireDate").ToString()).ToString("d MMM yy",new System.Globalization.CultureInfo("th-th")) : "" %>
+                                                </td>
                                                 <td class="text-center">
                                                     <asp:LinkButton runat="server" CssClass="btn btn-sm btn-secondary" ID="btnEditTicket" OnCommand="btnEditTicket_Command" CommandArgument='<%#Eval("code") %>'>แก้ไข</asp:LinkButton>
                                                 </td>
@@ -133,7 +137,9 @@
                             <div class="row mb-3">
                                 <div class="col-md-4 col-12">
                                     <label for="tbTicketEdit" class="form-label fw-bold">Ticket Code</label>
-                                    <asp:TextBox runat="server" ID="tbTicketEdit" CssClass="form-control" Enabled="false" />
+                                    <p>
+                                        <asp:Label runat="server" ID="lbTicket" CssClass="text-primary fw-bold fs-5" Enabled="false" />  
+                                    </p>
                                 </div>
                                 <div class="col-md-2 col-12">
                                     <label for="tbDiscountEdit" class="form-label fw-bold">ส่วนลด(%)</label>
@@ -166,17 +172,17 @@
                                     <asp:RangeValidator runat="server" ID="rvAmountEdit" ControlToValidate="tbAmountEdit" ErrorMessage="* ระบุค่า 1-1,000" CssClass="text-danger small fst-italic" MinimumValue="1" MaximumValue="1000" SetFocusOnError="True" Type=" Integer" ValidationGroup="formEdit"></asp:RangeValidator>
 
                                 </div>
-                                <div class="col-auto mt-5">
+                                <div class="col-auto mt-5" runat="server" id="divUsedCode">
                                     <span class="fw-lighter">ขณะนี้มีผู้ใช้งานแล้วจำนวน
                                         <asp:Label runat="server" ID="lbUsedCode" CssClass="fw-bold badge text-bg-primary" Text="0" />
                                         คน</span>
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                            <div class="row mb-3" runat="server" id="divStatus">
                                 <div class="col">
                                     <label class="form-label fw-bold">สถานะ</label>
                                     <div class="form-check form-switch">
-                                        <asp:TextBox runat="server" ID="ckbActive" CssClass="form-check-input" type="checkbox" checked />
+                                        <asp:TextBox runat="server" ID="ckbActive" CssClass="form-check-input" type="checkbox" />
                                         <label class="form-check-label" for="ckbActive">ใช้งาน</label>
                                     </div>
 

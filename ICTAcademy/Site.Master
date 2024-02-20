@@ -13,8 +13,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <%--<link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />--%>
     <link href="Content/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
 
@@ -87,16 +85,15 @@
                 </div>
             </footer>--%>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script src="Scripts/jquery-3.6.4.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
         <script src="Scripts/moment.min.js"></script>
         <script src="Scripts/moment-with-locales.min.js"></script>
-        <%--<script src="Scripts/bootstrap-datetimepicker.min.js"></script>
-        <script src="Scripts/bootstrap-datepicker-custom.js"></script>--%>
         <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker.js"></script>
         <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker-custom.js"></script>
         <script src="Scripts/bootstrap-datepicker/bootstrap-datepicker.th.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
         <script>
             //active menu
             $(function () {
@@ -111,6 +108,26 @@
                     })
                 }
                 catch (e) { }
+
+               
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+                //--- active clipboard cu
+                var clipboard = new ClipboardJS('.btn-clipboard');
+
+                // show tooltip when click clipboard button
+                clipboard.on('success', function (e) {
+                    var bcp = $("#" + e.trigger.id);
+                    bcp.tooltip('hide')
+                        .attr('data-original-title', 'copied!')
+                        .tooltip('show');
+                    setTimeout(function () {
+                        bcp.tooltip('hide');
+                    }, 1000);
+                });
+
+
 
             })
             function openModal(modalID) {

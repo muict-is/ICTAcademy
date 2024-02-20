@@ -20,7 +20,7 @@ namespace ICTAcademy.CS
         }
         public DataTable getTicketList(string ticket)
         {
-            return getTicketList(ticket, 0, null, null, 1);
+            return getTicketList(ticket, 0, null, null, -1);
         }
         public DataTable getTicketList( int courseID, string startDate, string expireDate, int status)
         {
@@ -56,9 +56,31 @@ namespace ICTAcademy.CS
                 return updTicket;
             }
         }
+        private static Random random = new Random();
+
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
         public void updateTicketDetail(int ticketID, int courseID, int discount, string startDate, string expireDate, int limitCode, int status, string updateby)
         {
-            updTicketADT.UpdateData(ticketID, courseID, discount, startDate, expireDate, limitCode, status, updateby);
+            if(ticketID == 0)
+            {
+                string newTicket = string.Empty;
+                do
+                {
+                    newTicket = RandomString(8);
+                } while (getTicketList(newTicket).Rows.Count > 0);
+
+                createNewTicket(newTicket, courseID, discount, startDate, expireDate, limitCode, updateby);
+            }
+            else
+            {
+                updTicketADT.UpdateData(ticketID, courseID, discount, startDate, expireDate, limitCode, status, updateby);
+            }
+            
         }
 
         private SP_Update_CodeDiscountUsedCodeTableAdapter updTicketUsedCode = null;
@@ -108,7 +130,7 @@ namespace ICTAcademy.CS
             DataTable dt = new DataTable();
             dt.Columns.Add("dataTextFiled", typeof(string));
             dt.Columns.Add("dataValueField", typeof(int));
-            //dt.Rows.Add(new Object[] { "--ทั้งหมด--", -1 });
+            dt.Rows.Add(new Object[] { "--ทั้งหมด--", -1 });
             dt.Rows.Add(new Object[] { "ใช้งาน", 1 });
             dt.Rows.Add(new Object[] { "ยกเลิกใช้งาน", 0 });
 

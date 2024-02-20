@@ -141,13 +141,13 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.DropDownList ddlCourseEdit;
 
         /// <summary>
-        /// tbTicketEdit control.
+        /// lbTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTicketEdit;
+        protected global::System.Web.UI.WebControls.Label lbTicket;
 
         /// <summary>
         /// tbDiscountEdit control.
@@ -204,6 +204,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.RangeValidator rvAmountEdit;
 
         /// <summary>
+        /// divUsedCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUsedCode;
+
+        /// <summary>
         /// lbUsedCode control.
         /// </summary>
         /// <remarks>
@@ -211,6 +220,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbUsedCode;
+
+        /// <summary>
+        /// divStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStatus;
 
         /// <summary>
         /// ckbActive control.
