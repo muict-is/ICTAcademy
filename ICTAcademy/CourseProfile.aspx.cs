@@ -50,6 +50,8 @@ namespace ICTAcademy
                 rptMyCourse.DataBind();
             } 
             else {
+                rptMyCourse.DataSource = null;
+                rptMyCourse.DataBind();
                 noData.Visible = true;
             }
 
@@ -116,9 +118,33 @@ namespace ICTAcademy
 
         }
 
-        protected void LinkDelete_Click(object sender, EventArgs e)
+        protected void Onexpand(object sender, EventArgs e)
         {
+            RepeaterItem row = (sender as Button).NamingContainer as RepeaterItem;
+            (row.FindControl("litsort") as Literal).Visible = false;
+            (row.FindControl("litfull") as Literal).Visible = true;
+            (row.FindControl("btnexpand") as Button).Visible = false;
+            (row.FindControl("btncollapse") as Button).Visible = true;
+        }
 
+        protected void Oncollapse(object sender, EventArgs e)
+        {
+            RepeaterItem row = (sender as Button).NamingContainer as RepeaterItem;
+            (row.FindControl("litsort") as Literal).Visible = true;
+            (row.FindControl("litfull") as Literal).Visible = false;
+            (row.FindControl("btnexpand") as Button).Visible = true;
+            (row.FindControl("btncollapse") as Button).Visible = false;
+        }
+
+        protected void Button1_Command(object sender, CommandEventArgs e)
+        {
+            int courseApplyID = int.Parse((sender as LinkButton).CommandArgument);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseApplyID + "')", true);
+
+            int statusCancle = 4; 
+            C.getUpdateStatusApply(statusCancle, courseApplyID);
+            getUserProfile();
+            getCourseApply();
         }
     }
 }

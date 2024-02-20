@@ -174,19 +174,28 @@
                                             <asp:Label ID="CourseName" runat="server"> <%#Eval("courseNameEN").ToString() == null ? "" : Eval("courseNameEN").ToString() %> </asp:Label>
                                         </h4>
 
-                                        <span class="text-body-secondary">
+                                        <%--<span class="text-body-secondary">
                                             <asp:Label runat="server" ID="lbcourseDescription" Text="" /><%#Eval("courseDescription").ToString() == null ? "" : Eval("courseDescription").ToString() %></asp:Label>
-                                        </span>
+                                        </span>--%> 
+                                        <div style="text-align:justify;">
+                                            <asp:Literal ID="litsort" Text='<%#Eval("courseDescription").ToString().Length > 102 ? Eval("courseDescription").ToString().Substring(0, 200) :Eval("courseDescription").ToString()%>' Visible="true" runat="server" />
+                                            <asp:Literal ID="litfull" Text='<%#Eval("courseDescription")%>' Visible="false" runat="server" />
+                                            <asp:Button ID="btnexpand" CssClass="btn btn-outline-secondary ms-1" Text="Read More" OnClick="Onexpand" Visible='<%#Eval("courseDescription").ToString().Length > 200 ? true:false%>' runat="server" />
+                                            <asp:Button ID="btncollapse" Text="Collapse" CssClass="btn btn-outline-secondary ms-1" OnClick="Oncollapse" Visible="false" runat="server" />
+                                        </div>
+
                                     </div>
                                     <div class="col-4 col-sm-4">
                                         <div class="text-end">
-
-                                            <%#  
-                                                      int.Parse(Eval("applyStatusID").ToString()) == 1 ? "<a class=\"btn btn-success rounded-5\" href=\"CourseProfile.aspx\">Pay Now </a><br><br><asp:LinkButton ID=\"LinkDelete\" runat=\"server\" CssClass=\"text-danger\" OnClick=\"LinkDelete_Click\"><span class=\"text-danger\"><i class=\"fa-solid fa-trash\"></i></span></asp:LinkButton>"
+                                            
+                                            <%#   
+                                                      int.Parse(Eval("applyStatusID").ToString()) == 1 ? "<a class='btn btn-success rounded-5' href='CourseProfile.aspx' >Pay Now </a>" 
                                                     : int.Parse(Eval("applyStatusID").ToString()) == 2 ? "<div class=\"progress\" role=\"progressbar\" aria-label=\"Info striped example\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"><div class=\"progress-bar progress-bar-striped bg-info\" style=\"width: "+ Eval("progress").ToString() +"\"></div></div>progress<b> <span style=\"font-size: 24px\">" + Eval("progress").ToString() + "</span></b>"
                                                     : int.Parse(Eval("applyStatusID").ToString()) == 3 ? "<div class='progress' role='progressbar' aria-label='Info striped example' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100'><div class='progress-bar progress-bar-striped bg-success' style='width: 100%'></div></div>progress<b> <span style='font-size: 24px'>100%</span></b><br><span class='text-secondary'>" + Eval("completeDate").ToString() + "</span>"
                                                     : "" 
                                             %>
+
+                                            <br><br><br><asp:LinkButton ID='Button1' runat='server'  CommandArgument='<%# Eval("courseApplyID") %>' OnCommand="Button1_Command"> <span class='text-danger'><i class='fa-solid fa-trash'></i></span> </asp:LinkButton>
                                         </div>
                                     </div>
 
@@ -197,7 +206,7 @@
                         </asp:Repeater>
 
                         <div class="alert alert-secondary" role="alert" id="noData" runat="server" visible="false">
-                            <center> No Course </center> 
+                            <center>No Course </center>
                         </div>
 
                         <%--<div class="row py-3"> 
