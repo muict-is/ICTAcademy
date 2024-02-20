@@ -25,6 +25,7 @@ namespace ICTAcademy
                 {
                     ViewState.Add("Username", Session["Username"].ToString());
                     getUserProfile();
+                    getCourseApply();
                 }
                 else
                 {
@@ -33,6 +34,28 @@ namespace ICTAcademy
                 
             }
                 
+        }
+
+        private void getCourseApply()
+        {
+            
+            string username = ViewState["Username"].ToString();
+            DataTable dt = C.getCourseApplyList(username);
+
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + dt.Rows.Count + "')", true);
+
+            if (dt.Rows.Count != 0)
+            {
+                rptMyCourse.DataSource = dt;
+                rptMyCourse.DataBind();
+            } 
+            else {
+                noData.Visible = true;
+            }
+
+           
+             
+
         }
 
         private void getUserProfile()
@@ -72,8 +95,6 @@ namespace ICTAcademy
                     email.Enabled = true;
                 }
 
-                
-
             }
         }
 
@@ -92,6 +113,11 @@ namespace ICTAcademy
              
             R.updateRegisterMember(titleTH, firstnameTH, middleTH, lastnameTH, titleEN, firstnameEN, middleEN, lastnameEN, email, username);
             getUserProfile();
+
+        }
+
+        protected void LinkDelete_Click(object sender, EventArgs e)
+        {
 
         }
     }

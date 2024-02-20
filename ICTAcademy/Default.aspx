@@ -40,7 +40,6 @@
                                             
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
-
                                             </div>
 
                                             <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
@@ -53,7 +52,8 @@
                                                 <div class="btn-group">
                                                      <p class="card-text badge bg-warning"><%#Eval("CategoryEN") %></p>
                                                 </div>
-                                                <small class="text-body-secondary"><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></small>
+                                               <small class="text-body-secondary"><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></small>
+                                               <%-- <small class='text-body-secondary <%#Eval("Fee").ToString().Length >0 ? "" : "d-none" %>'><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></small>--%>
                                             </div>
                                         </div>
 

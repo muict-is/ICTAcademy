@@ -158,29 +158,49 @@
                         <h3>My Courses</h3>
 
 
+                        <asp:Repeater runat="server" ID="rptMyCourse" ClientIDMode="AutoID">
+                            <ItemTemplate>
+                                <div class="row py-3">
+                                    <div class="col-8 col-sm-8">
+                                        <h4>
+                                            <%#  
+                                                     int.Parse(Eval("applyStatusID").ToString()) == 1 ? "<span class='badge text-bg-warning'><i class='fas fa-shopping-basket'></i> " + Eval("available").ToString() + "</span>"
+                                                   : int.Parse(Eval("applyStatusID").ToString()) == 2 ? "<span class='badge text-bg-info'><i class=\"fa-solid fa-bars-progress\"></i> " + Eval("available").ToString() + "</span>"
+                                                   : int.Parse(Eval("applyStatusID").ToString()) == 3 ? "<span class='badge text-bg-success'><i class=\"fa-regular fa-thumbs-up\"></i> " + Eval("available").ToString() + "</span>"
+                                                   : ""
+                                            %>  
+                                        </h4>
+                                        <h4>
+                                            <asp:Label ID="CourseName" runat="server"> <%#Eval("courseNameEN").ToString() == null ? "" : Eval("courseNameEN").ToString() %> </asp:Label>
+                                        </h4>
 
-                        <div class="row py-3">
-                            <div class="col-8 col-sm-8 ">
-                                <h4><span class="badge text-bg-warning"><i class="fas fa-shopping-basket"></i>In Basket</span></h4>
-                                <h4>
-                                    <asp:Label ID="Label1" runat="server" Text="Course Name 1"></asp:Label>
-                                </h4>
+                                        <span class="text-body-secondary">
+                                            <asp:Label runat="server" ID="lbcourseDescription" Text="" /><%#Eval("courseDescription").ToString() == null ? "" : Eval("courseDescription").ToString() %></asp:Label>
+                                        </span>
+                                    </div>
+                                    <div class="col-4 col-sm-4">
+                                        <div class="text-end">
 
-                                <span class="text-body-secondary">
-                                    <asp:Label runat="server" ID="lbCourseCode" Text="Course Description..." /></span>
-                            </div>
-                            <div class="col-4 col-sm-4">
-                                <div class="text-end">
-                                    <a class="btn btn-success rounded-5" href="CourseProfile.aspx">Pay Now </a>
-                                    <br>
-                                    <br>
-                                    <span class="text-danger"><i class="fa-solid fa-trash"></i></span>
+                                            <%#  
+                                                      int.Parse(Eval("applyStatusID").ToString()) == 1 ? "<a class=\"btn btn-success rounded-5\" href=\"CourseProfile.aspx\">Pay Now </a><br><br><asp:LinkButton ID=\"LinkDelete\" runat=\"server\" CssClass=\"text-danger\" OnClick=\"LinkDelete_Click\"><span class=\"text-danger\"><i class=\"fa-solid fa-trash\"></i></span></asp:LinkButton>"
+                                                    : int.Parse(Eval("applyStatusID").ToString()) == 2 ? "<div class=\"progress\" role=\"progressbar\" aria-label=\"Info striped example\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"><div class=\"progress-bar progress-bar-striped bg-info\" style=\"width: "+ Eval("progress").ToString() +"\"></div></div>progress<b> <span style=\"font-size: 24px\">" + Eval("progress").ToString() + "</span></b>"
+                                                    : int.Parse(Eval("applyStatusID").ToString()) == 3 ? "<div class='progress' role='progressbar' aria-label='Info striped example' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100'><div class='progress-bar progress-bar-striped bg-success' style='width: 100%'></div></div>progress<b> <span style='font-size: 24px'>100%</span></b><br><span class='text-secondary'>" + Eval("completeDate").ToString() + "</span>"
+                                                    : "" 
+                                            %>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
+
+                                <hr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                        <div class="alert alert-secondary" role="alert" id="noData" runat="server" visible="false">
+                            <center> No Course </center> 
                         </div>
 
-
-                        <div class="row py-3">
+                        <%--<div class="row py-3"> 
                             <div class="col-8 col-sm-8 ">
                                 <h4><span class="badge text-bg-warning"><i class="fas fa-shopping-basket"></i>In Basket</span></h4>
                                 <h4>
@@ -198,11 +218,9 @@
                                     <span class="text-danger"><i class="fa-solid fa-trash"></i></span>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
 
-                        <hr>
-
-                        <div class="row py-3">
+                        <%-- <div class="row py-3">
                             <div class="col-8 col-sm-8 ">
                                 <h4><span class="badge text-bg-info">In Progress Courses</span></h4>
                                 <h4>
@@ -221,11 +239,11 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
 
-                        <hr>
+                        <%--<hr>--%>
 
-                        <div class="row py-3">
+                        <%--<div class="row py-3">
                             <div class="col-8 col-sm-8 ">
                                 <h4><span class="badge text-bg-success">Completed Courses</span></h4>
                                 <h4>
@@ -245,9 +263,7 @@
                                     <span class="text-secondary">completed on Nov 23,2023</span>
                                 </div>
                             </div>
-                        </div>
-
-
+                        </div>--%>
                     </div>
                 </div>
             </main>
