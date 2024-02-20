@@ -114,7 +114,7 @@
 
 
                         <div class="text-end" id="DivEnroll" runat="server" visible="false">
-                            <asp:Label runat="server" ID="DivEnrollText" /></small>
+                            <asp:Label runat="server" ID="DivEnrollText" />
                         </div>
                         <div class="text-end" id="DivEnrollOpen" runat="server" visible="false">
                             <asp:LinkButton ID="enrollOpen" runat="server" class="btn btn-success btn-round"> Enroll Course </asp:LinkButton>

@@ -122,5 +122,36 @@ namespace ICTAcademy.CS
             return InstrutureADT.GetInstructorsByCourseID(courseDesID);
         }
 
+        //------------------------------------------------ 
+        private SP_SELECT_TrCourseApplyTableAdapter CourseApply = null;
+        protected SP_SELECT_TrCourseApplyTableAdapter CourseApplyADT
+        {
+            get
+            {
+                if (CourseApply == null) CourseApply = new SP_SELECT_TrCourseApplyTableAdapter();
+                return CourseApply;
+            }
+        }
+        public DataTable getCourseApplyList(string username)
+        {
+            return CourseApplyADT.GetCourseUserApply(username);
+        }
+
+
+        //------------------------------------------------ 
+        private SP_Update_StatusApplyTableAdapter StatusApply = null;
+        protected SP_Update_StatusApplyTableAdapter StatusApplyADT
+        {
+            get
+            {
+                if (StatusApply == null) StatusApply = new SP_Update_StatusApplyTableAdapter();
+                return StatusApply;
+            }
+        }
+        public DataTable getUpdateStatusApply(int applyStatusID, int courseApplyID)
+        {
+            return StatusApplyADT.GetUpdateStatusApply(applyStatusID, courseApplyID);
+        }
+
     }
 }
