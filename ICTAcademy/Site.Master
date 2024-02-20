@@ -63,6 +63,7 @@
                                 <a class="nav-link p-2" aria-current="true" href="CourseCategory.aspx">Course Category</a>
                             </li>
                         </ul>
+                        <a class="btn btn-success buttonRound" href="CourseProfile.aspx"> My Courses </a>
 
                         <a class="btn btn-success buttonRound" href="#">My Courses </a>
 
