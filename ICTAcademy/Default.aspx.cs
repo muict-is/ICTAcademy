@@ -49,7 +49,7 @@ namespace ICTAcademy
         protected void Image1_Command(object sender, CommandEventArgs e)
         {
             String courseDesID = (sender as ImageButton).CommandArgument;
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
             Response.Redirect(Page.ResolveUrl("~/CourseDetail.aspx?cid=" + courseDesID));
         }
 

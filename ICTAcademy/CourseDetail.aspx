@@ -172,8 +172,6 @@
                             <asp:Label ID="lbcourseEvaluation" runat="server" />
                         </div>
 
-
-
                     </div>
                 </div>
             </main>

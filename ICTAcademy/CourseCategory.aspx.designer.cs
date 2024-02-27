@@ -11,7 +11,7 @@ namespace ICTAcademy
 {
 
 
-    public partial class CourseCategory
+    public partial class HomeCoursesList
     {
 
         /// <summary>
@@ -22,5 +22,14 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// rptCourseCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptCourseCategory;
     }
 }

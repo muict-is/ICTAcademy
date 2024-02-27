@@ -153,5 +153,39 @@ namespace ICTAcademy.CS
             return StatusApplyADT.GetUpdateStatusApply(applyStatusID, courseApplyID);
         }
 
+        //------------------------------------------------ 
+        private SP_Select_CategoryGroupTableAdapter CategoryGroup = null;
+        protected SP_Select_CategoryGroupTableAdapter CategoryGroupADT
+        {
+            get
+            {
+                if (CategoryGroup == null) CategoryGroup = new SP_Select_CategoryGroupTableAdapter();
+                return CategoryGroup;
+            }
+        }
+        public DataTable getCategoryGroup()
+        {
+            return CategoryGroupADT.GetCategoryGroup();
+        }
+
+        //------------------------------------------------ 
+        private SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryID = null;
+        protected SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryIDADT
+        {
+            get
+            {
+                if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseByCategoryIDTableAdapter();
+                return CourseByCategoryID;
+            }
+        }
+        public DataTable getCourseByCategoryID(int CategoryID)
+        {
+           
+            return CourseByCategoryIDADT.GetCourseByCategoryID(CategoryID);
+        }
+
+
+
+
     }
 }
