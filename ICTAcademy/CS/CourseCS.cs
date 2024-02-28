@@ -169,22 +169,38 @@ namespace ICTAcademy.CS
         }
 
         //------------------------------------------------ 
-        private SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryID = null;
-        protected SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryIDADT
+        //private SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryID = null;
+        //protected SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryIDADT
+        //{
+        //    get
+        //    {
+        //        if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseByCategoryIDTableAdapter();
+        //        return CourseByCategoryID;
+        //    }
+        //}
+        //public DataTable getCourseByCategoryID(int CategoryID)
+        //{
+           
+        //    return CourseByCategoryIDADT.GetCourseByCategoryID(CategoryID);
+        //}
+
+
+        //------------------------------------------------ 
+        private SP_Select_CourseCategoryTableAdapter CourseByCategoryID = null;
+        protected SP_Select_CourseCategoryTableAdapter CourseByCategoryIDADT
         {
             get
             {
-                if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseByCategoryIDTableAdapter();
+                if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseCategoryTableAdapter();
                 return CourseByCategoryID;
             }
         }
-        public DataTable getCourseByCategoryID(int CategoryID)
+        public DataTable getCourseByCategoryID(String Lang, int CategoryID)
         {
+
+            return CourseByCategoryIDADT.GetDetailCourseCategory(Lang, CategoryID);
            
-            return CourseByCategoryIDADT.GetCourseByCategoryID(CategoryID);
         }
-
-
 
 
     }

@@ -48,11 +48,13 @@ namespace ICTAcademy
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 int categoryID = int.Parse((e.Item.FindControl("hfCategoryID") as HiddenField).Value);
+                String Lang = "E";
+
                 Repeater rptCourses = e.Item.FindControl("rptCourses") as Repeater;
-                rptCourses.DataSource = C.getCourseByCategoryID(categoryID);
+                rptCourses.DataSource = C.getCourseByCategoryID(Lang, categoryID);
 
                 //DataTable datepare = C.getCourseByCategoryID(categoryID);
-                //datepare.Columns.Add("startRegis");
+                //datepare.Columns.Add("startRegis"); 
 
                 rptCourses.DataBind();
             }
@@ -64,31 +66,51 @@ namespace ICTAcademy
             {
                 HiddenField hfStartRegisdate = (HiddenField)e.Item.FindControl("hfStartRegisdate");
                 HiddenField hfEndRegisdate = (HiddenField)e.Item.FindControl("hfEndRegisdate");
-                Literal ltrStatus = (Literal)e.Item.FindControl("ltrStatus");
+                //HiddenField hfAvailable = (HiddenField)e.Item.FindControl("hfAvailable");                 
 
-                ltrStatus.Text = "<span class='badge text-bg-danger'>No Date</span>"; 
+                int hfAvailable = int.Parse(((HiddenField)e.Item.FindControl("hfAvailable")).Value); 
+                int hfMaxSeat = int.Parse(((HiddenField)e.Item.FindControl("hfMaxSeat")).Value);
+
+                Literal ltrStatus = (Literal)e.Item.FindControl("ltrStatus");
+                Label lbmaxSeat = (Label)e.Item.FindControl("lbmaxSeat");
+                
+
+                ltrStatus.Text = "<span class='badge text-bg-danger'>Null</span>"; 
 
                 if (hfStartRegisdate.Value.Length > 0)
                 {
                     DateTime StartRegisdate = DateTime.Parse(hfStartRegisdate.Value);
                     DateTime EndRegisdate = DateTime.Parse(hfEndRegisdate.Value);
 
-                    if (StartRegisdate < DateTime.Now &&  DateTime.Now < EndRegisdate)
+                    if (StartRegisdate <= DateTime.Now && EndRegisdate >= DateTime.Now)
                     {
-                        ltrStatus.Text = "<span class='badge text-bg-warning'>Coming Soon</span>";
+                        ltrStatus.Text = "<span class='badge text-bg-success'>OPEN</span>";
                     }
 
-                    if (StartRegisdate >= DateTime.Now && DateTime.Now < EndRegisdate)
+                    
+                    if (EndRegisdate <= DateTime.Now)
                     {
-                        ltrStatus.Text = "<span class='badge text-bg-success'>Open</span>";
-                    }
-
-                    if (StartRegisdate >= DateTime.Now && DateTime.Now < EndRegisdate)
-                    {
-                        ltrStatus.Text = "<span class='badge text-bg-success'>Open</span>";
+                        ltrStatus.Text = "<span class='badge text-bg-danger'>CLOSED</span>";
                     }
 
                 }
+                 
+                 
+                if (hfAvailable == 0 && hfMaxSeat != 0) {  
+                    // Full 
+                    ltrStatus.Text = "<span class='badge text-bg-danger'>FULL</span>";
+
+                }
+                if (hfMaxSeat == 0)
+                {
+                    // UNLIMITED   
+                    lbmaxSeat.Text = "<span class='badge text-bg-secondary'>UNLIMITED</span>";
+
+                }
+                else {
+                    lbmaxSeat.Text = "<h4>"+ hfMaxSeat + "</h4>";
+                }
+
 
             }
         }
