@@ -25,8 +25,8 @@ namespace ICTAcademy
 
         private void getCourseList()
         {
-            //DataTable dt = C.getCourseAllList();
-            DataTable dt = C.getCourseList2();
+            DataTable dt = C.getCourseAllList();
+          
             rptCourseList.DataSource = dt;
             rptCourseList.DataBind();
 
