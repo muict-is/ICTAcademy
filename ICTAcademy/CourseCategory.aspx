@@ -75,15 +75,13 @@
                                                                 <b class="colorICT">Avalaible</b>
                                                                 <h4><%#Eval("Available") %> </h4>
                                                             </div>
-                                                            <div class="flex-wrap item-flex">
-
+                                                            <%--<div class="flex-wrap item-flex">--%>
                                                                 <asp:HiddenField ID="hfStartRegisdate" runat="server" Value=' <%#Eval("startRegisdate") %>' />
                                                                 <asp:HiddenField ID="hfEndRegisdate" runat="server" Value=' <%#Eval("endRegisdate") %>' />
                                                                 <asp:HiddenField ID="hfAvailable" runat="server" Value=' <%#Eval("Available") %>' />
                                                                 <asp:HiddenField ID="hfMaxSeat" runat="server" Value=' <%#Eval("maxSeat") %>' /> 
                                                                 <asp:Literal ID="ltrStatus" runat="server"></asp:Literal>
-
-                                                            </div>
+                                                            <%--</div>--%>
                                                         </div>
                                                        
                                                     </div>

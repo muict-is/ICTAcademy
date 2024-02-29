@@ -25,12 +25,15 @@ namespace ICTAcademy
 
         private void getCourseList()
         {
-            //DataTable dt = C.getCoursListSample();
-            DataTable dt = C.getCourseAllList();
+            //DataTable dt = C.getCourseAllList();
+            DataTable dt = C.getCourseList2();
             rptCourseList.DataSource = dt;
             rptCourseList.DataBind();
 
         }
+        //SP_Select_AllCourse1TableAdapter
+
+
 
         protected void rptCourseList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

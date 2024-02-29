@@ -86,10 +86,25 @@ namespace ICTAcademy.CS
             }
         }
         public DataTable getCourseAllList()
-        {
+        { 
             return courseAllADT.GetDataCourse();
         }
 
+
+        //------------------------------------------------
+        private SP_Select_AllCourse1TableAdapter course = null;
+        protected SP_Select_AllCourse1TableAdapter courseADT
+        {
+            get
+            {
+                if (course == null) course = new SP_Select_AllCourse1TableAdapter();
+                return course;
+            }
+        }
+        public DataTable getCourseList2()
+        {
+            return courseADT.GetData();
+        }
 
         //------------------------------------------------
         private SP_Select_CourseByIDTableAdapter courseByID = null;
@@ -105,6 +120,10 @@ namespace ICTAcademy.CS
         {
             return courseByIDADT.GetCourseByID(courseID);
         }
+
+
+
+
 
 
         //------------------------------------------------ 

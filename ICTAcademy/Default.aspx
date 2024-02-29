@@ -42,20 +42,17 @@
                                                 <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
                                             </div>
 
-                                            <%-- <p class="card-text fst-italic text-danger"><%#Eval("CourseNote") %></p>--%>
-                                        </div>
-                                        <%--<ul class="list-group list-group-flush">
-                                            <li class="list-group-item">An item</li>
-                                        </ul>--%>
+                                        </div>   
+                                        
                                         <div class="card-footer text-muted text-center">                                            
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
-                                                     <p class="card-text badge bg-warning"><%#Eval("CategoryEN") %></p>
+                                                     <p class="card-text badge text-bg-warning"><%#Eval("CategoryEN") %></p>
                                                 </div>
-                                               <small class="text-body-secondary"><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></small>
-                                               <%-- <small class='text-body-secondary <%#Eval("Fee").ToString().Length >0 ? "" : "d-none" %>'><b>฿<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %></b></small>--%>
+                                               <small class="text-body-secondary"><b>฿<%#Eval("fee").ToString().Length >0 ? decimal.Parse(Eval("fee").ToString()).ToString("N2") : "" %></b></small>
+                                              
                                             </div>
-                                        </div>
+                                        </div> 
 
                                     </div>
 

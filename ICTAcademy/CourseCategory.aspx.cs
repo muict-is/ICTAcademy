@@ -75,27 +75,30 @@ namespace ICTAcademy
                 Label lbmaxSeat = (Label)e.Item.FindControl("lbmaxSeat");
                 
 
-                ltrStatus.Text = "<span class='badge text-bg-danger'>Null</span>"; 
-
                 if (hfStartRegisdate.Value.Length > 0)
                 {
+
                     DateTime StartRegisdate = DateTime.Parse(hfStartRegisdate.Value);
                     DateTime EndRegisdate = DateTime.Parse(hfEndRegisdate.Value);
 
-                    if (StartRegisdate <= DateTime.Now && EndRegisdate >= DateTime.Now)
-                    {
-                        ltrStatus.Text = "<span class='badge text-bg-success'>OPEN</span>";
-                    }
+                    //ltrStatus.Text = "<span class='badge text-bg-danger'>Close on " + EndRegisdate + " </span>";
 
-                    
-                    if (EndRegisdate <= DateTime.Now)
-                    {
-                        ltrStatus.Text = "<span class='badge text-bg-danger'>CLOSED</span>";
-                    }
+                    //<span class='badge text-bg-danger'>Close on " + EndRegisdate + " </span>
+
+                    //if (StartRegisdate <= DateTime.Now && DateTime.Now <= EndRegisdate)
+                    //{
+                    //    ltrStatus.Text = "<span class='badge text-bg-success'>OPEN</span>";
+                    //} 
+
+
+                    //if (EndRegisdate < DateTime.Now)
+                    //{
+                    //    ltrStatus.Text = "<span class='badge text-bg-danger'>CLOSED "+ EndRegisdate + "</span>"+ DateTime.Now;
+                    //} 
 
                 }
-                 
-                 
+
+
                 if (hfAvailable == 0 && hfMaxSeat != 0) {  
                     // Full 
                     ltrStatus.Text = "<span class='badge text-bg-danger'>FULL</span>";
