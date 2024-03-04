@@ -161,7 +161,7 @@
 
                                 </label>
                             </div>
-                           <%-- <asp:FileUpload ID="FileUpload2" runat="server" />--%>
+                            <%-- <asp:FileUpload ID="FileUpload2" runat="server" />--%>
 
 
                             <%-- <div class="newImage">
@@ -265,14 +265,22 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <asp:Label for="startdate" runat="server" Text="Label" class="form-label">วันที่เปิดรับสมัคร  </asp:Label>
-                                                    <asp:TextBox ID="startdate" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
+                                                    <div class="col-md-12 col-12">
+                                                        <div class="mb-3">
+                                                            <label for="tbStartDate" class="form-label">วันที่เริ่มต้น</label>
+                                                            <div class="input-group date datepicker">
+                                                                <asp:TextBox ID="tbStartDate" CssClass="form-control datetimepicker-input datepicker" runat="server" autocomplete="off"></asp:TextBox>
+                                                                <div class="input-group-append input-group-text"><i class="fa fa-calendar"></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <asp:Label for="enddate" runat="server" Text="Label" class="form-label">วันที่ปิดรับสมัคร  </asp:Label>
                                                     <asp:TextBox ID="enddate" CssClass="form-control" TextMode="Date" runat="server" placeholder=""></asp:TextBox>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </ItemTemplate>
@@ -469,30 +477,30 @@
             }
         }
 
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
+        //ClassicEditor
+        //    .create(document.querySelector('#editor'))
+        //    .catch(error => {
+        //        console.error(error);
+        //    });
 
 
-        ClassicEditor
-            .create(document.querySelector('#editor2'))
-            .catch(error => {
-                console.error(error);
-            });
+        //ClassicEditor
+        //    .create(document.querySelector('#editor2'))
+        //    .catch(error => {
+        //        console.error(error);
+        //    });
 
-        ClassicEditor
-            .create(document.querySelector('#editor3'))
-            .catch(error => {
-                console.error(error);
-            });
+        //ClassicEditor
+        //    .create(document.querySelector('#editor3'))
+        //    .catch(error => {
+        //        console.error(error);
+        //    });
 
-        ClassicEditor
-            .create(document.querySelector('#editor4'))
-            .catch(error => {
-                console.error(error);
-            });
+        //ClassicEditor
+        //    .create(document.querySelector('#editor4'))
+        //    .catch(error => {
+        //        console.error(error);
+        //    });
 
 
 
@@ -505,6 +513,7 @@
             });
 
         });
+
 
     </script>
 </asp:Content>

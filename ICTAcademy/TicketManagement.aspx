@@ -224,9 +224,6 @@
             setMinDateFromStartDate($('#<%= tbStartDate.ClientID%>'), $('#<%= tbExpireDate.ClientID%>'));
             setMinDateFromStartDate($('#<%= tbStartDateEdit.ClientID%>'), $('#<%= tbExpireDateEdit.ClientID%>'))
 
-
-
-
         }
 
     </script>

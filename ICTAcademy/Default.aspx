@@ -33,30 +33,34 @@
 
                                 <div class="col">
 
+                                    <asp:HiddenField ID="hfCategoryID" runat="server" Value=' <%#Eval("CategoryID") %>' />
+
                                     <div class="card shadow-sm  h-100">
-                                        <asp:ImageButton ID="Image1" runat="server" src='<%#Eval("ImageCourse") %>' CommandArgument='<%# Eval("courseDesID") %>' OnCommand="Image1_Command" />
+                                        <asp:LinkButton ID="lbcourseNameEN" runat="server" CommandArgument='<%# Eval("courseDesID") %>' OnCommand="courseDesID_Command">
+                                            <asp:ImageButton ID="Image1" runat="server" src='<%#Eval("ImageCourse") %>' CommandArgument='<%# Eval("courseDesID") %>' OnCommand="courseDesID_Command" />
 
-                                        <div class="card-body ">
-                                            
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <p class="card-title fw-bold "><%#Eval("courseNameEN") %></p>
+                                            <div class="card-body ">
+
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="card-title fw-bold"><%#Eval("courseNameEN") %></p>
+                                                </div>
                                             </div>
-
-                                        </div>   
+                                        </asp:LinkButton> 
                                         
-                                        <div class="card-footer text-muted text-center">                                            
+                                        <div class="card-footer text-muted text-center">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
-                                                     <p class="card-text badge text-bg-warning"><%#Eval("CategoryEN") %></p>
+                                                    <asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%#Eval("CategoryID") %>' OnCommand="LinkButton1_Command">
+                                                        <span class="card-text badge text-bg-warning"><%#Eval("CategoryEN") %></span> 
+                                                    </asp:LinkButton>
+                                                    <%--<asp:LinkButton ID="LinkButton1" runat="server" CommandArgument="<%#Eval("CategoryID") %>" OnCommand="LinkButton1_Command"></asp:LinkButton>--%>
                                                 </div>
-                                               <small class="text-body-secondary"><b>฿<%#Eval("fee").ToString().Length >0 ? decimal.Parse(Eval("fee").ToString()).ToString("N2") : "" %></b></small>
-                                              
+                                                <small class="text-body-secondary"><b>฿<%#Eval("fee").ToString().Length >0 ? decimal.Parse(Eval("fee").ToString()).ToString("N2") : "" %></b></small>
+
                                             </div>
-                                        </div> 
+                                        </div>
 
                                     </div>
-
-
                                 </div>
 
                             </ItemTemplate>

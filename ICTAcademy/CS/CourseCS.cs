@@ -174,20 +174,19 @@ namespace ICTAcademy.CS
         }
 
         //------------------------------------------------ 
-        //private SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryID = null;
-        //protected SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryIDADT
-        //{
-        //    get
-        //    {
-        //        if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseByCategoryIDTableAdapter();
-        //        return CourseByCategoryID;
-        //    }
-        //}
-        //public DataTable getCourseByCategoryID(int CategoryID)
-        //{
-           
-        //    return CourseByCategoryIDADT.GetCourseByCategoryID(CategoryID);
-        //}
+        private SP_Select_CategoryIDTableAdapter CategoryGroupID = null;
+        protected SP_Select_CategoryIDTableAdapter CategoryGroupIDADT
+        {
+            get
+            {
+                if (CategoryGroupID == null) CategoryGroupID = new SP_Select_CategoryIDTableAdapter();
+                return CategoryGroupID;
+            }
+        } 
+        public DataTable getCategoryGroup(int CategoryID)
+        {
+            return CategoryGroupIDADT.getCategoryByID(@CategoryID); 
+        }
 
 
         //------------------------------------------------ 

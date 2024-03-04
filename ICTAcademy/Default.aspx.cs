@@ -49,13 +49,20 @@ namespace ICTAcademy
             }
         }
          
-        protected void Image1_Command(object sender, CommandEventArgs e)
-        {
-            String courseDesID = (sender as ImageButton).CommandArgument;
-            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
+        protected void courseDesID_Command(object sender, CommandEventArgs e)
+        {            
+            String courseDesID = e.CommandArgument.ToString();
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
             Response.Redirect(Page.ResolveUrl("~/CourseDetail.aspx?cid=" + courseDesID));
+        } 
+         
+        protected void LinkButton1_Command(object sender, CommandEventArgs e)
+        {
+            String CategoryID = e.CommandArgument.ToString();            
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + CategoryID + "')", true);
+            Session["CategoryID"] = CategoryID;
+            Response.Redirect(Page.ResolveUrl("~/CourseCategory.aspx")); 
+            //Response.Redirect(Page.ResolveUrl("~/CourseCategory.aspx?cid=" + CategoryID));
         }
-
-    
     }
 }
