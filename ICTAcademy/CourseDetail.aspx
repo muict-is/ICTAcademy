@@ -1,15 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CourseDetail.aspx.cs" Inherits="ICTAcademy.CourseDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .wordTop {
+           margin-top:30px;
+           /*padding-top:50px*/
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="album bg-light py-5">
+    <div class="album bg-light">
 
-        <div class="container" id="divCourse">
+        <div class="container  py-4" id="divCourse">
 
-            <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-outline-success btn-round" PostBackUrl="~/Default.aspx">< Back</asp:LinkButton>
-            <main>
+            <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-outline-success btn-round" OnClientClick="JavaScript:window.history.back(1); return false;">< Back</asp:LinkButton>
+
+            <main class="py-4">
                 <%--<div class="py-5 text-center">                   
                     <h2 ID="lbCourseCode2">Header</h2>
                 </div>--%>
@@ -84,8 +92,10 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0"><asp:Label runat="server" ID="lbstyleEN" /></h6>
-                                   <small class="text-body-secondary"> <asp:Label runat="server" ID="lbstyleTH" /></small>
+                                    <h6 class="my-0">
+                                        <asp:Label runat="server" ID="lbstyleEN" /></h6>
+                                    <small class="text-body-secondary">
+                                        <asp:Label runat="server" ID="lbstyleTH" /></small>
                                 </div>
                                 <%--<span class="text-body-secondary">
                                     <p class="card-text badge bg-warning my-0">
@@ -123,10 +133,10 @@
                             <asp:LinkButton ID="enrollClose" runat="server" class="btn btn-danger btn-round"> Closed </asp:LinkButton>
                         </div>
 
-                        <h4 class="mb-3 text-muted py-3">Description</h4>
+                        <h4 class="text-muted wordTop">Description</h4>
                         <asp:Label ID="lbcourseDescription" runat="server" />
 
-                        <h4 class="mb-3 text-muted py-3">Instructors</h4>
+                        <h4 class="text-muted wordTop">Instructors</h4>
                         <asp:Repeater runat="server" ID="rptInstructors" ClientIDMode="AutoID">
                             <ItemTemplate>
 
@@ -158,21 +168,22 @@
                         <asp:Image ID="ImageBlog" runat="server" Width="100%" />
 
                         <div id="DivlbcourseObjective" runat="server" visible="false">
-                            <h4 class="mb-3 py-4">Objective</h4>
+                            <h4 class="wordTop">Objective</h4>
                             <asp:Label ID="lbcourseObjective" runat="server" />
                         </div>
 
                         <div id="DivlbcourseOutline" runat="server" visible="false">
-                            <h4 class="mb-3 py-4">Program</h4>
+                            <h4 class="wordTop">Program</h4>
                             <asp:Label ID="lbcourseOutline" runat="server" />
                         </div>
 
                         <div id="DivlbcourseEvaluation" runat="server" visible="false">
-                            <h4 class="mb-3 py-4">Course Evaluation</h4>
+                            <h4 class="wordTop">Course Evaluation</h4>
                             <asp:Label ID="lbcourseEvaluation" runat="server" />
                         </div>
 
                     </div>
+
                 </div>
             </main>
 
