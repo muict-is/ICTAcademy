@@ -4,7 +4,6 @@
     <style>
         .wordTop {
            margin-top:30px;
-           /*padding-top:50px*/
         }
     </style>
 
