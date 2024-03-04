@@ -2255,6 +2255,7 @@
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
     <Content Include="Assets\Images\profile.jpg" />
+    <Content Include="Assets\Images\test-img.png" />
     <Content Include="Content\bootstrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="Assets\Images\user.png" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
