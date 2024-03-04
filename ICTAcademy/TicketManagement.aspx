@@ -82,7 +82,7 @@
                                                 <td><%# Container.ItemIndex + 1  %>. </td>
                                                 <td style="max-width: 20rem"><%#Eval("CourseNameTH") + "/" + Eval("CourseNameEN") %></td>
                                                 <td  style="width: 15%">
-                                                     <span class='fw-bold <%#(int)Eval("Status") == 1 ? "text-secondary" : "text-muted"%>'><%#Eval("Code") %></span>
+                                                     <span class='<%#(int)Eval("Status") == 1 ? "text-primary fw-bold" : "text-muted"%>'><%#Eval("Code") %></span>
                                                      <a href="javascript:void(0)"  class='<%#(int)Eval("Status") == 1 ? "btn-clipboard text-secondary " : "d-none"%>' data-clipboard-text='<%#Eval("Code") %>' id='<%# "btncp"+(Container.ItemIndex+1).ToString() %>'><i class="fa fa-clone" aria-hidden="true"></i></a>
                                                 </td>
                                                 <td class="text-center"><%#(int)Eval("Status") == 1 ? "<span class='badge text-bg-success'>ใช้งาน</span>" : "<span class='badge text-bg-danger'>ยกเลิกใช้งาน</span>" %></td>
