@@ -18,23 +18,23 @@
     <link href="Assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="Assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="Assets/fontawesome/css/solid.css" rel="stylesheet" />
-     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
 
     <style>
         .buttonRound {
-          background-color: #006C6C; /* Green ICT */
-          border: none;
-          color: white;
-          padding: 10px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 1px 2px;
-          cursor: pointer;
-          border-radius: 100px;
+            background-color: #006C6C; /* Green ICT */
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 1px 2px;
+            cursor: pointer;
+            border-radius: 100px;
         }
 
         .btn-round {
@@ -45,6 +45,16 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 100px;
+        }
+
+        a {
+            white-space: nowrap;
+            text-decoration-line: none;
+        }
+
+        literal {
+            white-space: nowrap;
+            text-decoration-line: none;
         }
     </style>
 
@@ -69,7 +79,7 @@
                                 <a class="nav-link p-2" aria-current="true" href="CourseCategory.aspx">Course Category</a>
                             </li>
                         </ul>
-                        <a class="btn btn-success buttonRound" href="CourseProfile.aspx"> My Courses </a>
+                        <a class="btn btn-success buttonRound" href="CourseProfile.aspx">My Courses </a>
 
                     </div>
                 </div>
@@ -114,7 +124,7 @@
                 }
                 catch (e) { }
 
-               
+
                 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
                 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
@@ -146,7 +156,7 @@
                         modal.hide();
                     });
                 });
-                
+
                 var modal = new bootstrap.Modal(modalID);
                 modal.hide()
 

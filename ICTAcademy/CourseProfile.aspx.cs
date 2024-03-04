@@ -54,10 +54,7 @@ namespace ICTAcademy
                 rptMyCourse.DataBind();
                 noData.Visible = true;
             }
-
            
-             
-
         }
 
         private void getUserProfile()

@@ -25,12 +25,15 @@ namespace ICTAcademy
 
         private void getCourseList()
         {
-            //DataTable dt = C.getCoursListSample();
             DataTable dt = C.getCourseAllList();
+          
             rptCourseList.DataSource = dt;
             rptCourseList.DataBind();
 
         }
+        //SP_Select_AllCourse1TableAdapter
+
+
 
         protected void rptCourseList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -49,7 +52,7 @@ namespace ICTAcademy
         protected void Image1_Command(object sender, CommandEventArgs e)
         {
             String courseDesID = (sender as ImageButton).CommandArgument;
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
             Response.Redirect(Page.ResolveUrl("~/CourseDetail.aspx?cid=" + courseDesID));
         }
 
