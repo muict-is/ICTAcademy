@@ -24,76 +24,103 @@ namespace ICTAcademy
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// titleTH control.
+        /// optionTH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList titleTH;
+        protected global::System.Web.UI.WebControls.CheckBox optionTH;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// optionEN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.CheckBox optionEN;
 
         /// <summary>
-        /// firstnameTH control.
+        /// countryID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstnameTH;
+        protected global::System.Web.UI.WebControls.DropDownList countryID;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// RequiredFieldcountryID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldcountryID;
 
         /// <summary>
-        /// middleTH control.
+        /// ddRegisterType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox middleTH;
+        protected global::System.Web.UI.WebControls.DropDownList ddRegisterType;
 
         /// <summary>
-        /// lastnameTH control.
+        /// RequiredFieldddRegisterType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastnameTH;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldddRegisterType;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// ddGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.DropDownList ddGender;
 
         /// <summary>
-        /// titleEN control.
+        /// RequiredFieldddGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList titleEN;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldddGender;
+
+        /// <summary>
+        /// ddByear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddByear;
+
+        /// <summary>
+        /// RequiredFieldddByear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldddByear;
+
+        /// <summary>
+        /// title_EN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList title_EN;
 
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -150,22 +177,40 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
 
         /// <summary>
-        /// countryID control.
+        /// title_TH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList countryID;
+        protected global::System.Web.UI.WebControls.DropDownList title_TH;
 
         /// <summary>
-        /// RequiredFieldValidator7 control.
+        /// firstnameTH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.TextBox firstnameTH;
+
+        /// <summary>
+        /// middleTH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox middleTH;
+
+        /// <summary>
+        /// lastnameTH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lastnameTH;
 
         /// <summary>
         /// email control.
@@ -184,15 +229,6 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-
-        /// <summary>
-        /// username control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
 
         /// <summary>
         /// password control.

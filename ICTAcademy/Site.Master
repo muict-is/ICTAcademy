@@ -62,6 +62,18 @@
             font-weight: bold;
             color: #006C6C; /* Green ICT */
         }
+
+        .wrap {
+            white-space: normal;
+            width: 100px;
+        }
+
+        .justify {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+       
     </style>
 
 </head>
@@ -220,7 +232,7 @@
             }
 
 
-           
+
 
         </script>
         <asp:ContentPlaceHolder ID="Scripts" runat="server">
@@ -228,26 +240,26 @@
     </form>
 </body>
 
-   <script>
-       var str = location.href.toLowerCase();
-       console.log(str);
-       $("#sidebar li a").each(function () {
-           if (str.indexOf($(this).attr("href").toLowerCase()) > -1) {
-               $("li.active").removeClass("active");
-               $(this).addClass("active");
-           }
-           if ($(this).attr("child-page")) {
-               if (str.indexOf($(this).attr("child-page").toLowerCase()) > -1) {
-                   $("li.active").removeClass("active");
-                   $(this).addClass("active");
-               }
-           }
-       });
-       $("li.active").parents().each(function () {
-           if ($(this).is("li")) {
-               $(this).addClass("active");
-           }
-       });
-   </script>
+<script>
+    var str = location.href.toLowerCase();
+    console.log(str);
+    $("#sidebar li a").each(function () {
+        if (str.indexOf($(this).attr("href").toLowerCase()) > -1) {
+            $("li.active").removeClass("active");
+            $(this).addClass("active");
+        }
+        if ($(this).attr("child-page")) {
+            if (str.indexOf($(this).attr("child-page").toLowerCase()) > -1) {
+                $("li.active").removeClass("active");
+                $(this).addClass("active");
+            }
+        }
+    });
+    $("li.active").parents().each(function () {
+        if ($(this).is("li")) {
+            $(this).addClass("active");
+        }
+    });
+</script>
 
 </html>

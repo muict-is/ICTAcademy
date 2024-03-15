@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .wordTop {
-           margin-top:30px;
+            margin-top: 30px;
         }
     </style>
 
@@ -132,8 +132,7 @@
                             <asp:LinkButton ID="enrollClose" runat="server" class="btn btn-danger btn-round"> Closed </asp:LinkButton>
                         </div>
 
-                        <h4 class="text-muted wordTop">Description</h4>
-                        <asp:Label ID="lbcourseDescription" runat="server" />
+
 
                         <h4 class="text-muted wordTop">Instructors</h4>
                         <asp:Repeater runat="server" ID="rptInstructors" ClientIDMode="AutoID">
@@ -162,9 +161,14 @@
 
 
                     </div>
-                    <div class="col-md-7 col-lg-8">
+                    <div class="col-md-7 col-lg-8 justify">
 
                         <asp:Image ID="ImageBlog" runat="server" Width="100%" />
+
+                        <div id="DivlbcourseDescription" runat="server" >
+                            <h4 class="wordTop">Description</h4>
+                            <asp:Label ID="lbcourseDescription" runat="server" />
+                        </div>
 
                         <div id="DivlbcourseObjective" runat="server" visible="false">
                             <h4 class="wordTop">Objective</h4>

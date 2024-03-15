@@ -2251,11 +2251,13 @@
     <Content Include="Assets\Images\cover_1.jpg" />
     <Content Include="Assets\Images\cover_2.jpg" />
     <Content Include="Assets\Images\cover_3.jpg" />
+    <Content Include="Assets\Images\en.png" />
     <Content Include="Assets\Images\imagePreview.jpg" />
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
     <Content Include="Assets\Images\profile.jpg" />
     <Content Include="Assets\Images\test-img.png" />
+    <Content Include="Assets\Images\th.png" />
     <Content Include="Content\bootstrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="Assets\Images\user.png" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
