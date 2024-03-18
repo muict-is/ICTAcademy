@@ -18,7 +18,6 @@
     <link href="Assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="Assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="Assets/fontawesome/css/solid.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
 

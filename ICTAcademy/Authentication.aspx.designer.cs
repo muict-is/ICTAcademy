@@ -11,97 +11,79 @@ namespace ICTAcademy
 {
 
 
-    public partial class Sample2_AddCourse
+    public partial class Authentication
     {
 
         /// <summary>
-        /// UpdatePanel1 control.
+        /// divError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divError;
 
         /// <summary>
-        /// tbCourseCode control.
+        /// tbUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCourseCode;
+        protected global::System.Web.UI.WebControls.TextBox tbUsername;
 
         /// <summary>
-        /// reqCourseCode control.
+        /// ReqUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCourseCode;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqUsername;
 
         /// <summary>
-        /// tbCourseNameTH control.
+        /// RegUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCourseNameTH;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegUsername;
 
         /// <summary>
-        /// reqCourseNameTH control.
+        /// tbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCourseNameTH;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
 
         /// <summary>
-        /// tbCourseNameEN control.
+        /// ReqPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCourseNameEN;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPassword;
 
         /// <summary>
-        /// reqCourseNameEN control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCourseNameEN;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// ddlLearningStyle control.
+        /// btnForgetPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLearningStyle;
-
-        /// <summary>
-        /// reqLearningStyle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLearningStyle;
-
-        /// <summary>
-        /// btnAddCourse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddCourse;
+        protected global::System.Web.UI.WebControls.LinkButton btnForgetPassword;
     }
 }
