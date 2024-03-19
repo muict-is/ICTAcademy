@@ -22,9 +22,9 @@ namespace ICTAcademy
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text.Trim().ToLower();
-            string password = tbPassword.Text.Trim();
-            divError.Visible = false;
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+            divErrorLogin.Visible = false;
 
 
             DataTable dt = A.getUserAccount(username, password);
@@ -44,13 +44,35 @@ namespace ICTAcademy
             else // authen failed
             {
                 tbPassword.Text = "";
-                divError.Visible = true;
+                divErrorLogin.Visible = true;
             }
         }
 
         protected void btnForgetPassword_Click(object sender, EventArgs e)
         {
+            divSuccessReset.Visible = false;
+            divErrorReset.Visible = false;
+            tbUsernameForgetPassword.Text = string.Empty;
 
+            ScriptManager.RegisterStartupScript(Page, GetType(), "OpenModal", "<script> openModal('modalConfirmCreateDoc'); </script>", false);
+        }
+
+        protected void btnRequestResetPassword_Click(object sender, EventArgs e)
+        {
+            string username = tbUsernameForgetPassword.Text;
+            string token = A.getTokenForResetPassword(username);
+            
+            divSuccessReset.Visible = false;
+            divErrorReset.Visible = false;
+
+            if (token.Length > 0)
+            {
+                divSuccessReset.Visible = true;
+            }
+            else
+            {
+                divErrorReset.Visible = true;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ICTAcademy
 {
 
 
-    public partial class Authentication
+    public partial class ResetPassword
     {
 
         /// <summary>
@@ -33,6 +33,24 @@ namespace ICTAcademy
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
+        /// mv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView mv;
+
+        /// <summary>
+        /// viewDefaultForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View viewDefaultForm;
+
+        /// <summary>
         /// divErrorLogin control.
         /// </summary>
         /// <remarks>
@@ -40,33 +58,6 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divErrorLogin;
-
-        /// <summary>
-        /// tbUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUsername;
-
-        /// <summary>
-        /// ReqUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqUsername;
-
-        /// <summary>
-        /// RegUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegUsername;
 
         /// <summary>
         /// tbPassword control.
@@ -87,84 +78,39 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPassword;
 
         /// <summary>
-        /// btnLogin control.
+        /// tbConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.TextBox tbConfirmPassword;
 
         /// <summary>
-        /// btnForgetPassword control.
+        /// cmpPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnForgetPassword;
+        protected global::System.Web.UI.WebControls.CompareValidator cmpPassword;
 
         /// <summary>
-        /// UpdatePanel2 control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// divSuccessReset control.
+        /// viewInvalidToken control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSuccessReset;
-
-        /// <summary>
-        /// divErrorReset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divErrorReset;
-
-        /// <summary>
-        /// tbUsernameForgetPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUsernameForgetPassword;
-
-        /// <summary>
-        /// ReqUsernameForgetPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqUsernameForgetPassword;
-
-        /// <summary>
-        /// RegUsernameForgetPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegUsernameForgetPassword;
-
-        /// <summary>
-        /// btnRequestResetPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRequestResetPassword;
+        protected global::System.Web.UI.WebControls.View viewInvalidToken;
     }
 }
