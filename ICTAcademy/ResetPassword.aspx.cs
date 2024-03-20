@@ -41,12 +41,19 @@ namespace ICTAcademy
             {
                 string newPassword = tbPassword.Text;
                 A.resetPassword(userID, token, newPassword);
+
+                mv.SetActiveView(viewResetSuccess);
             }
             else
             {
                 divErrorLogin.Visible = true;
             }
 
+        }
+
+        protected void btnGotoLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Authentication.aspx");
         }
     }
 }

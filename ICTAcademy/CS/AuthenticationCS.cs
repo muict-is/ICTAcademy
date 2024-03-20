@@ -62,6 +62,8 @@ namespace ICTAcademy.CS
             DataTable dt = tokenInfoADT.GetData(token);
             foreach (DataRow dr in dt.Rows) userID = int.Parse(dr["userID"].ToString());
 
+            // for test
+            userID = 1;
             return userID;
         }
 
