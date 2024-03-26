@@ -2283,6 +2283,7 @@
     <Content Include="CourseDetail.aspx" />
     <Content Include="CourseProfile.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EnrollCourse.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="CourseCategory.aspx" />
     <Content Include="register.aspx" />
@@ -2441,6 +2442,7 @@
     <Content Include="DS\AuthenticationDS.xsc">
       <DependentUpon>AuthenticationDS.xsd</DependentUpon>
     </Content>
+    <None Include=".editorconfig" />
     <None Include="DS\AuthenticationDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -2557,6 +2559,13 @@
     </Compile>
     <Compile Include="CourseCategory.aspx.designer.cs">
       <DependentUpon>CourseCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollCourse.aspx.cs">
+      <DependentUpon>EnrollCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnrollCourse.aspx.designer.cs">
+      <DependentUpon>EnrollCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="OpenFileDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
