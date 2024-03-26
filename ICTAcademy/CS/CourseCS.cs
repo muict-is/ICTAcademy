@@ -36,24 +36,24 @@ namespace ICTAcademy.CS
             dt.Rows.Add(new object[] { "Web Pentest", "Cyber Security", 4200, "recomened for web developer" });
             dt.Rows.Add(new object[] { "Machine learning for Image Processing", "credit bank", 4200, "" });
 
-
             return dt;
         }
 
 
         //--------------------------------------------
-        private SP_Insert_CourseTableAdapter insertCourse = null;
-        protected SP_Insert_CourseTableAdapter insertCourseADT
-        {
-            get
-            {
-                if (insertCourse == null) insertCourse = new SP_Insert_CourseTableAdapter();
-                return insertCourse;
-            }
-        }
+        //private SP_Insert_CourseTableAdapter insertCourse = null;
+        //protected SP_Insert_CourseTableAdapter insertCourseADT
+        //{
+        //    get
+        //    {
+        //        if (insertCourse == null) insertCourse = new SP_Insert_CourseTableAdapter();
+        //        return insertCourse;
+        //    }
+        //}
         public void createCourse(int courseType, string courseCode, string courseNameTH, string courseNameEN, string createBy)
         {
-            insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+            //insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+            courseListADT.InsertCourse(courseType, courseCode, courseNameTH, courseNameEN, createBy);
         }
 
 
@@ -206,6 +206,22 @@ namespace ICTAcademy.CS
            
         }
 
+        //------------------------------------------------ 
+        private SP_Select_AllCategoryTableAdapter Category = null;
+        protected SP_Select_AllCategoryTableAdapter CategoryADT
+        {
+            get
+            {
+                if (Category == null) Category = new SP_Select_AllCategoryTableAdapter();
+                return Category;
+            }
+        }
+        public DataTable getAllCategory(String Lang)
+        {
+
+            return CategoryADT.GetData(Lang);
+
+        }
 
     }
 }

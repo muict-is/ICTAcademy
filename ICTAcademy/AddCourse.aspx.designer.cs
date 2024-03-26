@@ -15,24 +15,6 @@ namespace ICTAcademy
     {
 
         /// <summary>
-        /// FileUpload3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
-
-        /// <summary>
-        /// btnTestFileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnTestFileUpload;
-
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +22,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// PreviewImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image PreviewImage;
 
         /// <summary>
         /// FileUpload1 control.
@@ -60,13 +51,13 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox CourseNameTH;
 
         /// <summary>
-        /// lblText1 control.
+        /// RequiredFieldddGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblText1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldddGender;
 
         /// <summary>
         /// CourseNameEN control.
@@ -78,6 +69,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox CourseNameEN;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// stylesID control.
         /// </summary>
         /// <remarks>
@@ -87,6 +87,15 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.DropDownList stylesID;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// CategoryID control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList CategoryID;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// maxSeat control.
@@ -132,31 +150,22 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.TextBox hourPerWeek;
 
         /// <summary>
-        /// periodTimeID control.
+        /// tblinkUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList periodTimeID;
+        protected global::System.Web.UI.WebControls.TextBox tblinkUrl;
 
         /// <summary>
-        /// startLeaening control.
+        /// lblinkUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox startLeaening;
-
-        /// <summary>
-        /// endLeaening control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox endLeaening;
+        protected global::System.Web.UI.WebControls.Label lblinkUrl;
 
         /// <summary>
         /// rptAddDate control.
@@ -166,15 +175,6 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptAddDate;
-
-        /// <summary>
-        /// BAddExtendTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BAddExtendTime;
 
         /// <summary>
         /// rptAddInstrutor control.
@@ -192,7 +192,7 @@ namespace ICTAcademy
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BAddInstruture;
+        protected global::System.Web.UI.WebControls.LinkButton BAddInstruture;
 
         /// <summary>
         /// courseDescription control.

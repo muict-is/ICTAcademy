@@ -6,7 +6,18 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container">
-                <asp:Repeater runat="server" ID="rptFormStudent" ClientIDMode="AutoID" OnItemDataBound="rptFormStudent_ItemDataBound">
+                <div class="row">
+                     <div class="col-md-2 col-12">
+     <div class="mb-3">
+         <label for="tbStartDate" class="form-label">วันที่เริ่มต้น</label>
+         <div class="input-group date datepicker">
+             <asp:TextBox ID="tbStartDate" CssClass="form-control datetimepicker-input datepicker" runat="server" autocomplete="off"></asp:TextBox>
+             <div class="input-group-append input-group-text"><i class="fa fa-calendar"></i></div>
+         </div>
+     </div>
+ </div>
+                </div>
+               <%-- <asp:Repeater runat="server" ID="rptFormStudent" ClientIDMode="AutoID" OnItemDataBound="rptFormStudent_ItemDataBound">
                     <ItemTemplate>
                         <div class="card m-3">
                             <div class="card-body">
@@ -22,7 +33,7 @@
                             </div>
                         </div>
                     </ItemTemplate>
-                </asp:Repeater>
+                </asp:Repeater>--%>
 
                 <asp:LinkButton runat="server" ID="btnAdd" CssClass="btn btn-primary" Text="Add Student" OnClick="btnAdd_Click" />
                 <asp:LinkButton runat="server" ID="btnbSave" CssClass="btn btn-outline-success" Text="Save Data" OnClick="btnbSave_Click"/>
@@ -32,4 +43,19 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+
+    <script type="text/javascript">
+
+        function activeJS() {
+            activeDP();
+        }
+
+        function activeDP() {
+            //---- atvice first
+            activeDatePicker();
+
+
+        }
+
+    </script>
 </asp:Content>

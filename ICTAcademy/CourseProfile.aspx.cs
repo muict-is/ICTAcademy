@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Globalization;
 using System.Threading;
+using System.Diagnostics.Metrics;
 
 namespace ICTAcademy
 {
@@ -17,7 +18,7 @@ namespace ICTAcademy
         CourseCS C = new CourseCS();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Username"] = "sukumaporn";
+            Session["Username"] = "sukumaporn.kon@gmail.com";
 
             if (!IsPostBack)
             {
@@ -26,6 +27,7 @@ namespace ICTAcademy
                     ViewState.Add("Username", Session["Username"].ToString());
                     getUserProfile();
                     getCourseApply();
+                    bindDDLTitle();
                 }
                 else
                 {
@@ -64,35 +66,34 @@ namespace ICTAcademy
 
             foreach (DataRow dr in dt.Rows) 
             {
-                lbfullname.Text = dr["titleTH"].ToString() + " " + dr["firstnameTH"].ToString() + " " + dr["middleTH"].ToString() + " " + dr["lastnameTH"].ToString();
-                lbfullnameEN.Text = dr["titleEN"].ToString() + " " + dr["firstnameEN"].ToString() + " " + dr["middleEN"].ToString() + " " + dr["lastnameEN"].ToString();
+                lbfullname.Text = dr["fullnameTH"].ToString() ;
+                lbfullnameEN.Text = dr["fullnameEN"].ToString() ;
                 lbStyle.Text = dr["registerTypeEN"].ToString();
                 lbEmail.Text = dr["email"].ToString();
 
                 //Info Modal
-                titleTH.SelectedValue = dr["titleTH"].ToString();
+                title_TH.SelectedValue = dr["titleID"].ToString();
                 firstnameTH.Text = dr["firstnameTH"].ToString();
                 middleTH.Text = dr["middleTH"].ToString();
                 lastnameTH.Text = dr["lastnameTH"].ToString();
-                titleEN.SelectedValue = dr["titleEN"].ToString();
+                title_EN.SelectedValue = dr["titleID"].ToString(); 
                 firstnameEN.Text = dr["firstnameEN"].ToString();
                 middleEN.Text = dr["middleEN"].ToString();
                 lastnameEN.Text = dr["lastnameEN"].ToString();
                 email.Text = dr["email"].ToString();
+                Country.Text = dr["countryEN"].ToString();
+                Byear.Text = dr["yearOfBirth"].ToString();
+                Type.Text = dr["registerTypeEN"].ToString();
+                Gender.Text = dr["genderEN"].ToString();
 
 
                 int registerTypeID = int.Parse(dr["registerTypeID"].ToString());
-                
-                if (registerTypeID == 1 || registerTypeID == 2)
-                {   //Student , Staff
-                    email.Enabled = false;
-                    // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + registerTypeID + "')", true);
-                }
-                else 
-                {
-                    //Alumni , General
-                    email.Enabled = true;
-                }
+              
+                email.Enabled = false;                  
+                Country.Enabled = false;
+                Byear.Enabled = false;
+                Type.Enabled = false;
+                Gender.Enabled = false;
 
             }
         }
@@ -100,11 +101,11 @@ namespace ICTAcademy
         protected void lbSaveChange_Click(object sender, EventArgs e)
         {
             string username = ViewState["Username"].ToString();
-            String titleTH = this.titleTH.Text.Trim();
+            String titleTH = this.title_TH.Text.Trim();
             String firstnameTH = this.firstnameTH.Text.Trim();
             String middleTH = this.middleTH.Text.Trim();
             String lastnameTH = this.lastnameTH.Text.Trim();
-            String titleEN = this.titleEN.Text.Trim();
+            String titleEN = this.title_EN.Text.Trim();
             String firstnameEN = this.firstnameEN.Text.Trim();
             String middleEN = this.middleEN.Text.Trim();
             String lastnameEN = this.lastnameEN.Text.Trim();
@@ -143,5 +144,23 @@ namespace ICTAcademy
             getUserProfile();
             getCourseApply();
         }
+
+
+        private void bindDDLTitle()
+        {
+            title_EN.DataSource = R.getTitle("E");
+            title_EN.DataTextField = "title";
+            title_EN.DataValueField = "titleID";
+            title_EN.DataBind();
+            title_EN.Items.Insert(0, new ListItem(" ", ""));
+
+            title_TH.DataSource = R.getTitle("T");
+            title_TH.DataTextField = "title";
+            title_TH.DataValueField = "titleID";
+            title_TH.DataBind();
+            title_TH.Items.Insert(0, new ListItem(" ", ""));
+        }
+
+
     }
 }

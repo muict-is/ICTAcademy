@@ -24,13 +24,13 @@ namespace ICTAcademy
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// rptFormStudent control.
+        /// tbStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptFormStudent;
+        protected global::System.Web.UI.WebControls.TextBox tbStartDate;
 
         /// <summary>
         /// btnAdd control.

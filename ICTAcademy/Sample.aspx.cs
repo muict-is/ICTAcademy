@@ -12,20 +12,21 @@ namespace ICTAcademy
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                DataTable dt = getDTStudent();
-                bindRPTStudent(dt);
-            }
+            //if (!IsPostBack)
+            //{
+            //    DataTable dt = getDTStudent();
+            //    bindRPTStudent(dt);
+            //}
 
+            ScriptManager.RegisterStartupScript(Page, GetType(), "activeJS", "<script>activeJS()</script>", false);
         }
 
         private void bindRPTStudent(DataTable dt)
         {
-            ViewState.Add("DTStudent", dt);
+            //ViewState.Add("DTStudent", dt);
 
-            rptFormStudent.DataSource = dt;
-            rptFormStudent.DataBind();
+            //rptFormStudent.DataSource = dt;
+            //rptFormStudent.DataBind();
 
             
 
@@ -92,35 +93,35 @@ namespace ICTAcademy
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            ViewState["DTStudent"] = null;
-            DataTable dt = getDTStudent();
+            //ViewState["DTStudent"] = null;
+            //DataTable dt = getDTStudent();
 
-            dt.Rows.RemoveAt(0);
-            foreach (RepeaterItem item in rptFormStudent.Items)
-            {
-                TextBox tbStudent = (TextBox)item.FindControl("tbStudentID");
-                DropDownList ddlYear = (DropDownList)item.FindControl("ddlYear");
+            //dt.Rows.RemoveAt(0);
+            //foreach (RepeaterItem item in rptFormStudent.Items)
+            //{
+            //    TextBox tbStudent = (TextBox)item.FindControl("tbStudentID");
+            //    DropDownList ddlYear = (DropDownList)item.FindControl("ddlYear");
 
-                dt.Rows.Add(new object[] { tbStudent.Text, ddlYear.SelectedValue.ToString() });
-            }
+            //    dt.Rows.Add(new object[] { tbStudent.Text, ddlYear.SelectedValue.ToString() });
+            //}
 
-            dt.Rows.Add(new object[] { string.Empty, 0 });
+            //dt.Rows.Add(new object[] { string.Empty, 0 });
 
-            bindRPTStudent(dt);
+            //bindRPTStudent(dt);
         }
 
         protected void btnbSave_Click(object sender, EventArgs e)
         {
-            log.Text = "<p> Result </p>";
-            log.Text += "<ul>";
-            foreach(RepeaterItem item in rptFormStudent.Items)
-            {
-                TextBox tbStudent = (TextBox)item.FindControl("tbStudentID");
-                DropDownList ddlYear = (DropDownList)item.FindControl("ddlYear");
+            //log.Text = "<p> Result </p>";
+            //log.Text += "<ul>";
+            //foreach(RepeaterItem item in rptFormStudent.Items)
+            //{
+            //    TextBox tbStudent = (TextBox)item.FindControl("tbStudentID");
+            //    DropDownList ddlYear = (DropDownList)item.FindControl("ddlYear");
 
-                log.Text += $"<li> ID : {tbStudent.Text} , Year : {ddlYear.SelectedValue}";
-            }
-            log.Text += "</ul>";
+            //    log.Text += $"<li> ID : {tbStudent.Text} , Year : {ddlYear.SelectedValue}";
+            //}
+            //log.Text += "</ul>";
         }
 
         

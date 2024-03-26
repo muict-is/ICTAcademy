@@ -73,12 +73,12 @@
                                     <small>EXAMPLECODE</small>
                                 </div>
                                 <span class="text-success">−$5</span> 
-                            </li>--%>
+                            </li>
                             <li class="list-group-item d-flex justify-content-between">
                                 <h6 class="my-0">Classes Start</h6>
                                 <small class="text-body-secondary">
                                     <asp:Label runat="server" ID="lbstartLearning" /></small>
-                            </li>
+                            </li>--%>
                             <li class="list-group-item d-flex justify-content-between">
                                 <h6 class="my-0">Total Hours</h6>
                                 <small class="text-body-secondary">

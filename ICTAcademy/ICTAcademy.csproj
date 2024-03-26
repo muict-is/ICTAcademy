@@ -2440,6 +2440,7 @@
     <Content Include="Assets\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Assets\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Assets\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="WebForm1.aspx" />
     <None Include="DS\RegisterDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -2572,6 +2573,13 @@
     </Compile>
     <Compile Include="TicketManagement.aspx.designer.cs">
       <DependentUpon>TicketManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

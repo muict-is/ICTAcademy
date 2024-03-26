@@ -190,6 +190,8 @@
 
             //------------- for date picker----
             function activeDatePicker() {
+                console.log("active date picker");
+
                 $('.datepicker').datepicker({
                     format: 'd M yyyy',
                     language: 'th',

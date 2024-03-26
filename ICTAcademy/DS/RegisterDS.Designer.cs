@@ -531,6 +531,40 @@ namespace ICTAcademy.DS {
             
             private global::System.Data.DataColumn columnregisterTypeEN;
             
+            private global::System.Data.DataColumn columngender;
+            
+            private global::System.Data.DataColumn columnyearOfBirth;
+            
+            private global::System.Data.DataColumn columntitleTH1;
+            
+            private global::System.Data.DataColumn columntitleEN1;
+            
+            private global::System.Data.DataColumn columntitleID;
+            
+            private global::System.Data.DataColumn columntitleTH11;
+            
+            private global::System.Data.DataColumn columntitleEN11;
+            
+            private global::System.Data.DataColumn columncountryID;
+            
+            private global::System.Data.DataColumn columncountryCode;
+            
+            private global::System.Data.DataColumn columncountryEN;
+            
+            private global::System.Data.DataColumn columncountryTH;
+            
+            private global::System.Data.DataColumn columncode;
+            
+            private global::System.Data.DataColumn columngenderID;
+            
+            private global::System.Data.DataColumn columngenderEN;
+            
+            private global::System.Data.DataColumn columngenderTH;
+            
+            private global::System.Data.DataColumn columnfullnameTH;
+            
+            private global::System.Data.DataColumn columnfullnameEN;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SP_Select_MemberDataTable() {
@@ -734,6 +768,142 @@ namespace ICTAcademy.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn genderColumn {
+                get {
+                    return this.columngender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn yearOfBirthColumn {
+                get {
+                    return this.columnyearOfBirth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn titleTH1Column {
+                get {
+                    return this.columntitleTH1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn titleEN1Column {
+                get {
+                    return this.columntitleEN1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn titleIDColumn {
+                get {
+                    return this.columntitleID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn titleTH11Column {
+                get {
+                    return this.columntitleTH11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn titleEN11Column {
+                get {
+                    return this.columntitleEN11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn countryIDColumn {
+                get {
+                    return this.columncountryID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn countryCodeColumn {
+                get {
+                    return this.columncountryCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn countryENColumn {
+                get {
+                    return this.columncountryEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn countryTHColumn {
+                get {
+                    return this.columncountryTH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn codeColumn {
+                get {
+                    return this.columncode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn genderIDColumn {
+                get {
+                    return this.columngenderID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn genderENColumn {
+                get {
+                    return this.columngenderEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn genderTHColumn {
+                get {
+                    return this.columngenderTH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn fullnameTHColumn {
+                get {
+                    return this.columnfullnameTH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn fullnameENColumn {
+                get {
+                    return this.columnfullnameEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -788,7 +958,21 @@ namespace ICTAcademy.DS {
                         System.DateTime updatedate, 
                         string status, 
                         string registerTypeTH, 
-                        string registerTypeEN) {
+                        string registerTypeEN, 
+                        int gender, 
+                        string yearOfBirth, 
+                        int titleTH1, 
+                        int titleEN1, 
+                        string titleTH11, 
+                        string titleEN11, 
+                        string countryCode, 
+                        string countryEN, 
+                        string countryTH, 
+                        string code, 
+                        string genderEN, 
+                        string genderTH, 
+                        string fullnameTH, 
+                        string fullnameEN) {
                 SP_Select_MemberRow rowSP_Select_MemberRow = ((SP_Select_MemberRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -811,7 +995,24 @@ namespace ICTAcademy.DS {
                         status,
                         null,
                         registerTypeTH,
-                        registerTypeEN};
+                        registerTypeEN,
+                        gender,
+                        yearOfBirth,
+                        titleTH1,
+                        titleEN1,
+                        null,
+                        titleTH11,
+                        titleEN11,
+                        null,
+                        countryCode,
+                        countryEN,
+                        countryTH,
+                        code,
+                        null,
+                        genderEN,
+                        genderTH,
+                        fullnameTH,
+                        fullnameEN};
                 rowSP_Select_MemberRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Select_MemberRow);
                 return rowSP_Select_MemberRow;
@@ -863,6 +1064,23 @@ namespace ICTAcademy.DS {
                 this.columnregisterTypeID1 = base.Columns["registerTypeID1"];
                 this.columnregisterTypeTH = base.Columns["registerTypeTH"];
                 this.columnregisterTypeEN = base.Columns["registerTypeEN"];
+                this.columngender = base.Columns["gender"];
+                this.columnyearOfBirth = base.Columns["yearOfBirth"];
+                this.columntitleTH1 = base.Columns["titleTH1"];
+                this.columntitleEN1 = base.Columns["titleEN1"];
+                this.columntitleID = base.Columns["titleID"];
+                this.columntitleTH11 = base.Columns["titleTH11"];
+                this.columntitleEN11 = base.Columns["titleEN11"];
+                this.columncountryID = base.Columns["countryID"];
+                this.columncountryCode = base.Columns["countryCode"];
+                this.columncountryEN = base.Columns["countryEN"];
+                this.columncountryTH = base.Columns["countryTH"];
+                this.columncode = base.Columns["code"];
+                this.columngenderID = base.Columns["genderID"];
+                this.columngenderEN = base.Columns["genderEN"];
+                this.columngenderTH = base.Columns["genderTH"];
+                this.columnfullnameTH = base.Columns["fullnameTH"];
+                this.columnfullnameEN = base.Columns["fullnameEN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -910,6 +1128,40 @@ namespace ICTAcademy.DS {
                 base.Columns.Add(this.columnregisterTypeTH);
                 this.columnregisterTypeEN = new global::System.Data.DataColumn("registerTypeEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnregisterTypeEN);
+                this.columngender = new global::System.Data.DataColumn("gender", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngender);
+                this.columnyearOfBirth = new global::System.Data.DataColumn("yearOfBirth", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnyearOfBirth);
+                this.columntitleTH1 = new global::System.Data.DataColumn("titleTH1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitleTH1);
+                this.columntitleEN1 = new global::System.Data.DataColumn("titleEN1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitleEN1);
+                this.columntitleID = new global::System.Data.DataColumn("titleID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitleID);
+                this.columntitleTH11 = new global::System.Data.DataColumn("titleTH11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitleTH11);
+                this.columntitleEN11 = new global::System.Data.DataColumn("titleEN11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitleEN11);
+                this.columncountryID = new global::System.Data.DataColumn("countryID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountryID);
+                this.columncountryCode = new global::System.Data.DataColumn("countryCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountryCode);
+                this.columncountryEN = new global::System.Data.DataColumn("countryEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountryEN);
+                this.columncountryTH = new global::System.Data.DataColumn("countryTH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountryTH);
+                this.columncode = new global::System.Data.DataColumn("code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode);
+                this.columngenderID = new global::System.Data.DataColumn("genderID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngenderID);
+                this.columngenderEN = new global::System.Data.DataColumn("genderEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngenderEN);
+                this.columngenderTH = new global::System.Data.DataColumn("genderTH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngenderTH);
+                this.columnfullnameTH = new global::System.Data.DataColumn("fullnameTH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullnameTH);
+                this.columnfullnameEN = new global::System.Data.DataColumn("fullnameEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullnameEN);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnregisterID,
                                 this.columnregisterTypeID1}, true));
@@ -937,6 +1189,38 @@ namespace ICTAcademy.DS {
                 this.columnregisterTypeID1.ReadOnly = true;
                 this.columnregisterTypeTH.MaxLength = 50;
                 this.columnregisterTypeEN.MaxLength = 50;
+                this.columnyearOfBirth.MaxLength = 4;
+                this.columntitleTH1.Caption = "titleTH";
+                this.columntitleEN1.Caption = "titleEN";
+                this.columntitleID.AutoIncrement = true;
+                this.columntitleID.AutoIncrementSeed = -1;
+                this.columntitleID.AutoIncrementStep = -1;
+                this.columntitleID.AllowDBNull = false;
+                this.columntitleID.ReadOnly = true;
+                this.columntitleTH11.Caption = "titleTH1";
+                this.columntitleTH11.MaxLength = 50;
+                this.columntitleEN11.Caption = "titleEN1";
+                this.columntitleEN11.MaxLength = 50;
+                this.columncountryID.AutoIncrement = true;
+                this.columncountryID.AutoIncrementSeed = -1;
+                this.columncountryID.AutoIncrementStep = -1;
+                this.columncountryID.AllowDBNull = false;
+                this.columncountryID.ReadOnly = true;
+                this.columncountryCode.MaxLength = 3;
+                this.columncountryEN.MaxLength = 200;
+                this.columncountryTH.MaxLength = 200;
+                this.columncode.MaxLength = 2;
+                this.columngenderID.AutoIncrement = true;
+                this.columngenderID.AutoIncrementSeed = -1;
+                this.columngenderID.AutoIncrementStep = -1;
+                this.columngenderID.AllowDBNull = false;
+                this.columngenderID.ReadOnly = true;
+                this.columngenderEN.MaxLength = 10;
+                this.columngenderTH.MaxLength = 10;
+                this.columnfullnameTH.ReadOnly = true;
+                this.columnfullnameTH.MaxLength = 552;
+                this.columnfullnameEN.ReadOnly = true;
+                this.columnfullnameEN.MaxLength = 552;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2973,6 +3257,263 @@ namespace ICTAcademy.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int gender {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Select_Member.genderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'gender\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string yearOfBirth {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.yearOfBirthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'yearOfBirth\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.yearOfBirthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int titleTH1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Select_Member.titleTH1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'titleTH1\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.titleTH1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int titleEN1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Select_Member.titleEN1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'titleEN1\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.titleEN1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int titleID {
+                get {
+                    return ((int)(this[this.tableSP_Select_Member.titleIDColumn]));
+                }
+                set {
+                    this[this.tableSP_Select_Member.titleIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string titleTH11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.titleTH11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'titleTH11\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.titleTH11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string titleEN11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.titleEN11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'titleEN11\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.titleEN11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int countryID {
+                get {
+                    return ((int)(this[this.tableSP_Select_Member.countryIDColumn]));
+                }
+                set {
+                    this[this.tableSP_Select_Member.countryIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string countryCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.countryCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'countryCode\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.countryCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string countryEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.countryENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'countryEN\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.countryENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string countryTH {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.countryTHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'countryTH\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.countryTHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string code {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'code\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int genderID {
+                get {
+                    return ((int)(this[this.tableSP_Select_Member.genderIDColumn]));
+                }
+                set {
+                    this[this.tableSP_Select_Member.genderIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string genderEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.genderENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'genderEN\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.genderENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string genderTH {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.genderTHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'genderTH\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.genderTHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string fullnameTH {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.fullnameTHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullnameTH\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.fullnameTHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string fullnameEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Select_Member.fullnameENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullnameEN\' in table \'SP_Select_Member\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Select_Member.fullnameENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsregisterTypeIDNull() {
                 return this.IsNull(this.tableSP_Select_Member.registerTypeIDColumn);
             }
@@ -3197,6 +3738,174 @@ namespace ICTAcademy.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetregisterTypeENNull() {
                 this[this.tableSP_Select_Member.registerTypeENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsgenderNull() {
+                return this.IsNull(this.tableSP_Select_Member.genderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetgenderNull() {
+                this[this.tableSP_Select_Member.genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsyearOfBirthNull() {
+                return this.IsNull(this.tableSP_Select_Member.yearOfBirthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetyearOfBirthNull() {
+                this[this.tableSP_Select_Member.yearOfBirthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstitleTH1Null() {
+                return this.IsNull(this.tableSP_Select_Member.titleTH1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettitleTH1Null() {
+                this[this.tableSP_Select_Member.titleTH1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstitleEN1Null() {
+                return this.IsNull(this.tableSP_Select_Member.titleEN1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettitleEN1Null() {
+                this[this.tableSP_Select_Member.titleEN1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstitleTH11Null() {
+                return this.IsNull(this.tableSP_Select_Member.titleTH11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettitleTH11Null() {
+                this[this.tableSP_Select_Member.titleTH11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstitleEN11Null() {
+                return this.IsNull(this.tableSP_Select_Member.titleEN11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettitleEN11Null() {
+                this[this.tableSP_Select_Member.titleEN11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscountryCodeNull() {
+                return this.IsNull(this.tableSP_Select_Member.countryCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcountryCodeNull() {
+                this[this.tableSP_Select_Member.countryCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscountryENNull() {
+                return this.IsNull(this.tableSP_Select_Member.countryENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcountryENNull() {
+                this[this.tableSP_Select_Member.countryENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscountryTHNull() {
+                return this.IsNull(this.tableSP_Select_Member.countryTHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcountryTHNull() {
+                this[this.tableSP_Select_Member.countryTHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscodeNull() {
+                return this.IsNull(this.tableSP_Select_Member.codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcodeNull() {
+                this[this.tableSP_Select_Member.codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsgenderENNull() {
+                return this.IsNull(this.tableSP_Select_Member.genderENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetgenderENNull() {
+                this[this.tableSP_Select_Member.genderENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsgenderTHNull() {
+                return this.IsNull(this.tableSP_Select_Member.genderTHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetgenderTHNull() {
+                this[this.tableSP_Select_Member.genderTHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfullnameTHNull() {
+                return this.IsNull(this.tableSP_Select_Member.fullnameTHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfullnameTHNull() {
+                this[this.tableSP_Select_Member.fullnameTHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfullnameENNull() {
+                return this.IsNull(this.tableSP_Select_Member.fullnameENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfullnameENNull() {
+                this[this.tableSP_Select_Member.fullnameENColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3811,11 +4520,9 @@ namespace ICTAcademy.DS.RegisterDSTableAdapters {
             tableMapping.DataSetTable = "SP_Select_Member";
             tableMapping.ColumnMappings.Add("registerID", "registerID");
             tableMapping.ColumnMappings.Add("registerTypeID", "registerTypeID");
-            tableMapping.ColumnMappings.Add("titleTH", "titleTH");
             tableMapping.ColumnMappings.Add("firstnameTH", "firstnameTH");
             tableMapping.ColumnMappings.Add("middleTH", "middleTH");
             tableMapping.ColumnMappings.Add("lastnameTH", "lastnameTH");
-            tableMapping.ColumnMappings.Add("titleEN", "titleEN");
             tableMapping.ColumnMappings.Add("firstnameEN", "firstnameEN");
             tableMapping.ColumnMappings.Add("middleEN", "middleEN");
             tableMapping.ColumnMappings.Add("lastnameEN", "lastnameEN");
@@ -3830,6 +4537,23 @@ namespace ICTAcademy.DS.RegisterDSTableAdapters {
             tableMapping.ColumnMappings.Add("registerTypeID1", "registerTypeID1");
             tableMapping.ColumnMappings.Add("registerTypeTH", "registerTypeTH");
             tableMapping.ColumnMappings.Add("registerTypeEN", "registerTypeEN");
+            tableMapping.ColumnMappings.Add("gender", "gender");
+            tableMapping.ColumnMappings.Add("yearOfBirth", "yearOfBirth");
+            tableMapping.ColumnMappings.Add("titleTH", "titleTH1");
+            tableMapping.ColumnMappings.Add("titleEN", "titleEN1");
+            tableMapping.ColumnMappings.Add("titleID", "titleID");
+            tableMapping.ColumnMappings.Add("titleTH1", "titleTH11");
+            tableMapping.ColumnMappings.Add("titleEN1", "titleEN11");
+            tableMapping.ColumnMappings.Add("countryID", "countryID");
+            tableMapping.ColumnMappings.Add("countryCode", "countryCode");
+            tableMapping.ColumnMappings.Add("countryEN", "countryEN");
+            tableMapping.ColumnMappings.Add("countryTH", "countryTH");
+            tableMapping.ColumnMappings.Add("code", "code");
+            tableMapping.ColumnMappings.Add("genderID", "genderID");
+            tableMapping.ColumnMappings.Add("genderEN", "genderEN");
+            tableMapping.ColumnMappings.Add("genderTH", "genderTH");
+            tableMapping.ColumnMappings.Add("fullnameTH", "fullnameTH");
+            tableMapping.ColumnMappings.Add("fullnameEN", "fullnameEN");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

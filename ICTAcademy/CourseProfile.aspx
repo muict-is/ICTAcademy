@@ -51,14 +51,9 @@
                                         <div class="mb-3 row">
                                             <asp:Label for="titleTH" runat="server" Text="Label" class="col-sm-4 col-form-label fw-bold">Title (TH)</asp:Label>
                                             <div class="col-sm-5">
-                                                <asp:DropDownList ID="titleTH" runat="server" CssClass="form-select">
-                                                    <asp:ListItem Value="0" Text=""></asp:ListItem>
-                                                    <asp:ListItem Value="นาย" Text="นาย" />
-                                                    <asp:ListItem Value="นางสาว" Text="นางสาว" />
-                                                    <asp:ListItem Value="นาง" Text="นาง" />
+                                                <asp:Label for="title_TH" runat="server" Text="" class="form-label fw-bold"></asp:Label>
+                                                <asp:DropDownList ID="title_TH" runat="server" CssClass="form-select">
                                                 </asp:DropDownList>
-                                                <asp:RequiredFieldValidator CssClass="rfv" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please provide a valid Title (TH) ." ControlToValidate="titleTH" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-
                                             </div>
                                         </div>
 
@@ -91,14 +86,9 @@
                                         <div class="mb-3 row">
                                             <asp:Label for="titleEN" runat="server" Text="Label" class="col-sm-4 col-form-label fw-bold">Title(EN)</asp:Label>
                                             <div class="col-sm-5">
-                                                <asp:DropDownList ID="titleEN" runat="server" CssClass="form-select">
-                                                    <asp:ListItem Value="0" Text=""></asp:ListItem>
-                                                    <asp:ListItem Value="Mr." Text="Mr." />
-                                                    <asp:ListItem Value="Mrs." Text="Mrs." />
-                                                    <asp:ListItem Value="Miss" Text="Miss" />
-                                                    <asp:ListItem Value="Ms." Text="Ms." />
+                                                <asp:DropDownList ID="title_EN" runat="server" CssClass="form-select">
                                                 </asp:DropDownList>
-                                                <asp:RequiredFieldValidator CssClass="rfv" ID="RequiredFieldValidator5" Display="Dynamic" runat="server" ErrorMessage="Please provide a valid Title Name (TH) ." ControlToValidate="titleEN" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RequiredFieldValidator CssClass="rfv" ID="RequiredFieldValidator5" Display="Dynamic" runat="server" ErrorMessage="Please provide a valid Title Name (TH) ." ControlToValidate="title_EN" ForeColor="Red"></asp:RequiredFieldValidator>
 
                                             </div>
                                         </div>
@@ -131,12 +121,41 @@
 
                                         <hr>
 
-                                        <div class="mb-3 row">
-                                            <asp:Label for="email" runat="server" Text="Label" class="col-sm-4 col-form-label fw-bold">Email</asp:Label>
-                                            <div class="col-sm-5">
-                                                <asp:TextBox ID="email" CssClass="form-control" runat="server" TextMode="Email" placeholder="name@example.com"></asp:TextBox>
-                                                <asp:RequiredFieldValidator CssClass="rfv" ID="RequiredFieldValidator8" runat="server" Display="Dynamic" ErrorMessage="Please provide a valid Email ." ControlToValidate="email" ForeColor="Red"></asp:RequiredFieldValidator>
 
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-6">
+                                                        <asp:Label for="countryID" runat="server" Text="Label" class="form-label fw-bold">Email  </asp:Label>
+                                                        <asp:TextBox ID="email" CssClass="form-control" runat="server" TextMode="Email" placeholder="name@example.com"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator CssClass="rfv" ID="RequiredFieldValidator8" runat="server" Display="Dynamic" ErrorMessage="Please provide a valid Email ." ControlToValidate="email" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <asp:Label for="countryID" runat="server" Text="Label" class="form-label fw-bold">Country  </asp:Label>
+                                                        <asp:TextBox ID="Country" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-6">
+                                                        <asp:Label for="lbType" runat="server" class="form-label fw-bold">Type </asp:Label>
+                                                        <asp:TextBox ID="Type" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    </div>
+                                                    <div class="col-sm-3 ">
+                                                        <asp:Label for="lbGender" runat="server" class="form-label fw-bold">Gender </asp:Label>
+                                                        <asp:TextBox ID="Gender" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    </div>
+                                                    <div class="col-sm-3 ">
+                                                        <asp:Label for="lbByear" runat="server" class="form-label fw-bold">Year Of Birth </asp:Label>
+                                                        <asp:TextBox ID="Byear" CssClass="form-control" runat="server"></asp:TextBox>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -176,8 +195,8 @@
 
                                         <%--<span class="text-body-secondary">
                                             <asp:Label runat="server" ID="lbcourseDescription" Text="" /><%#Eval("courseDescription").ToString() == null ? "" : Eval("courseDescription").ToString() %></asp:Label>
-                                        </span>--%> 
-                                        <div style="text-align:justify;">
+                                        </span>--%>
+                                        <div style="text-align: justify;">
                                             <asp:Literal ID="litsort" Text='<%#Eval("courseDescription").ToString().Length > 102 ? Eval("courseDescription").ToString().Substring(0, 200) :Eval("courseDescription").ToString()%>' Visible="true" runat="server" />
                                             <asp:Literal ID="litfull" Text='<%#Eval("courseDescription")%>' Visible="false" runat="server" />
                                             <asp:Button ID="btnexpand" CssClass="btn btn-outline-secondary ms-1" Text="Read More" OnClick="Onexpand" Visible='<%#Eval("courseDescription").ToString().Length > 200 ? true:false%>' runat="server" />
@@ -187,7 +206,7 @@
                                     </div>
                                     <div class="col-4 col-sm-4">
                                         <div class="text-end">
-                                            
+
                                             <%#   
                                                       int.Parse(Eval("applyStatusID").ToString()) == 1 ? "<a class='btn btn-success rounded-5' href='CourseProfile.aspx' >Pay Now </a>" 
                                                     : int.Parse(Eval("applyStatusID").ToString()) == 2 ? "<div class=\"progress\" role=\"progressbar\" aria-label=\"Info striped example\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"><div class=\"progress-bar progress-bar-striped bg-info\" style=\"width: "+ Eval("progress").ToString() +"\"></div></div>progress<b> <span style=\"font-size: 24px\">" + Eval("progress").ToString() + "</span></b>"
@@ -195,7 +214,10 @@
                                                     : "" 
                                             %>
 
-                                            <br><br><br><asp:LinkButton ID='Button1' runat='server'  CommandArgument='<%# Eval("courseApplyID") %>' OnCommand="Button1_Command"> <span class='text-danger'><i class='fa-solid fa-trash'></i></span> </asp:LinkButton>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <asp:LinkButton ID='Button1' runat='server' CommandArgument='<%# Eval("courseApplyID") %>' OnCommand="Button1_Command"> <span class='text-danger'><i class='fa-solid fa-trash'></i></span> </asp:LinkButton>
                                         </div>
                                     </div>
 
