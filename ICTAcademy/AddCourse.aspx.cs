@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -246,6 +247,8 @@ namespace ICTAcademy
                             imageStream.CopyTo(memoryStream);
                             string base64String = Convert.ToBase64String(memoryStream.ToArray());
                             previewImage.ImageUrl = "data:" + itemDt.Rows[e.Item.ItemIndex]["ImageType"] + ";base64," + base64String;
+
+                            ((HtmlGenericControl)e.Item.FindControl("divCoverPhoto2")).Visible = false;
                         }
                     }
 

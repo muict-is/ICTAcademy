@@ -309,7 +309,7 @@
                                                                 <asp:Image ID="PreviewImage" runat="server" Style="width: 200px; height: 120px" />
                                                             </div>
                                                             <asp:FileUpload ID="FileUploadImage" runat="server" onchange="onSelectedFile(this);" accept="image/*" hidden />
-                                                            <div id="divCoverPhoto2" class="ClassCoverPhoto">
+                                                            <div id="divCoverPhoto2" class="ClassCoverPhoto" runat="server">
                                                                 <div class="icon ">
                                                                     <i class="fas fa-images"></i>
                                                                 </div>
