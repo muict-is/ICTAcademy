@@ -303,12 +303,10 @@
                                                 <div class="col-sm-2 text-center">
                                                     <div class="newPreview">
                                                         <label class="newbtn drag-area2">
-                                                            
-
-                                                            <div id="imgPreview2" class="ClassimgPreview <%#  Eval("Image") == null ? "d-none" : Eval("Image") %>"   >                                                               
+                                                            <div id="imgPreview" class="ClassimgPreview preview-instructor <%#Eval("ImageName").ToString().Length == 0  ? "d-none" : Eval("Image") %>"   >                                                               
                                                                 <asp:Image ID="PreviewImage" runat="server" Style="width: 200px; height: 120px" />
                                                             </div>
-                                                            <asp:FileUpload ID="FileUploadImage" runat="server" onchange="onSelectedFile(this);" accept="image/*" hidden />
+                                                            <asp:FileUpload ID="FileUploadImage" runat="server" onchange='onSelectedFile(this);' accept="image/*" hidden />
                                                             <div id="divCoverPhoto2" class="ClassCoverPhoto" runat="server">
                                                                 <div class="icon ">
                                                                     <i class="fas fa-images"></i>
@@ -318,14 +316,6 @@
                                                                 <span class="support">Supports: JPEG, JPG, PNG</span>
                                                             </div>
 
-                                                            
-
-                                                            <%--<asp:Image Width="300px" ID="previewImage" runat="server" />
-                                                            <label class="btn btn-primary">
-                                                                File Upload
-                                                                <asp:FileUpload runat="server" ID="FileUploadImage" hidden onchange="onSelectedFile(this)" accept="image/*" />
-
-                                                            </label> --%>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-10">
@@ -359,7 +349,6 @@
                             <div class="row mb-3 justify-content-md-center">
                                 <div class="col-8 col-md-2">
                                     <asp:LinkButton ID="BAddInstruture" runat="server" CssClass="btn btn-outline-primary" OnClick="BAddInstruture_Click" CausesValidation="false">Add Instructor</asp:LinkButton>
-
                                 </div>
                             </div>
                             <br>
@@ -441,6 +430,11 @@
 
         }
 
+        function showCoursePhotoPreview() {
+            document.getElementById("imgPreview").style.display = "";
+            document.getElementById("divCoverPhoto").style.display = "none";
+        }
+
     </script>
 
     <script src="Scripts/classicEditor.js"></script>
@@ -469,6 +463,8 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+       
 
         //function readInstructor(input) {
 
@@ -522,6 +518,8 @@
 
 
         function onSelectedFile(input) {
+
+            console.log(input);
             var imgPreview = input.parentElement.parentElement.querySelector('img');
 
             //check is file selected is image
@@ -542,6 +540,11 @@
                     // var bt = input.parentElement.parentElement.querySelector('button');
                 };
                 reader.readAsDataURL(input.files[0]);
+
+
+                var imgPreviewDiv = imgPreview.parentElement.parentElement.querySelector('div');
+                console.log(imgPreviewDiv);
+                imgPreviewDiv.classList.remove("d-none");
 
             }
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
@@ -28,11 +29,16 @@ namespace ICTAcademy
            
             String lang = "E";
 
+            bool hasCoursePhoto = false;
+
             if (!IsPostBack)
             {
 
                 bindDDLCategory(lang);
                 bindDDLstylesID();
+
+                // Bind Course photo 
+                hasCoursePhoto = bindCoursePhoto();
 
                 //Add Data Instrutor
                 DataTable dt = getDTInstrutor();
@@ -43,13 +49,43 @@ namespace ICTAcademy
                 bindRPLearningPeriod(dtPeriod);
 
             }
+            string js = "activeJS();";
+            if (hasCoursePhoto) js += " showCoursePhotoPreview();";
 
-            ScriptManager.RegisterStartupScript(Page, GetType(), "activeJS", "<script>activeJS()</script>", false);
+            ScriptManager.RegisterStartupScript(Page, GetType(), "activeJS", "<script>"+js+"</script>", false);
 
         }
 
+        private bool bindCoursePhoto()
+        {
+            if (Session["dtCoursePhoto"]!=null)
+            {
+                DataTable dt = (DataTable)Session["dtCoursePhoto"];
 
-       
+                if(dt.Rows.Count > 0)
+                {
+                    // get image stream
+                    MemoryStream imageStream = (MemoryStream)dt.Rows[0]["Image"];
+                    if (imageStream != null && imageStream.CanRead)
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            imageStream.Position = 0;
+                            imageStream.CopyTo(memoryStream);
+                            string base64String = Convert.ToBase64String(memoryStream.ToArray());
+                            PreviewImage.ImageUrl = "data:" + dt.Rows[0]["ImageType"] + ";base64," + base64String;
+
+
+                            return true;
+                        }
+                    }
+                }
+                
+               
+            }
+
+            return false;
+        }
 
         private void bindRPLearningPeriod(DataTable dtPeriod)
         {
@@ -103,11 +139,43 @@ namespace ICTAcademy
 
         protected void BAddInstruture_Click(object sender, EventArgs e)
         {
-
+            getCoursePhoto();
             AddItem();
             bindRPInstrutor();
             //bindRPInstrutor(dt);
-             
+
+            Response.Redirect("AddCourse.aspx");
+
+        }
+
+        private void getCoursePhoto()
+        {
+            if(FileUpload1.HasFile)
+            {
+                // get file name
+                string fileName =FileUpload1.FileName;
+                // get file type
+                string fileType = FileUpload1.PostedFile.ContentType;
+                // get file stream
+                Stream fileStream = FileUpload1.PostedFile.InputStream;
+                // get file length
+                int fileContentLength = FileUpload1.PostedFile.ContentLength;
+
+                // update file date to datatable
+                MemoryStream ms = new MemoryStream();
+                fileStream.CopyTo(ms);
+                DataTable dtCoursePhoto = new DataTable();
+                
+                dtCoursePhoto.Columns.Add("Image", typeof(MemoryStream));
+                dtCoursePhoto.Columns.Add("ImageName", typeof(string));
+                dtCoursePhoto.Columns.Add("ImageType", typeof(string));
+                dtCoursePhoto.Columns.Add("ImageContentLength", typeof(int));
+
+
+                dtCoursePhoto.Rows.Add(new object[] { ms, fileName, fileType, fileContentLength });
+
+                Session.Add("dtCoursePhoto", dtCoursePhoto);
+            }
         }
 
         private void bindRPInstrutor()
@@ -161,7 +229,9 @@ namespace ICTAcademy
             //itemDt.Rows.Add("", null, null, null);
             itemDt.Rows.Add(new object[] { string.Empty, string.Empty });
             //update session
-            Session["ItemDt"] = itemDt; 
+            Session["ItemDt"] = itemDt;
+
+            
 
         }
 
@@ -248,7 +318,7 @@ namespace ICTAcademy
                             string base64String = Convert.ToBase64String(memoryStream.ToArray());
                             previewImage.ImageUrl = "data:" + itemDt.Rows[e.Item.ItemIndex]["ImageType"] + ";base64," + base64String;
 
-                            ((HtmlGenericControl)e.Item.FindControl("divCoverPhoto2")).Visible = false;
+                           ((HtmlGenericControl)e.Item.FindControl("divCoverPhoto2")).Visible = false;
                         }
                     }
 
