@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
+
 
 namespace ICTAcademy
 {
@@ -68,11 +71,18 @@ namespace ICTAcademy
             if (token.Length > 0)
             {
                 divSuccessReset.Visible = true;
+                //Send Email
+
             }
             else
             {
                 divErrorReset.Visible = true;
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
         }
     }
 }

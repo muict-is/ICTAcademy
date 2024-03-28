@@ -16,7 +16,8 @@
     <AssemblyName>ICTAcademy</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort>44359</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -2255,6 +2256,7 @@
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
     <Content Include="Assets\Images\profile.jpg" />
+    <Content Include="Assets\Images\sigin.png" />
     <Content Include="Assets\Images\test-img.png" />
     <Content Include="Authentication.aspx" />
     <Content Include="Content\bootstrap-datepicker\bootstrap-datepicker.css" />
