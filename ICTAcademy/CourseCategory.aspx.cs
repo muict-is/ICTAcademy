@@ -19,7 +19,27 @@ namespace ICTAcademy
         {
             if (!IsPostBack)
             {
-                getCourseCategory();
+
+                //if (!string.IsNullOrEmpty(Session["CategoryID"].ToString()))
+
+                if (Session["CategoryID"] != null)
+                {
+                    ViewState["CategoryID"] = Session["CategoryID"];
+                    Session.Remove("CategoryID");
+
+                    int categoryID = int.Parse(ViewState["CategoryID"].ToString());
+
+                    getCourseCategory(categoryID);
+
+                }
+                else { 
+
+                    getCourseCategory();      
+                
+                }
+               
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + CategoryID + "')", true); 
+
             }
         }
 
@@ -43,22 +63,54 @@ namespace ICTAcademy
 
         }
 
+
+        private void getCourseCategory(int CategoryID)
+        {
+
+            DataTable dt = C.getCategoryGroup(CategoryID);
+
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + dt.Rows.Count + "')", true);
+            if (dt.Rows.Count != 0)
+            {
+                rptCourseCategory.DataSource = dt;
+                rptCourseCategory.DataBind();
+            }
+            else
+            {
+                rptCourseCategory.DataSource = null;
+                rptCourseCategory.DataBind();
+                rptCourseCategory.Visible = true;
+            }
+
+        }
+
+
         protected void rptCourseCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+
+            int categoryID;
+
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                int categoryID = int.Parse((e.Item.FindControl("hfCategoryID") as HiddenField).Value);
+            {                              
+
+                if (ViewState["CategoryID"] != null)
+                {                    
+                    categoryID = int.Parse(ViewState["CategoryID"].ToString());
+                }
+                else { 
+                    categoryID = int.Parse((e.Item.FindControl("hfCategoryID") as HiddenField).Value);
+                }
+                
                 String Lang = "E";
 
                 Repeater rptCourses = e.Item.FindControl("rptCourses") as Repeater;
                 rptCourses.DataSource = C.getCourseByCategoryID(Lang, categoryID);
 
-                //DataTable datepare = C.getCourseByCategoryID(categoryID);
-                //datepare.Columns.Add("startRegis"); 
-
+               
                 rptCourses.DataBind();
             }
         }
+
 
         protected void rptCourses_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

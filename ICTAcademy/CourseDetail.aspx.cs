@@ -87,7 +87,6 @@ namespace ICTAcademy
                 lbFee.Text = decimal.Parse(dr["Fee"].ToString()).ToString("N2");
                 lbmaxSeat.Text = int.Parse(dr["maxSeat"].ToString()).ToString();
 
-
                 DateTime startLearning = Convert.ToDateTime(dr["startLearning"].ToString());
                 DateTime endLearning = Convert.ToDateTime(dr["endLearning"].ToString());
                 DateTime startRegisdate = Convert.ToDateTime(dr["startRegisdate"].ToString());
@@ -95,7 +94,7 @@ namespace ICTAcademy
 
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
                 //openRegisStart.Text = DateTime.Today.ToString("dddd dd MMMM yyyy"); 
-                lbstartLearning.Text =  startLearning.Date.ToString(" dd MMMM yyyy") + " - " + endLearning.Date.ToString(" dd MMMM yyyy");
+                //lbstartLearning.Text =  startLearning.Date.ToString(" dd MMMM yyyy") + " - " + endLearning.Date.ToString(" dd MMMM yyyy");
 
                 //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");   
                 //<%#Eval("Fee").ToString().Length >0 ? decimal.Parse(Eval("Fee").ToString()).ToString("N2") : "" %>

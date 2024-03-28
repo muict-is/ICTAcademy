@@ -20,26 +20,73 @@ namespace ICTAcademy.CS
                 return country;
             }
         }
-        public DataTable getCountryList()
+        public DataTable getCountryList(String lang)
         {
 
-            return countryADT.getCountry();
+            return countryADT.getCountry(lang);
+        }
+
+
+        //------------------------------------------------
+        private SP_Select_RegisterTypeTableAdapter RegisterType = null;
+        protected SP_Select_RegisterTypeTableAdapter RegisterTypeADT
+        {
+            get
+            {
+                if (RegisterType == null) RegisterType = new SP_Select_RegisterTypeTableAdapter();
+                return RegisterType;
+            }
+        }
+        public DataTable getRegisterType(String lang)
+        {
+
+            return RegisterTypeADT.GetData(lang);
+        }
+
+        //------------------------------------------------
+        private SP_Select_GenderTableAdapter Gender = null;
+        protected SP_Select_GenderTableAdapter GenderADT
+        {
+            get
+            {
+                if (Gender == null) Gender = new SP_Select_GenderTableAdapter();
+                return Gender;
+            }
+        }
+        public DataTable getGender(String lang)
+        {             
+            return GenderADT.GetData(lang);
+        }
+
+        //------------------------------------------------
+        private SP_Select_TitleTableAdapter Title = null;
+        protected SP_Select_TitleTableAdapter TitleADT
+        {
+            get
+            {
+                if (Title == null) Title = new SP_Select_TitleTableAdapter();
+                return Title;
+            }
+        }
+        public DataTable getTitle(String lang)
+        {
+            return TitleADT.GetData(lang);
         }
 
 
         //--------------------------------------------
-        private SP_Insert_TabRegisterMemberAdapterTableAdapter insertMember = null;
-        protected SP_Insert_TabRegisterMemberAdapterTableAdapter insertMemberADT
+        private SP_Insert_RegisterMemberAdapterTableAdapter insertMember = null;
+        protected SP_Insert_RegisterMemberAdapterTableAdapter insertMemberADT
         {
             get
             {
-                if (insertMember == null) insertMember = new SP_Insert_TabRegisterMemberAdapterTableAdapter();
+                if (insertMember == null) insertMember = new SP_Insert_RegisterMemberAdapterTableAdapter();
                 return insertMember;
             }
         }
-        public void insertRegisterMember(string titleTH, string firstnameTH, string middleTH, string lastnameTH, string titleEN, string firstnameEN, string middleEN, string lastnameEN, int country, string email, string username, string password)
+        public void insertRegisterMember(int registerTypeID, int gender, string yearOfBirth, int titleTH, string firstnameTH, string middleTH, string lastnameTH, int titleEN, string firstnameEN, string middleEN, string lastnameEN, int country, string email, string username, string password, bool adminRole)
         {
-            insertMemberADT.insertMember(titleTH, firstnameTH, middleTH, lastnameTH, titleEN, firstnameEN, middleEN, lastnameEN, country, email, username, password);
+            insertMemberADT.insertMember(registerTypeID, gender, yearOfBirth, titleTH, firstnameTH, middleTH, lastnameTH, titleEN, firstnameEN, middleEN, lastnameEN, country, email, username, password, adminRole); 
         }
 
         //--------------------------------------------

@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Image = System.Web.UI.WebControls.Image;
 
 
@@ -19,38 +23,68 @@ namespace ICTAcademy
     public partial class AddCourse1 : System.Web.UI.Page
     {
         InstructorCS ICS = new InstructorCS();
+        CourseCS C = new CourseCS();
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+           
+            String lang = "E";
+
+            bool hasCoursePhoto = false;
+
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
-                {
-                    //Add Data Instrutor
-                    DataTable dt = getDTInstrutor();
-                    bindRPInstrutor(dt);
 
-                    //Add Data Date
-                    DataTable dtPeriod = getDTLearningPeriod();
-                    bindRPLearningPeriod(dtPeriod);
+                bindDDLCategory(lang);
+                bindDDLstylesID();
 
-                    startLeaening.Text = DateTime.Now.ToString("yyyy/MM/dd");
-                    endLeaening.Text = DateTime.Now.ToString("yyyy/MM/dd");
-                }
+                // Bind Course photo 
+                hasCoursePhoto = bindCoursePhoto();
+
+                //Add Data Instrutor
+                DataTable dt = getDTInstrutor();
+                bindRPInstrutor();
+
+                //Add Data Date
+                DataTable dtPeriod = getDTLearningPeriod();
+                bindRPLearningPeriod(dtPeriod);
+
             }
-            catch {
-                Response.Write("Error");
-            }
+            string js = "activeJS();";
+            if (hasCoursePhoto) js += " showCoursePhotoPreview();";
+
+            ScriptManager.RegisterStartupScript(Page, GetType(), "activeJS", "<script>"+js+"</script>", false);
+
         }
 
-
-        private void bindRPInstrutor(DataTable dt)
+        private bool bindCoursePhoto()
         {
+            if (Session["dtCoursePhoto"]!=null)
+            {
+                DataTable dt = (DataTable)Session["dtCoursePhoto"];
 
-            ViewState.Add("DTInstrutor", dt);
+                if(dt.Rows.Count > 0)
+                {
+                    // get image stream
+                    MemoryStream imageStream = (MemoryStream)dt.Rows[0]["Image"];
+                    if (imageStream != null && imageStream.CanRead)
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            imageStream.Position = 0;
+                            imageStream.CopyTo(memoryStream);
+                            string base64String = Convert.ToBase64String(memoryStream.ToArray());
+                            PreviewImage.ImageUrl = "data:" + dt.Rows[0]["ImageType"] + ";base64," + base64String;
 
-            rptAddInstrutor.DataSource = dt;
-            rptAddInstrutor.DataBind();
 
+                            return true;
+                        }
+                    }
+                }
+                
+               
+            }
+
+            return false;
         }
 
         private void bindRPLearningPeriod(DataTable dtPeriod)
@@ -76,14 +110,12 @@ namespace ICTAcademy
             dtPeriod.Rows.Add(new Object[] { string.Empty, string.Empty });
             return dtPeriod;
 
-
         }
 
         private DataTable getDTInstrutor()
         {
-
-            if (ViewState["DTInstrutor"] != null) return (DataTable)ViewState["DTInstrutor"];
-
+            //if (ViewState["DTInstrutor"] != null) return (DataTable)ViewState["DTInstrutor"];
+            if (Session["ItemDt"] != null) return (DataTable)Session["ItemDt"];
 
             //--- mock empty data table
             DataTable dt = new DataTable();
@@ -92,59 +124,136 @@ namespace ICTAcademy
             dt.Columns.Add("Fullname", typeof(string));
             dt.Columns.Add("position", typeof(string));
             dt.Columns.Add("work", typeof(string));
-            dt.Columns.Add("email", typeof(string));
+            dt.Columns.Add("email", typeof(string)); 
+            dt.Columns.Add("Image", typeof(Stream));
+            dt.Columns.Add("ImageName", typeof(string));
+            dt.Columns.Add("ImageType", typeof(string));
+            dt.Columns.Add("ImageContentLength", typeof(string));
+
+            Session["ItemDt"] = dt;
 
             dt.Rows.Add(new Object[] { string.Empty, string.Empty });
             return dt;
-
 
         }
 
         protected void BAddInstruture_Click(object sender, EventArgs e)
         {
-            ViewState["DTInstrutor"] = null;
-            DataTable dt = getDTInstrutor();
+            getCoursePhoto();
+            AddItem();
+            bindRPInstrutor();
+            //bindRPInstrutor(dt);
 
-            dt.Rows.RemoveAt(0);
-
-            foreach (RepeaterItem item in rptAddInstrutor.Items) {
-
-                //Image PreviewImage2 = (Image)item.FindControl("PreviewImage2");
-                FileUpload FileUploadImage = (FileUpload)item.FindControl("FileUploadImage");
-                TextBox Fullname = (TextBox)item.FindControl("Fullname");
-                TextBox position = (TextBox)item.FindControl("position");
-                TextBox work = (TextBox)item.FindControl("work");
-                TextBox email = (TextBox)item.FindControl("email");
-
-                //เหลือจัดการ File Upload Image FileContent gettype
-                dt.Rows.Add(new object[] { "data:"+FileUploadImage.FileContent+";base64,{0}"+Convert.ToBase64String(FileUploadImage.FileBytes), Fullname.Text, position.Text, work.Text, email.Text });
-            } 
-
-            dt.Rows.Add(new object[] { string.Empty, string.Empty });
-
-            bindRPInstrutor(dt);
+            Response.Redirect("AddCourse.aspx");
 
         }
 
-        protected void BAddExtendTime_Click(object sender, EventArgs e)
+        private void getCoursePhoto()
         {
-            ViewState["DTLearningPeriod"] = null;
-            DataTable dtPeriod = getDTLearningPeriod();
-
-            dtPeriod.Rows.RemoveAt(0);
-
-            foreach (RepeaterItem item in rptAddDate.Items)
+            if(FileUpload1.HasFile)
             {
-                TextBox startdate = (TextBox)item.FindControl("startdate");
-                TextBox enddate = (TextBox)item.FindControl("enddate");
-               
-                dtPeriod.Rows.Add(new object[] { startdate.Text, enddate.Text });
+                // get file name
+                string fileName =FileUpload1.FileName;
+                // get file type
+                string fileType = FileUpload1.PostedFile.ContentType;
+                // get file stream
+                Stream fileStream = FileUpload1.PostedFile.InputStream;
+                // get file length
+                int fileContentLength = FileUpload1.PostedFile.ContentLength;
+
+                // update file date to datatable
+                MemoryStream ms = new MemoryStream();
+                fileStream.CopyTo(ms);
+                DataTable dtCoursePhoto = new DataTable();
+                
+                dtCoursePhoto.Columns.Add("Image", typeof(MemoryStream));
+                dtCoursePhoto.Columns.Add("ImageName", typeof(string));
+                dtCoursePhoto.Columns.Add("ImageType", typeof(string));
+                dtCoursePhoto.Columns.Add("ImageContentLength", typeof(int));
+
+
+                dtCoursePhoto.Rows.Add(new object[] { ms, fileName, fileType, fileContentLength });
+
+                Session.Add("dtCoursePhoto", dtCoursePhoto);
             }
-
-            dtPeriod.Rows.Add(new object[] { string.Empty, string.Empty });
-
-            bindRPLearningPeriod(dtPeriod);
         }
+
+        private void bindRPInstrutor()
+        {
+            // get data from session
+            DataTable itemDt = (DataTable)Session["ItemDt"];
+            // bind to repeater
+            rptAddInstrutor.DataSource = itemDt; 
+            rptAddInstrutor.DataBind();
+        }
+
+        private void AddItem()
+        {
+            // Get the current data from Session
+            DataTable itemDt = (DataTable)Session["ItemDt"];
+
+            // get added item from repeater
+            foreach (RepeaterItem repeaterItem in rptAddInstrutor.Items)
+            {
+                // get control from repeater
+                
+                FileUpload fuImage = (FileUpload)repeaterItem.FindControl("FileUploadImage");
+                TextBox Fullname = (TextBox)repeaterItem.FindControl("Fullname");
+                TextBox position = (TextBox)repeaterItem.FindControl("position");
+                TextBox work = (TextBox)repeaterItem.FindControl("work");
+                TextBox email = (TextBox)repeaterItem.FindControl("email");
+
+                // check if fileupload has file
+                if (fuImage.HasFile)
+                {
+                    // get file name
+                    string fileName = fuImage.FileName;
+                    // get file type
+                    string fileType = fuImage.PostedFile.ContentType;
+                    // get file stream
+                    Stream fileStream = fuImage.PostedFile.InputStream;
+                    // update file date to datatable
+                    MemoryStream ms = new MemoryStream();
+                    fileStream.CopyTo(ms);
+                    itemDt.Rows[repeaterItem.ItemIndex]["Image"] = ms;
+                    itemDt.Rows[repeaterItem.ItemIndex]["ImageName"] = fileName;
+                    itemDt.Rows[repeaterItem.ItemIndex]["ImageType"] = fileType;
+                    itemDt.Rows[repeaterItem.ItemIndex]["ImageContentLength"] = fuImage.PostedFile.ContentLength;
+                }
+                itemDt.Rows[repeaterItem.ItemIndex]["Fullname"] = Fullname.Text;
+                itemDt.Rows[repeaterItem.ItemIndex]["position"] = position.Text;
+                itemDt.Rows[repeaterItem.ItemIndex]["work"] = work.Text;
+                itemDt.Rows[repeaterItem.ItemIndex]["email"] = email.Text;
+            }
+            // Add new row
+            //itemDt.Rows.Add("", null, null, null);
+            itemDt.Rows.Add(new object[] { string.Empty, string.Empty });
+            //update session
+            Session["ItemDt"] = itemDt;
+
+            
+
+        }
+
+        //protected void BAddExtendTime_Click(object sender, EventArgs e)
+        //{
+        //    ViewState["DTLearningPeriod"] = null;
+        //    DataTable dtPeriod = getDTLearningPeriod();
+
+        //    dtPeriod.Rows.RemoveAt(0);
+
+        //    foreach (RepeaterItem item in rptAddDate.Items)
+        //    {
+        //        TextBox startdate = (TextBox)item.FindControl("startdate");
+        //        TextBox enddate = (TextBox)item.FindControl("enddate");
+               
+        //        dtPeriod.Rows.Add(new object[] { startdate.Text, enddate.Text });
+        //    }
+
+        //    dtPeriod.Rows.Add(new object[] { string.Empty, string.Empty });
+
+        //    bindRPLearningPeriod(dtPeriod);
+        //}
 
 
         protected void rptAddDate_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -160,8 +269,8 @@ namespace ICTAcademy
                 TextBox startdate = (TextBox)item.FindControl("startdate");
                 TextBox enddate = (TextBox)item.FindControl("enddate");
 
-                startdate.Text = dtPeriod.Rows[itemIdx]["startdate"].ToString();
-                enddate.Text = dtPeriod.Rows[itemIdx]["enddate"].ToString();
+                //startdate.Text = dtPeriod.Rows[itemIdx]["startdate"].ToString();
+                //enddate.Text = dtPeriod.Rows[itemIdx]["enddate"].ToString();
 
             }
         }
@@ -176,28 +285,45 @@ namespace ICTAcademy
 
                 RepeaterItem item = e.Item;
 
-
-
-                Image PreviewImage2 = (Image)item.FindControl("PreviewImage2");
+                // get control from repeater               
                 TextBox Fullname = (TextBox)item.FindControl("Fullname");
                 TextBox position = (TextBox)item.FindControl("position");
                 TextBox work = (TextBox)item.FindControl("work");
                 TextBox email = (TextBox)item.FindControl("email");
 
-                //FileUploadImage.FileBytes = dt.Rows[itemIdx]["FileUploadImage"].GetType ;
+                // get data from session
+                DataTable temp = (DataTable)Session["ItemDt"];
+                // copy to new Datatable name itemDt
+                DataTable itemDt = temp.Copy();
 
-                //string fileName = System.IO.Path.GetFileName(FileUploadImage.PostedFile.FileName);
-                //string filePath = Server.MapPath("~/UploadedFiles/") + fileName;
-                //fileUploadControl.SaveAs(filePath);
-                //byte[] fileBytes = YourFileBytesFunction();
-
-                //FileUploadImage.PostedFile = new HttpPostedFileWrapper(new System.Web.HttpPostedFile(fileName, "image/webp", new MemoryStream(fileBytes)));
-                PreviewImage2.ImageUrl = dt.Rows[itemIdx]["FileUploadImage"].ToString();
+                //set value to control
                 Fullname.Text = dt.Rows[itemIdx]["Fullname"].ToString();
                 position.Text = dt.Rows[itemIdx]["position"].ToString();
                 work.Text = dt.Rows[itemIdx]["work"].ToString();
                 email.Text = dt.Rows[itemIdx]["email"].ToString();
-                 
+
+                // check if image is not null
+                if (itemDt.Rows[e.Item.ItemIndex]["Image"] != DBNull.Value)
+                {
+                    // set image to previewImage
+                    Image previewImage = (Image)e.Item.FindControl("previewImage");
+                    // get image stream
+                    MemoryStream imageStream = (MemoryStream)itemDt.Rows[e.Item.ItemIndex]["Image"];
+                    if (imageStream != null && imageStream.CanRead)
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        { 
+                            imageStream.Position = 0;
+                            imageStream.CopyTo(memoryStream);
+                            string base64String = Convert.ToBase64String(memoryStream.ToArray());
+                            previewImage.ImageUrl = "data:" + itemDt.Rows[e.Item.ItemIndex]["ImageType"] + ";base64," + base64String;
+
+                           ((HtmlGenericControl)e.Item.FindControl("divCoverPhoto2")).Visible = false;
+                        }
+                    }
+
+                }
+
             }
         }
 
@@ -253,23 +379,46 @@ namespace ICTAcademy
             String fee = this.fee.Text;
             String totalHour = this.totalHour.Text;
             String hourPerWeek = this.hourPerWeek.Text;
-            String periodTimeID = this.periodTimeID.Text;
-            String startLeaening = this.startLeaening.Text;
-            String endLeaening = this.endLeaening.Text;
+            //String periodTimeID = this.periodTimeID.Text;
+            //String startLeaening = this.startLeaening.Text;
+            //String endLeaening = this.endLeaening.Text;
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + ImageCourseName + "')", true);
         }
 
-        protected void btnTestFileUpload_Click(object sender, EventArgs e)
+        private void bindDDLCategory(String lang)
         {
-            string logResult = "- no file -";
-            if(FileUpload3.HasFile)
-            {
-                logResult = FileUpload3.FileName.ToString();
-                logResult = FileUpload3.FileName.ToString();
-            }
+            CategoryID.DataSource = C.getAllCategory(lang);
+            CategoryID.DataTextField = "Category";
+            CategoryID.DataValueField = "CategoryID";
+            CategoryID.DataBind();
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' File name : " + logResult + "')", true);
+            CategoryID.Items.Insert(0, new ListItem("  ", ""));
         }
+
+        private void bindDDLstylesID()
+        {
+            stylesID.DataSource = C.getLearningStyleList();
+            stylesID.DataTextField = "LearningStyles";
+            stylesID.DataValueField = "stylesID";
+            stylesID.DataBind();
+
+            stylesID.Items.Insert(0, new ListItem("  ", ""));
+        }
+
+      
+
+
+        //protected void btnTestFileUpload_Click(object sender, EventArgs e)
+        //{
+        //    string logResult = "- no file -";
+        //    if(FileUpload3.HasFile)
+        //    {
+        //        logResult = FileUpload3.FileName.ToString();
+        //        logResult = FileUpload3.FileName.ToString();
+        //    }
+
+        //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' File name : " + logResult + "')", true);
+        //}
     }
 }

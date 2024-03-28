@@ -30,7 +30,7 @@
 
             <div class="album  py-5">
                 <div class="container">
-                    <div class="py-5">
+                    <div class="py-3">
                         <h3>Course Category</h3>
                     </div>
                     <div class="row row-cols-md-12 g-3">
@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="up-20">
                                         <h4><span class="badge text-bg-warning up-20"><%#Eval("CategoryEN") %></span></h4>
-                                    </div>
+                                    </div> 
 
                                     <asp:HiddenField ID="hfCategoryID" runat="server" Value=' <%#Eval("CategoryID") %>' />
 

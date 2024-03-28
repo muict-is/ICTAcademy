@@ -51,15 +51,6 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.Label lbCategoryEN;
 
         /// <summary>
-        /// lbstartLearning control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbstartLearning;
-
-        /// <summary>
         /// lbhour control.
         /// </summary>
         /// <remarks>
@@ -168,15 +159,6 @@ namespace ICTAcademy
         protected global::System.Web.UI.WebControls.LinkButton enrollClose;
 
         /// <summary>
-        /// lbcourseDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbcourseDescription;
-
-        /// <summary>
         /// rptInstructors control.
         /// </summary>
         /// <remarks>
@@ -193,6 +175,24 @@ namespace ICTAcademy
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageBlog;
+
+        /// <summary>
+        /// DivlbcourseDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivlbcourseDescription;
+
+        /// <summary>
+        /// lbcourseDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbcourseDescription;
 
         /// <summary>
         /// DivlbcourseObjective control.

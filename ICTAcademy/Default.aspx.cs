@@ -22,7 +22,6 @@ namespace ICTAcademy
            
         }
 
-
         private void getCourseList()
         {
             DataTable dt = C.getCourseAllList();
@@ -32,8 +31,6 @@ namespace ICTAcademy
 
         }
         //SP_Select_AllCourse1TableAdapter
-
-
 
         protected void rptCourseList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -49,13 +46,39 @@ namespace ICTAcademy
             }
         }
          
-        protected void Image1_Command(object sender, CommandEventArgs e)
-        {
-            String courseDesID = (sender as ImageButton).CommandArgument;
+        protected void courseDesID_Command(object sender, CommandEventArgs e)
+        {            
+            String courseDesID = e.CommandArgument.ToString();
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + courseDesID + "')", true);
             Response.Redirect(Page.ResolveUrl("~/CourseDetail.aspx?cid=" + courseDesID));
+        } 
+         
+        protected void LinkButton1_Command(object sender, CommandEventArgs e)
+        {
+            String CategoryID = e.CommandArgument.ToString();            
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + CategoryID + "')", true);
+            Session["CategoryID"] = CategoryID;
+            Response.Redirect(Page.ResolveUrl("~/CourseCategory.aspx")); 
+            //Response.Redirect(Page.ResolveUrl("~/CourseCategory.aspx?cid=" + CategoryID));
         }
 
-    
+
+        protected void Onexpand(object sender, EventArgs e)
+        {
+            RepeaterItem row = (sender as Button).NamingContainer as RepeaterItem;
+            (row.FindControl("litsort") as Literal).Visible = false;
+            (row.FindControl("litfull") as Literal).Visible = true;
+            (row.FindControl("btnexpand") as Button).Visible = false;
+            (row.FindControl("btncollapse") as Button).Visible = true;
+        }
+
+        protected void Oncollapse(object sender, EventArgs e)
+        {
+            RepeaterItem row = (sender as Button).NamingContainer as RepeaterItem;
+            (row.FindControl("litsort") as Literal).Visible = true;
+            (row.FindControl("litfull") as Literal).Visible = false;
+            (row.FindControl("btnexpand") as Button).Visible = true;
+            (row.FindControl("btncollapse") as Button).Visible = false;
+        }
     }
 }

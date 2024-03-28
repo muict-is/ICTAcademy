@@ -36,24 +36,24 @@ namespace ICTAcademy.CS
             dt.Rows.Add(new object[] { "Web Pentest", "Cyber Security", 4200, "recomened for web developer" });
             dt.Rows.Add(new object[] { "Machine learning for Image Processing", "credit bank", 4200, "" });
 
-
             return dt;
         }
 
 
         //--------------------------------------------
-        private SP_Insert_CourseTableAdapter insertCourse = null;
-        protected SP_Insert_CourseTableAdapter insertCourseADT
-        {
-            get
-            {
-                if (insertCourse == null) insertCourse = new SP_Insert_CourseTableAdapter();
-                return insertCourse;
-            }
-        }
+        //private SP_Insert_CourseTableAdapter insertCourse = null;
+        //protected SP_Insert_CourseTableAdapter insertCourseADT
+        //{
+        //    get
+        //    {
+        //        if (insertCourse == null) insertCourse = new SP_Insert_CourseTableAdapter();
+        //        return insertCourse;
+        //    }
+        //}
         public void createCourse(int courseType, string courseCode, string courseNameTH, string courseNameEN, string createBy)
         {
-            insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+            //insertCourseADT.InsertData(courseType, courseCode, courseNameTH, courseNameEN, createBy);
+            courseListADT.InsertCourse(courseType, courseCode, courseNameTH, courseNameEN, createBy);
         }
 
 
@@ -174,20 +174,19 @@ namespace ICTAcademy.CS
         }
 
         //------------------------------------------------ 
-        //private SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryID = null;
-        //protected SP_Select_CourseByCategoryIDTableAdapter CourseByCategoryIDADT
-        //{
-        //    get
-        //    {
-        //        if (CourseByCategoryID == null) CourseByCategoryID = new SP_Select_CourseByCategoryIDTableAdapter();
-        //        return CourseByCategoryID;
-        //    }
-        //}
-        //public DataTable getCourseByCategoryID(int CategoryID)
-        //{
-           
-        //    return CourseByCategoryIDADT.GetCourseByCategoryID(CategoryID);
-        //}
+        private SP_Select_CategoryIDTableAdapter CategoryGroupID = null;
+        protected SP_Select_CategoryIDTableAdapter CategoryGroupIDADT
+        {
+            get
+            {
+                if (CategoryGroupID == null) CategoryGroupID = new SP_Select_CategoryIDTableAdapter();
+                return CategoryGroupID;
+            }
+        } 
+        public DataTable getCategoryGroup(int CategoryID)
+        {
+            return CategoryGroupIDADT.getCategoryByID(@CategoryID); 
+        }
 
 
         //------------------------------------------------ 
@@ -207,6 +206,22 @@ namespace ICTAcademy.CS
            
         }
 
+        //------------------------------------------------ 
+        private SP_Select_AllCategoryTableAdapter Category = null;
+        protected SP_Select_AllCategoryTableAdapter CategoryADT
+        {
+            get
+            {
+                if (Category == null) Category = new SP_Select_AllCategoryTableAdapter();
+                return Category;
+            }
+        }
+        public DataTable getAllCategory(String Lang)
+        {
+
+            return CategoryADT.GetData(Lang);
+
+        }
 
     }
 }

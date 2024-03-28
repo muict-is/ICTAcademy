@@ -2252,6 +2252,7 @@
     <Content Include="Assets\Images\cover_1.jpg" />
     <Content Include="Assets\Images\cover_2.jpg" />
     <Content Include="Assets\Images\cover_3.jpg" />
+    <Content Include="Assets\Images\en.png" />
     <Content Include="Assets\Images\imagePreview.jpg" />
     <Content Include="Assets\Images\logo-small.png" />
     <Content Include="Assets\Images\muict-logo.png" />
@@ -2259,6 +2260,7 @@
     <Content Include="Assets\Images\sigin.png" />
     <Content Include="Assets\Images\test-img.png" />
     <Content Include="Authentication.aspx" />
+    <Content Include="Assets\Images\th.png" />
     <Content Include="Content\bootstrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="Assets\Images\user.png" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -2589,6 +2591,13 @@
     </Compile>
     <Compile Include="TicketManagement.aspx.designer.cs">
       <DependentUpon>TicketManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
